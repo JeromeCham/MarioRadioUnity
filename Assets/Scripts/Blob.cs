@@ -22,6 +22,7 @@ public class Blob : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 lineCastPos = myTrans.position - myTrans.right * myWidth;
+        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down);
         bool isGrounded = Physics2D.Linecast (lineCastPos, lineCastPos + Vector2.down, blobMask);
 
         if(!isGrounded)
@@ -33,7 +34,7 @@ public class Blob : MonoBehaviour
 
         //Always move forward
         Vector2 myVel = myBody.velocity;
-        myVel.x = speed;
+        myVel.x = -myTrans.right.x * speed;
         myBody.velocity = myVel;
     }
 }
