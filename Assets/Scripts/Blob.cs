@@ -9,6 +9,7 @@ public class Blob : MonoBehaviour
     Rigidbody2D myBody;
     Transform myTrans;
     float myWidth;
+ 
     // Start is called before the first frame update
     void Start()
     {
