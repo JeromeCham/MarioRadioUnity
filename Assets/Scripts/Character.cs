@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     [SerializeField]
-    private float movementspeed;
+    protected float movementspeed;
 
-    private bool facingRight;
+    protected bool facingRight;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         facingRight = true;
     }
@@ -22,6 +22,7 @@ public class Character : MonoBehaviour
 
     public void ChangeDirection()
     {
-
+        facingRight = !facingRight;
+        transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
     }
 }

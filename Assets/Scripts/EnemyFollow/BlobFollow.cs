@@ -7,15 +7,17 @@ public class BlobFollow : Character
 
     private IEnemyState currentState;
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
+        ChangeState(new IdleState());
       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        currentState.Execute();
 
     }
 
