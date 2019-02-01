@@ -30,6 +30,8 @@ public class StatHealthMana : MonoBehaviour
             {
                 currentHealth = value;
             }
+
+            currentFill = currentHealth / MaxHealth;
         }
     }
 
@@ -39,13 +41,12 @@ public class StatHealthMana : MonoBehaviour
     void Start()
     {
         content = GetComponent<Image>();
-        content.fillAmount = 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CurrentHealth);
+        content.fillAmount = currentFill;
     }
 
     public void Initialize(float currentValue, float maxValue)
