@@ -33,7 +33,7 @@ public class Blob : MonoBehaviour
 
         //Always move forward
         Vector2 myVel = myBody.velocity;
-        myVel.x = speed;
+        myVel.x = -myTrans.right.x * speed;
         myBody.velocity = myVel;
     }
 }
