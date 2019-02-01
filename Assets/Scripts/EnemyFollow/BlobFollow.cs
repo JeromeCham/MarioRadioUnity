@@ -31,4 +31,19 @@ public class BlobFollow : Character
 
         currentState.Enter(this);
     }
+
+    public void Move()
+    {
+        transform.Translate(GetDirection() * (movementspeed * Time.deltaTime));
+    }
+
+    public Vector2 GetDirection()
+    {
+        return facingRight ? Vector2.right : Vector2.left;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        currentState.OnTriggerEnter(other);
+    }
 }

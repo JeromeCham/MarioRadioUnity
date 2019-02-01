@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flag
+  - Edge
   layers:
   - Default
   - TransparentFX
