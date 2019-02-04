@@ -5,11 +5,20 @@ using UnityEngine.UI;
 
 public class Bar : MonoBehaviour
 {
-    [SerializeField]
     private float fillAmount;
 
     [SerializeField]
     private Image content;
+
+    public float MaxValue {get; set;}
+
+    public float Value
+    {
+        set
+        {
+            fillAmount = Map(value, 0, MaxValue, 0, 1);
+        }
+    } 
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +34,10 @@ public class Bar : MonoBehaviour
 
     private void HandleBar()
     {
-        content.fillAmount = Map(53, 0, 100, 0, 1);
+        if (fillAmount != content.fillAmount)
+        {
+            content.fillAmount = fillAmount;
+        }
     }
 
     private float Map(float value, float inMin, float inMax, float outMin, float outMax)

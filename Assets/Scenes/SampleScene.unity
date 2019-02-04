@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 207696940}
   - component: {fileID: 207696941}
   - component: {fileID: 207696942}
+  - component: {fileID: 207696943}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -518,6 +519,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8491cbeb367ce141ad8bcfd1b638e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementspeed: 0
+  facingRight: 0
+  health: {fileID: 0}
+  initialHealth: 100
+--- !u!114 &207696943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207696933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6461f68ce1872145ac7442f42a2e9bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health:
+    bar: {fileID: 1392288469}
+    maxVal: 100
+    currentVal: 100
 --- !u!1 &238986266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,8 +2204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81429830f2586b0408a19692aec7982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillAmount: 0
-  content: {fileID: 0}
+  content: {fileID: 374306135}
 --- !u!1 &1411010532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,7 +5507,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1878519800
 BoxCollider2D:
   m_ObjectHideFlags: 0
