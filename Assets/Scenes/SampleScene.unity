@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 207696941}
   - component: {fileID: 207696942}
   - component: {fileID: 207696943}
+  - component: {fileID: 207696944}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -519,22 +520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8491cbeb367ce141ad8bcfd1b638e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementspeed: 0
-  facingRight: 0
-  health: {fileID: 0}
-  initialHealth: 100
 --- !u!114 &207696943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +536,19 @@ MonoBehaviour:
     bar: {fileID: 1392288469}
     maxVal: 100
     currentVal: 100
+--- !u!114 &207696944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207696933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 1790216941}
 --- !u!1 &238986266
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,7 +5364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790216940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.78, y: -4, z: -0.05654309}
+  m_LocalPosition: {x: -10.41, y: -3.59, z: -0.05654309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5607,7 +5605,7 @@ GameObject:
   - component: {fileID: 2124036429}
   - component: {fileID: 2124036428}
   m_Layer: 0
-  m_Name: Edge (1)
+  m_Name: 'Edge '
   m_TagString: Edge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5647,7 +5645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124036427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.76, y: -3.43, z: -0.05654309}
+  m_LocalPosition: {x: 31.44, y: -3.43, z: -0.05654309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
