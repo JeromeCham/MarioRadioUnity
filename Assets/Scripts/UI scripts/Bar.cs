@@ -8,7 +8,13 @@ public class Bar : MonoBehaviour
     private float fillAmount;
 
     [SerializeField]
+    private float healthBarSpeed;
+
+    [SerializeField]
     private Image content;
+
+    [SerializeField]
+    private Text valueText;
 
     public float MaxValue {get; set;}
 
@@ -16,6 +22,8 @@ public class Bar : MonoBehaviour
     {
         set
         {
+            string[] temp = valueText.text.Split(':');
+            valueText.text = temp[0] + ": " + value;
             fillAmount = Map(value, 0, MaxValue, 0, 1);
         }
     } 
@@ -36,7 +44,7 @@ public class Bar : MonoBehaviour
     {
         if (fillAmount != content.fillAmount)
         {
-            content.fillAmount = fillAmount;
+            content.fillAmount = Mathf.Lerp(content.fillAmount, fillAmount, Time.deltaTime * healthBarSpeed);
         }
     }
 
