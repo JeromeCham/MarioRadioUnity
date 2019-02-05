@@ -7,7 +7,7 @@ public class PatrolState : IEnemyState
     private BlobFollow enemy;
 
     private float patrolTimer;
-    private float patrolDuration=5;
+    private float patrolDuration=16;
 
     public void Enter(BlobFollow enemy)
     {
