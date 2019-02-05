@@ -12,14 +12,16 @@ public class Follow : MonoBehaviour
         if(other.tag == "Player")
         {
             enemy.Target = other.gameObject;
+            Debug.Log("Target locked");
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             enemy.Target = null;
+            Debug.Log("Target not locked");
         }
     }
 

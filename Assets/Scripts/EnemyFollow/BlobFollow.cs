@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlobFollow : Character
 {
-
+    Transform mytrans;
     private IEnemyState currentState;
 
     public GameObject Target { get; set; }
@@ -21,7 +21,7 @@ public class BlobFollow : Character
     void Update()
     {
         currentState.Execute();
-        //LookAtTarget();
+        LookAtTarget();
     }
 
     public void ChangeState(IEnemyState newState)
@@ -48,9 +48,9 @@ public class BlobFollow : Character
     {
         if(Target != null)
         {
-            float xDir = Target.transform.position.x - transform.position.x;
-
-            if(xDir < 0 && facingRight || xDir > 0 &&  !facingRight)
+            float xDir =  Target.transform.position.x - transform.position.x;
+            
+            if (xDir > 0 && facingRight || xDir < 0 &&  !facingRight)
             {
                 ChangeDirection();
             }
