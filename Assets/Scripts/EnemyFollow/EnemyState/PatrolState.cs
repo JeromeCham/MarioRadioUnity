@@ -12,6 +12,7 @@ public class PatrolState : IEnemyState
     public void Enter(BlobFollow enemy)
     {
         this.enemy = enemy;
+
     }
 
     public void Execute()
@@ -37,6 +38,7 @@ public class PatrolState : IEnemyState
 
     private void Patrol()
     {
+
         patrolTimer += Time.deltaTime;
 
         if (patrolTimer >= patrolDuration)
