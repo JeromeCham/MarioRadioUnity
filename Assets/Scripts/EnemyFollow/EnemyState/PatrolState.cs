@@ -7,7 +7,7 @@ public class PatrolState : IEnemyState
     private BlobFollow enemy;
 
     private float patrolTimer;
-    private float patrolDuration=5;
+    private float patrolDuration=16;
 
     public void Enter(BlobFollow enemy)
     {
@@ -21,6 +21,11 @@ public class PatrolState : IEnemyState
         Patrol();
 
         enemy.Move();
+
+        if(enemy.Target != null)
+        {
+            enemy.ChangeState(new RangedState());
+        }
     }
 
     public void Exit()

@@ -19,6 +19,11 @@ public class IdleState : IEnemyState
     {
         Debug.Log("I am idling");
         Idle();
+
+        if(enemy.Target != null)
+        {
+            enemy.ChangeState(new PatrolState());
+        }
     }
 
     public void Exit()
