@@ -21,7 +21,7 @@ public class BlobFollow : Character
     void Update()
     {
         currentState.Execute();
-
+        //LookAtTarget();
     }
 
     public void ChangeState(IEnemyState newState)
@@ -43,6 +43,18 @@ public class BlobFollow : Character
     public Vector2 GetDirection()
     {
         return facingRight ? Vector2.right : Vector2.left;
+    }
+    private void  LookAtTarget()
+    {
+        if(Target != null)
+        {
+            float xDir = Target.transform.position.x - transform.position.x;
+
+            if(xDir < 0 && facingRight || xDir > 0 &&  !facingRight)
+            {
+                ChangeDirection();
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

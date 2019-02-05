@@ -17,15 +17,21 @@ public class RangedState : IEnemyState
         {
             enemy.Move();
         }
+        else
+        {
+            enemy.ChangeState(new IdleState());
+        }
     }
 
     public void Exit()
     {
         
     }
-
     public void OnTriggerEnter(Collider2D other)
     {
-        
+        if (other.tag == "Edge")
+        {
+            enemy.ChangeDirection();
+        }
     }
 }

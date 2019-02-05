@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flag
   - Edge
+  - Sight
   layers:
   - Default
   - TransparentFX
