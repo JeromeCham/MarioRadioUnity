@@ -26,4 +26,9 @@ public class Player : MonoBehaviour
             health.CurrentValue += 10;
         }
     }
+
+    public void takeDmg(float dmg)
+    {
+        health.CurrentValue -= dmg;
+    }
 }

@@ -286,8 +286,8 @@ GameObject:
   - component: {fileID: 207696942}
   - component: {fileID: 207696943}
   m_Layer: 8
-  m_Name: Player
-  m_TagString: Player
+  m_Name: PlayerFox
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6084,8 +6084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a11b322e6162964da0c253ca005e321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radioMagnitude: 0
+  radioMagnitude: 2
   radioRadius: 0
+  dmgTimer: 0.2
 --- !u!58 &2134232051
 CircleCollider2D:
   m_ObjectHideFlags: 0
