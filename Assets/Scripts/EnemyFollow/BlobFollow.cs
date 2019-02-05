@@ -9,6 +9,7 @@ public class BlobFollow : Character
     // Start is called before the first frame update
     public override void Start()
     {
+
         base.Start();
         ChangeState(new IdleState());
       

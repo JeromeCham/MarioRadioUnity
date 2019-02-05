@@ -13,6 +13,7 @@ public abstract class Character : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
+        mytrans = this.transform;
         facingRight = true;
     }
 
@@ -24,7 +25,7 @@ public abstract class Character : MonoBehaviour
 
     public void ChangeDirection()
     {
-        facingRight = !facingRight;
+        //facingRight = !facingRight;
         //transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
 
         Vector3 currRot = mytrans.eulerAngles;
