@@ -12,6 +12,7 @@ public class PatrolState : IEnemyState
     public void Enter(BlobFollow enemy)
     {
         this.enemy = enemy;
+
     }
 
     public void Execute()
@@ -20,6 +21,11 @@ public class PatrolState : IEnemyState
         Patrol();
 
         enemy.Move();
+
+        if(enemy.Target != null)
+        {
+            enemy.ChangeState(new RangedState());
+        }
     }
 
     public void Exit()
@@ -37,6 +43,7 @@ public class PatrolState : IEnemyState
 
     private void Patrol()
     {
+
         patrolTimer += Time.deltaTime;
 
         if (patrolTimer >= patrolDuration)

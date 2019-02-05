@@ -39,8 +39,6 @@ public class CharacterController2D : MonoBehaviour
 
     private Vector3 m_Velocity = Vector3.zero;
 
-    private bool m_isCollidingObject = false;
-
 
     [Header("Events")]
 
@@ -123,18 +121,6 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Flag") m_isCollidingObject = true;
-        FindObjectOfType<GameManager>().EndLevel();
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Flag") m_isCollidingObject = false;
-    }
-
-
     public void Move(float move, bool crouch, bool jump)
 
     {
@@ -147,7 +133,7 @@ public class CharacterController2D : MonoBehaviour
 
             // If the character has a ceiling preventing them from standing up, keep them crouching
 
-            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround) && m_isCollidingObject == false)
+            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 
             {
 

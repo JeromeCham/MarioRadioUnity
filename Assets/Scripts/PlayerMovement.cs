@@ -56,4 +56,12 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Finish")
+        {
+            FindObjectOfType<GameManager>().EndLevel();
+        }
+    }
 }

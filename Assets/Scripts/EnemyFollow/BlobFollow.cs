@@ -6,6 +6,8 @@ public class BlobFollow : Character
 {
 
     private IEnemyState currentState;
+
+    public GameObject Target { get; set; }
     // Start is called before the first frame update
     public override void Start()
     {
