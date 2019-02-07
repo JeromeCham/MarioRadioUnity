@@ -25,8 +25,8 @@ public abstract class Character : MonoBehaviour
 
     public void ChangeDirection()
     {
-        //facingRight = false;
-        //transform.localScale = new Vector3(transform.localScale.x * -1,1,1);
+        movementspeed = -movementspeed;
+        facingRight = !facingRight;
 
         Vector3 currRot = mytrans.eulerAngles;
         currRot.y += 180;

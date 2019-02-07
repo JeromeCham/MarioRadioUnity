@@ -13,7 +13,8 @@ public class RangedState : IEnemyState
 
     public void Execute()
     {
-        if(enemy.Target !=null)
+        Debug.Log("Ranged");
+        if (enemy.Target !=null)
         {
             enemy.Move();
         }

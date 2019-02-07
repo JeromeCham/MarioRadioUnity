@@ -1959,7 +1959,6 @@ GameObject:
   - component: {fileID: 1330656351}
   - component: {fileID: 1330656350}
   - component: {fileID: 1330656349}
-  - component: {fileID: 1330656354}
   m_Layer: 8
   m_Name: Gros blob
   m_TagString: Untagged
@@ -2090,20 +2089,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1330656354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330656348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  other: {fileID: 207696940}
-  other2: {fileID: 207696934}
 --- !u!1 &1392288465
 GameObject:
   m_ObjectHideFlags: 0
