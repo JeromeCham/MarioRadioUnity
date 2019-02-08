@@ -5,11 +5,10 @@ using UnityEngine;
 public class ButtonPause : MonoBehaviour
 {
     private bool isPaused = false;
-    private bool highlightedColor;
 
     public void pauseGame()
     {
-        if(isPaused && Input.GetKeyDown(KeyCode.P))
+        if(isPaused)
         {
             Time.timeScale = 1;
             isPaused = false;
@@ -18,7 +17,6 @@ public class ButtonPause : MonoBehaviour
         {
             Time.timeScale = 0;
             isPaused = true;
-            highlightedColor = false;
         }
     }
 
