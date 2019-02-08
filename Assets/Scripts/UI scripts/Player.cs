@@ -27,16 +27,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void takeDmg(float dmg)
+    public void takeDmg(float dmg, float timer)
     {
         health.CurrentValue -= dmg;
-    }
-
-    public void OnTriggerEnter(Collider autre)
-    {
-        if (autre.gameObject.CompareTag("Mace"))
-        {
-            takeDmg(10f);
-        }
     }
 }

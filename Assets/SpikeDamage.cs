@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpikeDamage : MonoBehaviour
 {
     public float impaleDmg = 10.0f;
+    public float dmgTimer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,10 @@ public class SpikeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (dmgTimer > 0)
+        {
+            dmgTimer -= Time.deltaTime;
+        }
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -23,8 +27,11 @@ public class SpikeDamage : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Player player = col.GetComponent<Player>();
-            //InvokeRepeating
-            player.takeDmg(impaleDmg);
+            if (dmgTimer <= 0)
+            {
+                player.takeDmg(impaleDmg, dmgTimer);
+                dmgTimer = 0.5f;
+            }
         }
     }
 }
