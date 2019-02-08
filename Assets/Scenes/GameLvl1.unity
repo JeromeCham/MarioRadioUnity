@@ -6166,8 +6166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a11b322e6162964da0c253ca005e321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radioMagnitude: 0
+  radioMagnitude: 5
   dmgTimer: 0.5
+  rayon: 4
 --- !u!61 &2134232051
 BoxCollider2D:
   m_ObjectHideFlags: 0

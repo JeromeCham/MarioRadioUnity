@@ -29,7 +29,7 @@ public class SpikeDamage : MonoBehaviour
             Player player = col.GetComponent<Player>();
             if (dmgTimer <= 0)
             {
-                player.takeDmg(impaleDmg, dmgTimer);
+                player.takeDmg(impaleDmg);
                 dmgTimer = 0.5f;
             }
         }

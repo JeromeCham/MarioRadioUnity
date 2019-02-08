@@ -25,14 +25,9 @@ public class Player : MonoBehaviour
         {
             health.CurrentValue += 10;
         }
-
-        if(health.CurrentValue == 0)
-        {
-            FindObjectOfType<GameManager>().EndGame();
-        }
     }
 
-    public void takeDmg(float dmg, float timer)
+    public void takeDmg(float dmg)
     {
         health.CurrentValue -= dmg;
     }

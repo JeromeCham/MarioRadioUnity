@@ -6,7 +6,6 @@ public class Radioactivity : MonoBehaviour
 {
     public float radioMagnitude = 0.0f;
     public float dmgTimer = 0.0f;
-    public Vector2 centre;
     public float rayon = 4.0f;
 
     // Start is called before the first frame update
@@ -23,10 +22,14 @@ public class Radioactivity : MonoBehaviour
 
     void radioDmg()
     {
-        centre = GameObject.Find("SourceRadioactive").
-        //Collider2D rayonEffet = Physics2D.OverlapCircleAll(Vector2 centre, float rayon);
-        GameObject playerFox = GameObject.Find("PlayerFox");
-        Player player = playerFox.GetComponent<Player>();
-        player.takeDmg(radioMagnitude, dmgTimer);
+        rayon = 4;
+        Vector2 centre = GameObject.Find("SourceRadioactive").transform.position;
+        Collider2D[] rayonEffet = Physics2D.OverlapCircleAll(centre, rayon);
+        
+        foreach(Collider2D hit in rayonEffet)
+        {
+            Player player = hit.GetComponent<Player>();
+            player.takeDmg(radioMagnitude);
+        }
     }
 }
