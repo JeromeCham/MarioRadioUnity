@@ -23,7 +23,7 @@ public class SpikeDamage : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Player player = col.GetComponent<Player>();
-            InvokeRepeating
+            //InvokeRepeating
             player.takeDmg(impaleDmg);
         }
     }
