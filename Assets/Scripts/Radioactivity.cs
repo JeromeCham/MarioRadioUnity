@@ -10,9 +10,7 @@ public class Radioactivity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*CircleCollider2D sourceRadio = new CircleCollider2D();
-        sourceRadio.radius = 5;*/
-        InvokeRepeating("RadioDmg", 0.0f, dmgTimer);
+        InvokeRepeating("radioDmg", 0.0f, dmgTimer);
     }
 
     // Update is called once per frame
@@ -21,7 +19,7 @@ public class Radioactivity : MonoBehaviour
 
     }
 
-    void RadioDmg()
+    void radioDmg()
     {
         GameObject playerFox = GameObject.Find("PlayerFox");
         Player player = playerFox.GetComponent<Player>();

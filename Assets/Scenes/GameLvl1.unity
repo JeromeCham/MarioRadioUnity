@@ -283,7 +283,6 @@ GameObject:
   - component: {fileID: 207696940}
   - component: {fileID: 207696934}
   - component: {fileID: 207696941}
-  - component: {fileID: 207696942}
   - component: {fileID: 207696943}
   m_Layer: 8
   m_Name: PlayerFox
@@ -302,7 +301,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: da640ba0f9417a6438ae7338e35c7021, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.009720672, y: -0.008961499}
@@ -508,18 +507,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &207696942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207696933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8491cbeb367ce141ad8bcfd1b638e55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &207696943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6071,9 +6058,10 @@ GameObject:
   - component: {fileID: 2134232047}
   - component: {fileID: 2134232051}
   - component: {fileID: 2134232050}
+  - component: {fileID: 2134232052}
   m_Layer: 0
   m_Name: SourceRadioactive
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6088,7 +6076,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6160,8 +6148,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134232046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.76, y: 1.96, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.35, z: 1}
+  m_LocalPosition: {x: 6.74, y: 1.94, z: 0}
+  m_LocalScale: {x: 1.2798699, y: 1.3811241, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -6196,3 +6184,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &2134232052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134232046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c80ab600838ce48a7686e95e1f6dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impaleDmg: 1

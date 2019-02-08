@@ -31,4 +31,12 @@ public class Player : MonoBehaviour
     {
         health.CurrentValue -= dmg;
     }
+
+    public void OnTriggerEnter(Collider autre)
+    {
+        if (autre.gameObject.CompareTag("Mace"))
+        {
+            takeDmg(10f);
+        }
+    }
 }
