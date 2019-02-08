@@ -21,12 +21,12 @@ public class Radioactivity : MonoBehaviour
 
     }
 
-    /*void radioDmg()
+    void radioDmg()
     {
         centre = GameObject.Find("SourceRadioactive").
         //Collider2D rayonEffet = Physics2D.OverlapCircleAll(Vector2 centre, float rayon);
         GameObject playerFox = GameObject.Find("PlayerFox");
         Player player = playerFox.GetComponent<Player>();
         player.takeDmg(radioMagnitude, dmgTimer);
-    }*/
+    }
 }
