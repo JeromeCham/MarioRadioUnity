@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
+    private Stat health;
+
     public CharacterController2D controller;
     public Animator animator;
     public Rigidbody2D rb;
@@ -14,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+
+    private void Awake()
+    {
+        health.Initialized();
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +42,19 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            health.CurrentValue -= 10;
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            health.CurrentValue += 10;
+        }
+        if (health.CurrentValue == 0)
+        {
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 
@@ -57,11 +78,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Finish")
+        if (other.tag == "Finish")
         {
             FindObjectOfType<GameManager>().EndLevel();
+            Debug.Log("Finish");
         }
+        if (other.tag == "Dmg")
+        {
+            Debug.Log("Damaged");
+            takeDmg(5);
+        }
+    }
+
+    public void takeDmg(float dmg)
+    {
+        health.CurrentValue -= dmg;
     }
 }

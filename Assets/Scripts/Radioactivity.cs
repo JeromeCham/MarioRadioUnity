@@ -28,8 +28,8 @@ public class Radioactivity : MonoBehaviour
         
         foreach(Collider2D hit in rayonEffet)
         {
-            Player player = hit.GetComponent<Player>();
-            player.takeDmg(radioMagnitude);
+            PlayerMovement player = hit.GetComponent<PlayerMovement>();
+            //player.takeDmg(radioMagnitude);
         }
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Edge
   - Sight
   - Enemy
+  - Dmg
   layers:
   - Default
   - TransparentFX
