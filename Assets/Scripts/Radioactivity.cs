@@ -5,9 +5,8 @@ using UnityEngine;
 public class Radioactivity : MonoBehaviour
 {
     public float radioMagnitude = 0.0f;
-    public float dmgTimer = 0.0f;
+    public float dmgTimer = 0.3f;
     public float maxTimer = 0.3f;
-    public float rayon = 4.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +17,19 @@ public class Radioactivity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (dmgTimer > 0)
+        {
+            dmgTimer -= Time.deltaTime;
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
-        PlayerMovement player = col.GetComponent<PlayerMovement>();
-        player.takeDmg(radioMagnitude);
+        if (dmgTimer <= 0)
+        {
+            PlayerMovement player = col.GetComponent<PlayerMovement>();
+            player.takeDmg(radioMagnitude);
+            dmgTimer = maxTimer;
+        }
     }
 }

@@ -293,9 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c80ab600838ce48a7686e95e1f6dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impaleDmg: 2
-  dmgTimer: 0.3
-  maxTimer: 0.5
 --- !u!1 &200716584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2129,6 @@ MonoBehaviour:
   radioMagnitude: 5
   dmgTimer: 0.5
   maxTimer: 0.3
-  rayon: 4
 --- !u!1 &1330656348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 2124036428}
   other2: {fileID: 1790216941}
+  other3: {fileID: 0}
 --- !u!1 &1661636392
 GameObject:
   m_ObjectHideFlags: 0
