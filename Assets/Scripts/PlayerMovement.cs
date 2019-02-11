@@ -90,6 +90,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Damaged");
             takeDmg(5);
         }
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("Damaged spike");
+            takeDmg(10);
+        }
     }
 
     public void takeDmg(float dmg)

@@ -13,7 +13,7 @@ public class BlobFollow : Character
 
         base.Start();
         ChangeState(new IdleState());
-      
+
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class BlobFollow : Character
 
     public void ChangeState(IEnemyState newState)
     {
-        if(currentState != null)
+        if (currentState != null)
         {
             currentState.Exit();
         }
@@ -36,11 +36,11 @@ public class BlobFollow : Character
 
     public void Move()
     {
-            transform.Translate(GetDirection() * (movementspeed * Time.deltaTime));
+        transform.Translate(GetDirection() * (movementspeed * Time.deltaTime));
     }
     public Vector2 GetDirection()
     {
-        if(facingRight == true)
+        if (facingRight == true)
         {
             return Vector2.right;
         }
@@ -49,11 +49,11 @@ public class BlobFollow : Character
             return Vector2.left;
         }
     }
-    private void  LookAtTarget()
+    private void LookAtTarget()
     {
-        if(Target != null)
+        if (Target != null)
         {
-            float xDir =  Target.transform.position.x - transform.position.x;
+            float xDir = Target.transform.position.x - transform.position.x;
             //Debug.Log(message: xDir);
 
             Debug.Log(GetDirection());
@@ -66,6 +66,6 @@ public class BlobFollow : Character
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        currentState.OnTriggerEnter(other);
+        currentState.OnTriggerEnter2D(other);
     }
 }

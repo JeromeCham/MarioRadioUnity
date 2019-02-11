@@ -5,7 +5,6 @@ using UnityEngine;
 public class RangedState : IEnemyState
 {
     private BlobFollow enemy;
-
     public void Enter(BlobFollow enemy)
     {
         this.enemy = enemy;
@@ -14,7 +13,7 @@ public class RangedState : IEnemyState
     public void Execute()
     {
         Debug.Log("Ranged");
-        if (enemy.Target !=null)
+        if (enemy.Target != null)
         {
             enemy.Move();
         }
@@ -26,13 +25,21 @@ public class RangedState : IEnemyState
 
     public void Exit()
     {
-        
+
     }
-    public void OnTriggerEnter(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Edge")
         {
             enemy.ChangeDirection();
+        }
+        if (other.tag == "Player")
+        {
+            Debug.Log("HIT");
+
+            enemy.ChangeDirection();
+            enemy.ChangeState(new PatrolState());
+            enemy.Target = null;
         }
     }
 }

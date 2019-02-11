@@ -7,12 +7,11 @@ public class PatrolState : IEnemyState
     private BlobFollow enemy;
 
     private float patrolTimer;
-    private float patrolDuration=5;
+    private float patrolDuration = 5;
 
     public void Enter(BlobFollow enemy)
     {
         this.enemy = enemy;
-
     }
 
     public void Execute()
@@ -22,7 +21,7 @@ public class PatrolState : IEnemyState
 
         enemy.Move();
 
-        if(enemy.Target != null)
+        if (enemy.Target != null)
         {
             enemy.ChangeState(new RangedState());
         }
@@ -30,17 +29,16 @@ public class PatrolState : IEnemyState
 
     public void Exit()
     {
-        
+
     }
 
-    public void OnTriggerEnter(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-       if(other.tag == "Edge")
+        if (other.tag == "Edge")
         {
             enemy.ChangeDirection();
         }
     }
-
     private void Patrol()
     {
 

@@ -10,19 +10,19 @@ public class SpikeDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (dmgTimer > 0)
+        /*if (dmgTimer > 0)
         {
             dmgTimer -= Time.deltaTime;
-        }
+        }*/
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    /*void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -33,5 +33,5 @@ public class SpikeDamage : MonoBehaviour
                 dmgTimer = 0.5f;
             }
         }
-    }
+    }*/
 }

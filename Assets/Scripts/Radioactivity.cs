@@ -25,8 +25,8 @@ public class Radioactivity : MonoBehaviour
         rayon = 4;
         Vector2 centre = GameObject.Find("SourceRadioactive").transform.position;
         Collider2D[] rayonEffet = Physics2D.OverlapCircleAll(centre, rayon);
-        
-        foreach(Collider2D hit in rayonEffet)
+
+        foreach (Collider2D hit in rayonEffet)
         {
             PlayerMovement player = hit.GetComponent<PlayerMovement>();
             //player.takeDmg(radioMagnitude);

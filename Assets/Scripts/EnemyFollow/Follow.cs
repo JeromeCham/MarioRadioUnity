@@ -9,7 +9,7 @@ public class Follow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             enemy.Target = other.gameObject;
             Debug.Log("Target locked");
@@ -26,3 +26,4 @@ public class Follow : MonoBehaviour
     }
 
 }
+
