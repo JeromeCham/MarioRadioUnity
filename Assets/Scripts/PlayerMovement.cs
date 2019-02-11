@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
 
-
     public float runSpeed = 40f;
 
     float horizontalMove = 0f;
@@ -90,6 +89,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Damaged");
             takeDmg(5);
+        }
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("Damaged spike");
+            takeDmg(10);
         }
     }
 
