@@ -18,7 +18,7 @@ public class IdleState : IEnemyState
     public void Execute()
     {
         Debug.Log("I am idling");
-        
+
         Idle();
 
         if (enemy.Target != null)
@@ -29,19 +29,19 @@ public class IdleState : IEnemyState
 
     public void Exit()
     {
-       
+
     }
 
-    public void OnTriggerEnter(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-    
+
     }
 
     private void Idle()
     {
         idleTimer += Time.deltaTime;
 
-        if(idleTimer >= idleDuration)
+        if (idleTimer >= idleDuration)
         {
             enemy.ChangeState(new PatrolState());
         }
