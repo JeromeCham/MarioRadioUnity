@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpikeDamage : MonoBehaviour
 {
     public float impaleDmg = 10.0f;
-    public float dmgTimer = 0.0f;
+    public float dmgTimer = 0.5f;
+    public float maxTimer = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +27,11 @@ public class SpikeDamage : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Player player = col.GetComponent<Player>();
+            PlayerMovement player = col.GetComponent<PlayerMovement>();
             if (dmgTimer <= 0)
             {
-                player.takeDmg(impaleDmg);
-                dmgTimer = 0.5f;
+                player.takeDmg(impaleDmg/*, dmgTimer, maxTimer*/);
+                dmgTimer = maxTimer;
             }
         }
     }*/
