@@ -12,7 +12,7 @@ public class Radioactivity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("radioDmg", 0.0f);
+
     }
 
     // Update is called once per frame
@@ -21,19 +21,9 @@ public class Radioactivity : MonoBehaviour
 
     }
 
-    void radioDmg()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        rayon = 0;
-        Vector2 centre = GameObject.Find("SourceRadioactive").transform.position;
-        Collider2D[] rayonEffet = Physics2D.OverlapCircleAll(centre, rayon);
-
-        foreach (Collider2D hit in rayonEffet)
-        {
-            PlayerMovement player = hit.GetComponent<PlayerMovement>();
-            if (player != null)
-            {
-                player.takeDmg(radioMagnitude);
-            }
-        }
+        PlayerMovement player = col.GetComponent<PlayerMovement>();
+        player.takeDmg(radioMagnitude);
     }
 }
