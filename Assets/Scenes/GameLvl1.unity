@@ -2689,7 +2689,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 7}
+  m_Size: {x: 8.2, y: 7.2}
   m_EdgeRadius: 0
 --- !u!114 &911799323
 MonoBehaviour:
@@ -2776,7 +2776,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130367142}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a11b322e6162964da0c253ca005e321, type: 3}
   m_Name: 
@@ -6752,7 +6752,7 @@ GameObject:
   - component: {fileID: 1695687609}
   m_Layer: 8
   m_Name: DmgCheck
-  m_TagString: Player
+  m_TagString: PlayerCol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

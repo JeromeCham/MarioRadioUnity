@@ -9,6 +9,7 @@ TagManager:
   - Sight
   - Enemy
   - Dmg
+  - PlayerCol
   layers:
   - Default
   - TransparentFX
