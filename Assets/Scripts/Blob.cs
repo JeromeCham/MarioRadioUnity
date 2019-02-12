@@ -18,14 +18,7 @@ public class Blob : MonoBehaviour
         myWidth = this.GetComponent<SpriteRenderer>().bounds.extents.x;
 
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            Debug.Log("Allo");
-            hit = true;
-        }
-    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -47,6 +40,13 @@ public class Blob : MonoBehaviour
         myBody.velocity = myVel;
         hit = false;
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("Allo");
+            hit = true;
+        }
+    }
 
 }
