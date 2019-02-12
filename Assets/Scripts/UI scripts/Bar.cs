@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class Bar : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class Bar : MonoBehaviour
     private Image content;
 
     [SerializeField]
-    private Text valueText;
+    private TextMeshProUGUI valueText;
 
     public float MaxValue {get; set;}
 
@@ -23,7 +25,7 @@ public class Bar : MonoBehaviour
         set
         {
             string[] temp = valueText.text.Split(':');
-            valueText.text = temp[0] + ": " + value;
+            valueText.text = temp[0] + ": " + Math.Round(value, 1);
             fillAmount = Map(value, 0, MaxValue, 0, 1);
         }
     } 
