@@ -25,7 +25,7 @@ public class Bar : MonoBehaviour
         set
         {
             string[] temp = valueText.text.Split(':');
-            valueText.text = temp[0] + ": " + Math.Round(value, 1);
+            valueText.text = temp[0] + ": " + Math.Round(value, 0);
             fillAmount = Map(value, 0, MaxValue, 0, 1);
         }
     } 
