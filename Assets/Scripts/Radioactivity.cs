@@ -28,7 +28,9 @@ public class Radioactivity : MonoBehaviour
         if (dmgTimer <= 0)
         {
             PlayerMovement player = col.GetComponent<PlayerMovement>();
-            player.takeDmg(radioMagnitude);
+            float proximity = Vector2.Distance(gameObject.transform.position, player.transform.position);
+            float effect = Mathf.Abs(1 - (proximity / (gameObject.GetComponent<Collider2D>() as CircleCollider2D).radius));
+            player.takeDmg(radioMagnitude * effect);
             dmgTimer = maxTimer;
         }
     }
