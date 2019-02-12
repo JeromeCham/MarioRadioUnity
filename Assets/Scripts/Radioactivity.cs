@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Radioactivity : MonoBehaviour
 {
-    public float radioMagnitude = 0.0f;
+    public float radioMagnitude = 0.0f;  
     public float dmgTimer = 0.3f;
     public float maxTimer = 0.3f;
 
@@ -25,13 +25,13 @@ public class Radioactivity : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col)
     {
-        if (dmgTimer <= 0)
+        float radius = (gameObject.GetComponent<Collider2D>() as CircleCollider2D).radius;
+        PlayerMovement player = col.GetComponent<PlayerMovement>();
+        float proximity = Vector2.Distance(gameObject.transform.position, player.transform.position);
+        float effect = 1 - (proximity / radius);
+        if (effect > 0)
         {
-            PlayerMovement player = col.GetComponent<PlayerMovement>();
-            float proximity = Vector2.Distance(gameObject.transform.position, player.transform.position);
-            float effect = Mathf.Abs(1 - (proximity / (gameObject.GetComponent<Collider2D>() as CircleCollider2D).radius));
-            player.takeDmg(radioMagnitude * effect);
-            dmgTimer = maxTimer;
+            dmgTimer = player.takeDmg((radioMagnitude * effect), dmgTimer, maxTimer);
         }
     }
 }

@@ -35,17 +35,14 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             animator.SetBool("IsJumping", true);
         }
-
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
         }
-
         else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
         }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             health.CurrentValue -= 10;
@@ -55,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         {
             health.CurrentValue += 10;
         }
-
         if (health.CurrentValue == 0)
         {
             FindObjectOfType<GameManager>().EndGame();
@@ -89,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameManager>().EndLevel();
             Debug.Log("Finish");
         }
-        if (other.tag == "Dmg")
+        /*if (other.tag == "Dmg")
         {
             Debug.Log("Damaged");
             takeDmg(5);
@@ -98,11 +94,19 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Damaged spike");
             takeDmg(10);
-        }
+        }*/
     }
 
-    public void takeDmg(float dmg)
+    public float takeDmg(float dmg, float currentTimer, float maxTimer)
     {
-        health.CurrentValue -= dmg;
+        if (currentTimer <= 0)
+        {
+            Debug.Log("Current timer 1:      " + currentTimer);
+            currentTimer += maxTimer;
+            Debug.Log("Current timer 2:      " + currentTimer);
+            health.CurrentValue -= dmg;
+            return currentTimer;
+        }
+        return currentTimer;
     }
 }
