@@ -286,4 +286,9 @@ public class CharacterController2D : MonoBehaviour
 
     }
 
+    public bool getGrounded()
+    {
+        return m_Grounded;
+    }
+
 }
