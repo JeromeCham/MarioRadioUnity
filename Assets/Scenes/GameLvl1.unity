@@ -2703,7 +2703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871d2b80d8ce3384f903d2a88a620a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDamage: 20
+  hitDamage: 10
   dmgTimer: 0.3
   maxTimer: 0.3
 --- !u!114 &911799324
@@ -2719,8 +2719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   other: {fileID: 1649532213}
-  other2: {fileID: 0}
-  other3: {fileID: 0}
+  other2: {fileID: 2124036428}
+  other3: {fileID: 1790216941}
 --- !u!1 &1130367142
 GameObject:
   m_ObjectHideFlags: 0
@@ -7017,7 +7017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1850216054
 Transform:
   m_ObjectHideFlags: 0
@@ -7042,7 +7042,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7070,7 +7070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871d2b80d8ce3384f903d2a88a620a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDamage: 10
+  hitDamage: 5
   dmgTimer: 0.3
   maxTimer: 0.3
 --- !u!1 &1878519797

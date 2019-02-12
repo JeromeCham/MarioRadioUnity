@@ -33,13 +33,5 @@ public class RangedState : IEnemyState
         {
             enemy.ChangeDirection();
         }
-        if (other.tag == "Player")
-        {
-            Debug.Log("HIT");
-
-            enemy.ChangeDirection();
-            enemy.ChangeState(new PatrolState());
-            enemy.Target = null;
-        }
     }
 }

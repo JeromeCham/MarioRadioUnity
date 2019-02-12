@@ -101,9 +101,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentTimer <= 0)
         {
-            Debug.Log("Current timer 1:      " + currentTimer);
+            //Debug.Log("Current timer 1:      " + currentTimer);
             currentTimer += maxTimer;
-            Debug.Log("Current timer 2:      " + currentTimer);
+            //Debug.Log("Current timer 2:      " + currentTimer);
             health.CurrentValue -= dmg;
             return currentTimer;
         }
