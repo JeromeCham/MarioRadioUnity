@@ -35,14 +35,17 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             animator.SetBool("IsJumping", true);
         }
+
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
         }
+
         else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
         }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             health.CurrentValue -= 10;
@@ -52,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             health.CurrentValue += 10;
         }
+
         if (health.CurrentValue == 0)
         {
             FindObjectOfType<GameManager>().EndGame();

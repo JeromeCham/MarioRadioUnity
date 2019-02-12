@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
+    /*[SerializeField]
     private Stat health;
 
     // Start is called before the first frame update
@@ -30,5 +30,5 @@ public class Player : MonoBehaviour
     public void takeDmg(float dmg)
     {
         health.CurrentValue -= dmg;
-    }
+    }*/
 }

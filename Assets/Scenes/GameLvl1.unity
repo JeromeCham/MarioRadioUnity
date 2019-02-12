@@ -2663,7 +2663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   other: {fileID: 2124036428}
   other2: {fileID: 1790216941}
-  other3: {fileID: 0}
+  other3: {fileID: 1695687609}
 --- !u!1 &1661636392
 GameObject:
   m_ObjectHideFlags: 0

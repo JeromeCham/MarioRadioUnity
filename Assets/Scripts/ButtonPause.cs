@@ -8,7 +8,7 @@ public class ButtonPause : MonoBehaviour
 
     public void pauseGame()
     {
-        if(isPaused)
+        if(isPaused == true)
         {
             Time.timeScale = 1;
             isPaused = false;
@@ -29,6 +29,9 @@ public class ButtonPause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            pauseGame();
+        }
     }
 }
