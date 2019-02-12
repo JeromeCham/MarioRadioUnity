@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 121452788}
   - component: {fileID: 121452790}
   - component: {fileID: 121452789}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spike Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2077,7 +2077,7 @@ GameObject:
   - component: {fileID: 1130367143}
   - component: {fileID: 1130367145}
   - component: {fileID: 1130367144}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Radioactive Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6246,7 +6246,7 @@ GameObject:
   - component: {fileID: 2134232049}
   - component: {fileID: 2134232048}
   - component: {fileID: 2134232051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SourceRadioactive
   m_TagString: Enemy
   m_Icon: {fileID: 0}
