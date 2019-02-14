@@ -1297,6 +1297,89 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &582935595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582935596}
+  - component: {fileID: 582935599}
+  - component: {fileID: 582935598}
+  - component: {fileID: 582935597}
+  m_Layer: 0
+  m_Name: Blob Die
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &582935596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582935595}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: 3.35, z: 0.13630159}
+  m_LocalScale: {x: -5.375, y: 5.549735, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1878519802}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &582935597
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582935595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: bc032e5b8ed26eb4586140ae57b75cf1, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+--- !u!68 &582935598
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582935595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.1}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+--- !u!114 &582935599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582935595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b24edbff97ecdd4688709f4c2aa56d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other2: {fileID: 1878519797}
+  timer: 0
 --- !u!1 &609514279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,7 +3328,7 @@ Transform:
   m_Children:
   - {fileID: 1649532212}
   - {fileID: 911799321}
-  - {fileID: 1771942332}
+  - {fileID: 1754176954}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3340,69 +3423,6 @@ MonoBehaviour:
   healthBarSpeed: 3
   content: {fileID: 374306135}
   valueText: {fileID: 1455578552}
---- !u!1 &1403815539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1403815540}
-  - component: {fileID: 1403815542}
-  - component: {fileID: 1403815541}
-  m_Layer: 9
-  m_Name: Blob die
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1403815540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403815539}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1878519802}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &1403815541
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403815539}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.3, y: 3.5}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -5.1393394, y: -0.046720505}
-  - {x: 0.5, y: 0}
---- !u!114 &1403815542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403815539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b24edbff97ecdd4688709f4c2aa56d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  other2: {fileID: 1878519797}
 --- !u!1 &1411010532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6861,7 +6881,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.20025477, y: 0.23483253}
   m_EdgeRadius: 0
---- !u!1 &1771942331
+--- !u!1 &1754176953
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6869,61 +6889,81 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1771942332}
-  - component: {fileID: 1771942334}
-  - component: {fileID: 1771942333}
-  m_Layer: 9
-  m_Name: Blob die
+  - component: {fileID: 1754176954}
+  - component: {fileID: 1754176957}
+  - component: {fileID: 1754176956}
+  - component: {fileID: 1754176955}
+  m_Layer: 0
+  m_Name: Blob Die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1771942332
+--- !u!4 &1754176954
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771942331}
+  m_GameObject: {fileID: 1754176953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.84, y: 0.97, z: 0}
-  m_LocalScale: {x: -0.81300807, y: 0.73546934, z: 1}
+  m_LocalPosition: {x: -0.11, y: 3.13, z: 0.13630159}
+  m_LocalScale: {x: 5.465129, y: 4.0816326, z: 1}
   m_Children: []
   m_Father: {fileID: 1330656353}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &1771942333
+--- !u!68 &1754176955
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771942331}
+  m_GameObject: {fileID: 1754176953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: bc032e5b8ed26eb4586140ae57b75cf1, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+--- !u!68 &1754176956
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754176953}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.3, y: 3.5}
+  m_Offset: {x: 0, y: 0.1}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -6.9785976, y: -0.046720505}
+  - {x: -0.5, y: 0}
   - {x: 0.5, y: 0}
---- !u!114 &1771942334
+--- !u!114 &1754176957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771942331}
+  m_GameObject: {fileID: 1754176953}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b24edbff97ecdd4688709f4c2aa56d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   other2: {fileID: 1330656348}
+  timer: 0
 --- !u!1 &1772260305
 GameObject:
   m_ObjectHideFlags: 0
@@ -7344,7 +7384,7 @@ Transform:
   m_LocalScale: {x: -0.20000003, y: 0.18018879, z: 1}
   m_Children:
   - {fileID: 1850216054}
-  - {fileID: 1403815540}
+  - {fileID: 582935596}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

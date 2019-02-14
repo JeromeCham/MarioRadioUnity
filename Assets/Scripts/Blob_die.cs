@@ -5,12 +5,25 @@ using UnityEngine;
 public class Blob_die : MonoBehaviour
 {
     public GameObject other2;
-    void OnTriggerEnter2D(Collider2D other)
+    public float timer;
+    bool hit = false;
+    void Update()
+    {
+        if (hit == true)
+        {
+            timer += 1;
+        }
+        if (timer == 10)
+        {
+            Destroy(other2);
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             Debug.Log("Die");
-            Destroy(other2);
+            hit = true;
         }
     }
 }
