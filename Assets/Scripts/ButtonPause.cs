@@ -25,11 +25,13 @@ public class ButtonPause : MonoBehaviour
         if (isPaused == true)
         {
             Time.timeScale = 0;
+            AudioListener.pause = true;
             pauseMenuUI.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
+            AudioListener.pause = false;
             pauseMenuUI.SetActive(false);
         }
     }
