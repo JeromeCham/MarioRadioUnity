@@ -107,16 +107,16 @@ public class PlayerMovement : MonoBehaviour
         }*/
     }
 
-    public float takeDmg(float dmg, float currentTimer, float maxTimer)
+    public float takeDmg(float dmg, float currentCooldown, float maxCooldown)
     {
-        if (currentTimer <= 0)
+        if (currentCooldown <= 0)
         {
             //Debug.Log("Current timer 1:      " + currentTimer);
-            currentTimer += maxTimer;
+            currentCooldown += maxCooldown;
             //Debug.Log("Current timer 2:      " + currentTimer);
             health.CurrentValue -= dmg;
-            return currentTimer;
+            return currentCooldown;
         }
-        return currentTimer;
+        return currentCooldown;
     }
 }

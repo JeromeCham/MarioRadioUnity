@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Radioactivity : MonoBehaviour
 {
-    public float radioMagnitude = 0.0f;  
-    public float dmgTimer = 0.3f;
-    public float maxTimer = 0.3f;
+    public float radioMagnitude = 0.0f;
+    public float dmgCooldown = 0.3f;
+    public float maxCooldown = 0.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,9 @@ public class Radioactivity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dmgTimer > 0)
+        if (dmgCooldown > 0)
         {
-            dmgTimer -= Time.deltaTime;
+            dmgCooldown -= Time.deltaTime;
         }
     }
 
@@ -33,8 +33,9 @@ public class Radioactivity : MonoBehaviour
             float effect = 1 - (proximity / radius);
             if (effect > 0)
             {
-                dmgTimer = player.takeDmg((radioMagnitude * effect), dmgTimer, maxTimer);
+                dmgCooldown = player.takeDmg((radioMagnitude * effect), dmgCooldown, maxCooldown);
             }
         }
+
     }
 }
