@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
-            animator.SetBool("IsJumping", true);
         }
         if (Input.GetButtonDown("Crouch"))
         {
@@ -56,11 +55,22 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+        if (rb.velocity.y > 0 && controller.getGrounded() == false)
+        {
+            animator.SetBool("IsJumping", true);
+            animator.SetBool("IsFalling", false);
+        }
+        if (rb.velocity.y < 0 && controller.getGrounded() == false)
+        {
+            animator.SetBool("IsFalling", true);
+            animator.SetBool("IsJumping", false);
+        }
     }
 
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
+        animator.SetBool("IsFalling", false);
     }
 
     public void OnCrouching(bool isCrouching)
