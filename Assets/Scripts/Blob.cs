@@ -9,7 +9,7 @@ public class Blob : MonoBehaviour
     Rigidbody2D myBody;
     Transform myTrans;
     float myWidth;
-    bool hit = false;
+    bool facingRight = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,26 +27,34 @@ public class Blob : MonoBehaviour
 
 
 
-        if (!isGrounded || hit == true)
+        if (!isGrounded)
         {
             Vector3 currRot = myTrans.eulerAngles;
             currRot.y += 180;
             myTrans.eulerAngles = currRot;
+            facingRight = false;
         }
 
         //Always move forward
-        Vector2 myVel = myBody.velocity;
+        /*Vector2 myVel = myBody.velocity;
         myVel.x = -myTrans.right.x * speed;
-        myBody.velocity = myVel;
-        hit = false;
+        myBody.velocity = myVel;*/
+        Move();
+
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Move()
     {
-        if (other.tag == "Player")
+        transform.Translate(GetDirection() * (speed * Time.deltaTime));
+    }
+    public Vector2 GetDirection()
+    {
+        if (facingRight == true)
         {
-            Debug.Log("Allo");
-            hit = true;
+            return Vector2.right;
+        }
+        else
+        {
+            return Vector2.left;
         }
     }
-
 }

@@ -1,37 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonPause : MonoBehaviour
 {
     private bool isPaused = false;
+    
+    [SerializeField]
+    private GameObject pauseMenuUI;
 
-    public void pauseGame()
+    private void Update()
     {
-        if(isPaused == true)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Time.timeScale = 1;
-            isPaused = false;
+            PauseGame();
+        }
+    }
+
+    public void PauseGame()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused == true)
+        {
+            Time.timeScale = 0;
+            pauseMenuUI.SetActive(true);
         }
         else
         {
-            Time.timeScale = 0;
-            isPaused = true;
+            Time.timeScale = 1;
+            pauseMenuUI.SetActive(false);
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void MainMenu()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            pauseGame();
-        }
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
