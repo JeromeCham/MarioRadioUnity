@@ -12,7 +12,7 @@ public class Follow : MonoBehaviour
         if (other.tag == "Player")
         {
             enemy.Target = other.gameObject;
-            Debug.Log("Target locked");
+            //Debug.Log("Target locked");
         }
     }
 
@@ -21,7 +21,7 @@ public class Follow : MonoBehaviour
         if (other.tag == "Player")
         {
             enemy.Target = null;
-            Debug.Log("Target not locked");
+            //Debug.Log("Target not locked");
         }
     }
 

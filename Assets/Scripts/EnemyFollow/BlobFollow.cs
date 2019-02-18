@@ -54,7 +54,7 @@ public class BlobFollow : Character
             float xDir = Target.transform.position.x - transform.position.x;
             //Debug.Log(message: xDir);
 
-            Debug.Log(GetDirection());
+            //Debug.Log(GetDirection());
             if (xDir < 0 && movementspeed > 0 || xDir > 0 && movementspeed < 0)
             {
                 ChangeDirection();

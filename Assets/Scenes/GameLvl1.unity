@@ -500,8 +500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impaleDmg: 10
-  dmgTimer: 0.5
-  maxTimer: 0.5
+  dmgCooldown: 0.5
+  maxCooldown: 0.5
 --- !u!1 &200716584
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 207696940}
   - component: {fileID: 207696934}
   - component: {fileID: 207696941}
+  - component: {fileID: 207696942}
   m_Layer: 8
   m_Name: PlayerFox
   m_TagString: Player
@@ -790,6 +791,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &207696942
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207696933}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: da640ba0f9417a6438ae7338e35c7021, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013354406, y: -0.0498318}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.33, y: 0.32}
+    newSize: {x: 0.95, y: 1.63}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.19898951, y: 0.23274927}
+  m_EdgeRadius: 0
 --- !u!1 &238986266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2754,7 @@ GameObject:
   - component: {fileID: 911799323}
   - component: {fileID: 911799322}
   - component: {fileID: 911799324}
+  - component: {fileID: 911799325}
   m_Layer: 8
   m_Name: Blob Damage
   m_TagString: Untagged
@@ -2802,7 +2830,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   other: {fileID: 1649532213}
-  other2: {fileID: 2124036428}
+  other2: {fileID: 207696940}
+  other3: {fileID: 207696934}
+--- !u!114 &911799325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911799320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 2124036428}
+  other2: {fileID: 1790216941}
   other3: {fileID: 1790216941}
 --- !u!1 &1130367142
 GameObject:
@@ -2815,6 +2858,7 @@ GameObject:
   - component: {fileID: 1130367143}
   - component: {fileID: 1130367145}
   - component: {fileID: 1130367144}
+  - component: {fileID: 1130367146}
   m_Layer: 11
   m_Name: Radioactive Damage
   m_TagString: Untagged
@@ -2865,8 +2909,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radioMagnitude: 10
-  dmgTimer: 0.3
-  maxTimer: 0.3
+  dmgCooldown: 0.3
+  maxCooldown: 0.3
+--- !u!114 &1130367146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130367142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 207696940}
+  other2: {fileID: 207696934}
+  other3: {fileID: 2124036428}
 --- !u!1 &1198258965
 GameObject:
   m_ObjectHideFlags: 0
@@ -6840,7 +6899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1695687608
 Transform:
   m_ObjectHideFlags: 0
@@ -7178,6 +7237,7 @@ GameObject:
   - component: {fileID: 1850216054}
   - component: {fileID: 1850216056}
   - component: {fileID: 1850216055}
+  - component: {fileID: 1850216057}
   m_Layer: 9
   m_Name: Blob Damage
   m_TagString: Untagged
@@ -7240,6 +7300,21 @@ MonoBehaviour:
   hitDamage: 5
   dmgTimer: 0.3
   maxTimer: 0.3
+--- !u!114 &1850216057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850216053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 207696940}
+  other2: {fileID: 207696934}
+  other3: {fileID: 2124036428}
 --- !u!1 &1878519797
 GameObject:
   m_ObjectHideFlags: 0

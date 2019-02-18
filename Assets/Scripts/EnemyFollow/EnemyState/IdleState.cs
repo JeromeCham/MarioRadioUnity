@@ -17,7 +17,7 @@ public class IdleState : IEnemyState
 
     public void Execute()
     {
-        Debug.Log("I am idling");
+        //Debug.Log("I am idling");
 
         Idle();
 
