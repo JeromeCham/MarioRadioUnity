@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
 
-    public float runSpeed = 40f;
+    [SerializeField]
+    private float runSpeed = 40f;
+
+    [SerializeField]
+    private float minimumHeight = -20f;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -82,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
-        if (rb.position.y < -5f)
+        if (rb.position.y < minimumHeight)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
@@ -92,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.tag == "Finish")
         {
-            FindObjectOfType<GameManager>().EndLevel();
+            FindObjectOfType<GameManager>().NextLevel();
             Debug.Log("Finish");
         }
         /*if (other.tag == "Dmg")

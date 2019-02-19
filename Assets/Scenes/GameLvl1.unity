@@ -214,7 +214,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74088608}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 1.28, y: 1.28, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e70557939071e42941f810334f69c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
+  m_JumpForce: 800
   m_CrouchSpeed: 0.52
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -863,6 +863,7 @@ MonoBehaviour:
   animator: {fileID: 207696941}
   rb: {fileID: 207696935}
   runSpeed: 40
+  minimumHeight: -20
 --- !u!58 &207696940
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1374,7 +1375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d45ca48bc89124db88e09349ebbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 207696933}
+  cameraBaseHeight: -0.4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1401,7 +1402,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3513,7 +3514,6 @@ GameObject:
   - component: {fileID: 1411010535}
   - component: {fileID: 1411010534}
   - component: {fileID: 1411010533}
-  - component: {fileID: 1411010536}
   m_Layer: 11
   m_Name: red flag
   m_TagString: Finish
@@ -3603,24 +3603,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411010532}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 23.26, y: 5.18, z: 0}
+  m_LocalPosition: {x: 28.97, y: 6.38, z: 0}
   m_LocalScale: {x: 0.33748084, y: 0.2981612, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1411010536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411010532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 124f1204acf9e6f46908e93b34aaee4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1455578550
 GameObject:
   m_ObjectHideFlags: 0
@@ -12129,7 +12117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878519797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.32, y: 2.819, z: 0}
+  m_LocalPosition: {x: 1.49, y: 3.39, z: 0}
   m_LocalScale: {x: -0.20000003, y: 0.18018879, z: 1}
   m_Children:
   - {fileID: 1850216054}
