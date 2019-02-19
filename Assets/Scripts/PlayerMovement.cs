@@ -111,12 +111,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentCooldown <= 0)
         {
-            //Debug.Log("Current timer 1:      " + currentTimer);
             currentCooldown += maxCooldown;
-            //Debug.Log("Current timer 2:      " + currentTimer);
             health.CurrentValue -= dmg;
             return currentCooldown;
         }
         return currentCooldown;
+    }
+
+    public void takeDmg(float dmg)
+    {
+        health.CurrentValue -= dmg;
     }
 }
