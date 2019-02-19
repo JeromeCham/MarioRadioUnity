@@ -41,11 +41,11 @@ public class PatrolState : IEnemyState
     private void Patrol()
     {
 
-        patrolTimer += Time.deltaTime;
+        //patrolTimer += Time.deltaTime;
 
-        if (patrolTimer >= patrolDuration)
+        /*if (patrolTimer >= patrolDuration)
         {
             enemy.ChangeState(new IdleState());
-        }
+        }*/
     }
 }

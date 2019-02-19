@@ -8,7 +8,7 @@ public class IdleState : IEnemyState
 
     private float idleTimer;
 
-    private float idleDuration = 1;
+    private float idleDuration = 0;
 
     public void Enter(BlobFollow enemy)
     {
