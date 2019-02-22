@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 m_EditorVersion: 2018.3.4f1
 =======
@@ -7,3 +8,6 @@ m_EditorVersion: 2018.3.3f1
 m_EditorVersion: 2018.3.2f1
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+m_EditorVersion: 2018.3.3f1
+>>>>>>> master
