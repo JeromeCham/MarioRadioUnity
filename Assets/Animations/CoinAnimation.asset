@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: CoinAnimation
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 21300000, guid: 284a590648cd2624cbd085c4f1627465, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Neighbors: 0000000000000000000000000000000000000000000000000000000000000000
+    m_Sprites:
+    - {fileID: 21300000, guid: 284a590648cd2624cbd085c4f1627465, type: 3}
+    - {fileID: 21300000, guid: 49b76ee0d3655ee4c8402582c1c02c93, type: 3}
+    - {fileID: 21300000, guid: 01f2715068a32f44a99ba474fbf74cdf, type: 3}
+    - {fileID: 21300000, guid: 829702d123e43a54c80bc02a11288a82, type: 3}
+    - {fileID: 21300000, guid: 93932efaf072000449ce4c111911cfe3, type: 3}
+    - {fileID: 21300000, guid: c925826c0552cf549a3f1123cae8db5b, type: 3}
+    - {fileID: 21300000, guid: 01139edbf108bde4aa26ebc3d05c3025, type: 3}
+    - {fileID: 21300000, guid: 39bf764a4d5181d4ea6477506162098e, type: 3}
+    - {fileID: 21300000, guid: 3071611f52f355941ae108e3822562d3, type: 3}
+    - {fileID: 21300000, guid: bfdb508608e20c14a84a06ee5d00795b, type: 3}
+    - {fileID: 21300000, guid: 08e82f56b6f8f9e4da39977182df7f39, type: 3}
+    - {fileID: 21300000, guid: 6ffad87630735e04d83408305dcc75b5, type: 3}
+    - {fileID: 21300000, guid: 4188406557eaca0488459eba94278250, type: 3}
+    - {fileID: 21300000, guid: 7471dc94b1670e54b8f926859686caa1, type: 3}
+    - {fileID: 21300000, guid: 27f6b32c91a50ae4088361bfd738dd14, type: 3}
+    - {fileID: 21300000, guid: 570f426f740c2c5499e2f9670c12598a, type: 3}
+    m_GameObject: {fileID: 0}
+    m_AnimationSpeed: 15
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 2
+    m_ColliderType: 1
+    m_RandomTransform: 0
