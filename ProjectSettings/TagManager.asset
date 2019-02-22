@@ -45,11 +45,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Dirt
-    uniqueID: 1171140519
-    locked: 0
   - name: Background
     uniqueID: 1639112649
+    locked: 0
+  - name: Dirt
+    uniqueID: 1171140519
     locked: 0
   - name: Objects
     uniqueID: 2496545365
