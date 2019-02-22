@@ -99,15 +99,10 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameManager>().NextLevel();
             Debug.Log("Finish");
         }
-        /*if (other.tag == "Dmg")
+        /*if (other.tag == "green potion")
         {
-            Debug.Log("Damaged");
-            takeDmg(5);
-        }
-        if (other.tag == "Enemy")
-        {
-            Debug.Log("Damaged spike");
-            takeDmg(10);
+            Debug.Log("Potion verte");
+            Destroy(other.gameObject);
         }*/
     }
 
