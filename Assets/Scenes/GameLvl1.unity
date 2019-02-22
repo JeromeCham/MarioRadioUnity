@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d45ca48bc89124db88e09349ebbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraBaseHeight: -0.4
+  cameraBaseHeight: -2.6
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
