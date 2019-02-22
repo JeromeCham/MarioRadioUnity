@@ -28,15 +28,8 @@ public class Bar : MonoBehaviour
             valueText.text = temp[0] + ": " + Math.Round(value, 0);
             fillAmount = Map(value, 0, MaxValue, 0, 1);
         }
-    } 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         HandleBar();
