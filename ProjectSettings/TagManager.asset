@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Dmg
   - PlayerCol
+  - green potion
   layers:
   - Default
   - TransparentFX
