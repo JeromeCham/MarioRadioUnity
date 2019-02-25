@@ -12,11 +12,6 @@ public class CloudMouvement : MonoBehaviour
 
     [SerializeField]
     float cloudPosistionX = 20f;
-    
-    void Start()
-    {
-        Cloud = GameObject.FindGameObjectWithTag("Cloud").transform;
-    }
 
     void Update()
     {
