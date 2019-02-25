@@ -11,6 +11,7 @@ TagManager:
   - Dmg
   - PlayerCol
   - green potion
+  - Weapon
   layers:
   - Default
   - TransparentFX
