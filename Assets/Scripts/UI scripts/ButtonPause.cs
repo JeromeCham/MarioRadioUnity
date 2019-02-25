@@ -10,11 +10,19 @@ public class ButtonPause : MonoBehaviour
     [SerializeField]
     private GameObject pauseMenuUI;
 
+    [SerializeField]
+    private GameObject inventoryMenuUI;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
             PauseGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            InventoryGame();
         }
     }
 
@@ -33,6 +41,24 @@ public class ButtonPause : MonoBehaviour
             Time.timeScale = 1;
             AudioListener.pause = false;
             pauseMenuUI.SetActive(false);
+        }
+    }
+
+    public void InventoryGame()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused == true)
+        {
+            Time.timeScale = 0;
+            AudioListener.pause = true;
+            inventoryMenuUI.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            AudioListener.pause = false;
+            inventoryMenuUI.SetActive(false);
         }
     }
 
