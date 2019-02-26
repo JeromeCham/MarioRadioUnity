@@ -27,7 +27,7 @@ public class Blob_Damage : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             PlayerMovement player = col.GetComponent<PlayerMovement>();
-            dmgTimer = player.takeDmg(hitDamage, dmgTimer, maxTimer);
+            dmgTimer = player.takeDmg(hitDamage, dmgTimer, maxTimer, "Blob");
         }
     }
 }

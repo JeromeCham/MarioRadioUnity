@@ -5,6 +5,7 @@ using UnityEngine;
 public class Activator : MonoBehaviour
 {
     public bool onOff = false;
+    public bool onActivator = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +21,22 @@ public class Activator : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(!onOff);
         transform.GetChild(1).gameObject.SetActive(onOff);
         GameObject.Find("Gate").transform.GetChild(0).gameObject.SetActive(onOff);
-    }
 
-    bool OnTriggerStay2D(Collider2D col)
-    {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (onActivator && Input.GetKeyDown(KeyCode.E))
         {
             onOff = !onOff;
-            return onOff;
         }
-        return onOff;
+    }
+
+    bool OnTriggerEnter2D(Collider2D col)
+    {
+        onActivator = true;
+        return onActivator;
+    }
+
+    bool OnTriggerExit2D(Collider2D col)
+    {
+        onActivator = false;
+        return onActivator;
     }
 }
