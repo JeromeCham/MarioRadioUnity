@@ -18,6 +18,11 @@ public class Weapons : Inventory
         {
             Shoot();
         }
+        if (drop == true && count <= 1)
+        {
+            Create();
+            count += 1;
+        }
     }
     void Shoot()
     {
@@ -25,4 +30,16 @@ public class Weapons : Inventory
         Destroy(bullet, bulletLife);
     }
 
+
+    public Transform DropPoint;
+    public GameObject GunPrefab;
+    public GameObject gun2;
+    public int count = 0;
+
+    void Create()
+    {
+        gun2 = (GameObject)Instantiate(GunPrefab, DropPoint.position, DropPoint.rotation);
+        count = 0;
+        drop = false;
+    }
 }

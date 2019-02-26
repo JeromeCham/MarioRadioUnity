@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     #region Singleton
     public static Inventory instance;
     public bool gun = false;
+    public bool drop = false;
     private void Awake()
     {
         if (instance != null)
@@ -16,7 +17,7 @@ public class Inventory : MonoBehaviour
         }
         instance = this;
     }
-    
+
     #endregion
 
     public delegate void OnItemChanged();
@@ -24,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
     public int space = 6;
-    
+
     public bool Add(Item item)
     {
         if (items.Count >= space)
@@ -52,7 +53,10 @@ public class Inventory : MonoBehaviour
         if (index <= 0)
         {
             gun = false;
+            drop = true;
         }
     }
+
+
 }
 
