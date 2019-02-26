@@ -33,7 +33,7 @@ public class Radioactivity : MonoBehaviour
             float effect = 1 - (proximity / radius);
             if (effect > 0)
             {
-                dmgCooldown = player.takeDmg((radioMagnitude * effect), dmgCooldown, maxCooldown);
+                dmgCooldown = player.takeDmg((radioMagnitude * effect), dmgCooldown, maxCooldown, "WTF????");
             }
         }
 

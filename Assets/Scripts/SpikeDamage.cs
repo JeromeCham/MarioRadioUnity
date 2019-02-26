@@ -28,7 +28,7 @@ public class SpikeDamage : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             PlayerMovement player = col.GetComponent<PlayerMovement>();
-            dmgCooldown = player.takeDmg(impaleDmg, dmgCooldown, maxCooldown);
+            dmgCooldown = player.takeDmg(impaleDmg, dmgCooldown, maxCooldown, "Spike");
         }
     }
 }
