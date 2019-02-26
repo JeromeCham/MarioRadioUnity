@@ -4,27 +4,38 @@ using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
-    public bool onOff = false;
+    public bool isActivated = false;
     public bool onActivator = false;
+    Vector3 doorPositionInitial = new Vector3(4.35f, -3.7f, 0f);
+    Vector3 doorPositionFinal = new Vector3(4.35f, -1f, 0f);
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.GetChild(0).gameObject.SetActive(!onOff);
-        transform.GetChild(1).gameObject.SetActive(onOff);
-        GameObject.Find("Gate").transform.GetChild(0).gameObject.SetActive(onOff);
+        transform.GetChild(0).gameObject.SetActive(!isActivated);
+        transform.GetChild(1).gameObject.SetActive(isActivated);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.GetChild(0).gameObject.SetActive(!onOff);
-        transform.GetChild(1).gameObject.SetActive(onOff);
-        GameObject.Find("Gate").transform.GetChild(0).gameObject.SetActive(onOff);
+        transform.GetChild(0).gameObject.SetActive(!isActivated);
+        transform.GetChild(1).gameObject.SetActive(isActivated);
+        GameObject Gate = GameObject.Find("Gate");
+        DoorOpenClose gate1 = Gate.transform.GetChild(0).GetComponent<DoorOpenClose>();
 
         if (onActivator && Input.GetKeyDown(KeyCode.E))
         {
-            onOff = !onOff;
+            isActivated = !isActivated;
+            if (isActivated == true)
+            {
+                gate1.SetDestination(doorPositionFinal);
+            }
+            else
+            {
+                gate1.SetDestination(doorPositionInitial);
+            }
         }
     }
 

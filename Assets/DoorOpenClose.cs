@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door_Open_Close : MonoBehaviour
+public class DoorOpenClose : MonoBehaviour
 {
     public float speed;
     private Vector3 destination;
@@ -18,7 +18,7 @@ public class Door_Open_Close : MonoBehaviour
     {
         if (destination != gameObject.transform.position)
         {
-            MoveObject();
+            MoveObject(destination);
         }
     }
 
@@ -27,7 +27,7 @@ public class Door_Open_Close : MonoBehaviour
         destination = endroit;
     }
 
-    public void MoveObject()
+    public void MoveObject(Vector3 destination)
     {
         float dx = speed * Time.deltaTime;
         Vector3 currentPosition = gameObject.transform.position;
