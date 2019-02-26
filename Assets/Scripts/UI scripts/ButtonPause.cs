@@ -2,25 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonPause : MonoBehaviour
 {
     private bool isPaused = false;
-    
+    private bool isInInventory = false;
+
     [SerializeField]
     private GameObject pauseMenuUI;
 
     [SerializeField]
     private GameObject inventoryMenuUI;
 
+    [SerializeField]
+    private GameObject outInventory;
+
+    [SerializeField]
+    private GameObject inInventory;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && isInInventory == false)
         {
             PauseGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && isPaused == false)
         {
             InventoryGame();
         }
@@ -46,19 +54,23 @@ public class ButtonPause : MonoBehaviour
 
     public void InventoryGame()
     {
-        isPaused = !isPaused;
+        isInInventory = !isInInventory;
 
-        if (isPaused == true)
+        if (isInInventory == true)
         {
             Time.timeScale = 0;
             AudioListener.pause = true;
             inventoryMenuUI.SetActive(true);
+            outInventory.SetActive(false);
+            inInventory.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
             AudioListener.pause = false;
             inventoryMenuUI.SetActive(false);
+            outInventory.SetActive(true);
+            inInventory.SetActive(false);
         }
     }
 
