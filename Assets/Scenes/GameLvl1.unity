@@ -189,38 +189,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20903911}
   m_CullTransparentMesh: 0
---- !u!1 &70806923
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 70806925}
-  m_Layer: 0
-  m_Name: Teleporteur A
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &70806925
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70806923}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 409094321}
-  - {fileID: 910668076}
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74088608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,8 +2164,8 @@ Transform:
   m_LocalPosition: {x: 14.17, y: 9.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 70806925}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &409094322
 BoxCollider2D:
@@ -2285,10 +2253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d2cccbe2b09b04993287e275a33264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortA: {x: 14.17, y: 9.11, z: 0}
-  PortB: {x: 35.56, y: 6.55, z: 0}
-  portCooldownCurrent: 2
-  portCooldownMax: 2
+  PortInitial: {x: 14.17, y: 9.11, z: 0}
+  PortFinal: {x: 35.56, y: 6.55, z: 0}
 --- !u!1 &419752473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,7 +2268,6 @@ GameObject:
   - component: {fileID: 419752476}
   - component: {fileID: 419752475}
   - component: {fileID: 419752474}
-  - component: {fileID: 419752479}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Weapon
@@ -3420,13 +3385,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650298732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.84, y: -0.95000005, z: 0.08203125}
+  m_LocalPosition: {x: -6.57, y: -0.9, z: 0.1640625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1758294571}
   - {fileID: 260485480}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 825152271}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &650298734
 MonoBehaviour:
@@ -4690,11 +4655,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910668075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.56, y: 6.55, z: -0.91015625}
+  m_LocalPosition: {x: 35.56, y: 6.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 70806925}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &910668077
 BoxCollider2D:
@@ -4782,10 +4747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d2cccbe2b09b04993287e275a33264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortA: {x: 14.17, y: 9.11, z: 0}
-  PortB: {x: 35.56, y: 6.55, z: 0}
-  portCooldownCurrent: 2
-  portCooldownMax: 2
+  PortInitial: {x: 35.56, y: 6.55, z: 0}
+  PortFinal: {x: 14.17, y: 9.11, z: 0}
 --- !u!1 &911799320
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,7 +5566,7 @@ Transform:
   m_LocalScale: {x: 0.15303898, y: 0.13822055, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076064517
 GameObject:
@@ -6423,7 +6386,7 @@ Transform:
   - {fileID: 1261548522}
   - {fileID: 1530078549}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1455578550
 GameObject:
@@ -10616,7 +10579,7 @@ Transform:
   m_GameObject: {fileID: 1816842619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.054, y: 3.706, z: 0}
-  m_LocalScale: {x: 2.1967194, y: 1.7669882, z: 1}
+  m_LocalScale: {x: 3.8717182, y: 2.1907892, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
