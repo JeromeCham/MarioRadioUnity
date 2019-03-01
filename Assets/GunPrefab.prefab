@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1682076139012548905}
   - component: {fileID: 3341365773405177141}
   - component: {fileID: 2050160043476802228}
-  - component: {fileID: 6734593476461804771}
   - component: {fileID: 3252454386519206272}
   m_Layer: 0
   m_Name: GunPrefab
@@ -123,21 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 0}
   item: {fileID: 11400000, guid: 4cadb78dfe2fa1a4daa81785428e4a14, type: 2}
---- !u!114 &6734593476461804771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6173623888468327262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  other: {fileID: 0}
-  other2: {fileID: 0}
-  other3: {fileID: 0}
 --- !u!50 &3252454386519206272
 Rigidbody2D:
   serializedVersion: 4
