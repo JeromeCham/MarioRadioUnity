@@ -12,6 +12,7 @@ TagManager:
   - PlayerCol
   - green potion
   - Weapon
+  - red potion
   layers:
   - Default
   - TransparentFX
@@ -27,6 +28,7 @@ TagManager:
   - Radiation
   - Activator
   - 
+  - Potion
   - 
   - 
   - 
