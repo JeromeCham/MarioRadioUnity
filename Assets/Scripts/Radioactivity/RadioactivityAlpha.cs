@@ -28,6 +28,7 @@ public class RadioactivityAlpha : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             PlayerMovement player = other.GetComponent<PlayerMovement>();
+            if (!player.isUsingGreenPotion)
             dmgCooldown = player.takeDmg(radioMagnitude, dmgCooldown, maxCooldown, "Alpha");
         }
     }

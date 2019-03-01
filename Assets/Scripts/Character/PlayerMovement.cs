@@ -21,8 +21,10 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-    bool isUsingGreenPotion = false;
-    int timer = 0;
+    public bool isUsingGreenPotion = false;
+    public bool isUsingBluePotion = false;
+    int timerGreen = 0;
+    int timerBlue = 0;
 
     private void Awake()
     {
@@ -32,12 +34,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isUsingGreenPotion) timer++;
-        if (timer == 1000)
+        if (isUsingGreenPotion) timerGreen++;
+        if (timerGreen == 1000)
         {
             isUsingGreenPotion = false;
-            runSpeed -= 100;
-            timer = 0;
+            timerGreen = 0;
+        }
+
+        if (isUsingBluePotion) timerBlue++;
+        if (timerBlue == 1000)
+        {
+            isUsingBluePotion = false;
+            controller.m_JumpForce -= 200;
+            timerBlue = 0;
         }
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -137,12 +146,18 @@ public class PlayerMovement : MonoBehaviour
     public void GreenPotion()
     {
         isUsingGreenPotion = true;
-        if (timer <= 1000) runSpeed += 100;
+        //if (timer <= 1000) runSpeed += 100;
     }
 
     public void RedPotion()
     {
         health.CurrentValue += 50;
         if (health.CurrentValue > 100) health.CurrentValue = 100;
+    }
+
+    public void BluePotion()
+    {
+        isUsingBluePotion = true;
+        if (timerBlue <= 1000) controller.m_JumpForce += 200;
     }
 }

@@ -33,10 +33,10 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
-        if (item != null)
+        if (item != null && item.Use())
         {
             item.Use();
+            Inventory.instance.Remove(item);
         }
-        Inventory.instance.Remove(item);
     }
 }

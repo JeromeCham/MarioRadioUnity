@@ -7,10 +7,11 @@ public class Redpotion : Item
 {
     PlayerMovement player;
     override
-    public void Use()
+    public bool Use()
     {
         player = FindObjectOfType<PlayerMovement>();
 
         player.RedPotion();
+        return true;
     }
 }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New green potion", menuName = "Inventory/Green potion")]
-public class GreenPotion : Item
+[CreateAssetMenu(fileName = "New blue potion", menuName = "Inventory/Blue potion")]
+public class BluePotion : Item
 {
     PlayerMovement player;
 
@@ -13,9 +13,10 @@ public class GreenPotion : Item
         player = FindObjectOfType<PlayerMovement>();
         if (!player.isUsingGreenPotion && !player.isUsingBluePotion)
         {
-            player.GreenPotion();
+            player.BluePotion();
             return true;
         }
         return false;
     }
+
 }
