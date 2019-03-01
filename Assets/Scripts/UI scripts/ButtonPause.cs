@@ -7,7 +7,8 @@ public class ButtonPause : MonoBehaviour
 {
     private bool isPaused = false;
     private bool isInInventory = false;
-    int x = 0;
+    private bool fixFonction = false;
+    int count = 0;
 
     [SerializeField]
     private GameObject pauseMenuUI;
@@ -36,9 +37,7 @@ public class ButtonPause : MonoBehaviour
 
     public void PauseGame()
     {
-        x++;
-        Debug.Log(x);
-        if(isInInventory == false)
+        if (isInInventory == false)
         {
             isPaused = !isPaused;
 
@@ -76,8 +75,8 @@ public class ButtonPause : MonoBehaviour
                 Time.timeScale = 1;
                 AudioListener.pause = false;
                 inventoryMenuUI.SetActive(false);
-                outInventory.SetActive(true);
                 inInventory.SetActive(false);
+                outInventory.SetActive(true);
             }
         }
     }

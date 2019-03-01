@@ -9836,6 +9836,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 747430051}
+  inventoryMenuUI: {fileID: 0}
+  outInventory: {fileID: 0}
+  inInventory: {fileID: 0}
 --- !u!4 &1668129753
 Transform:
   m_ObjectHideFlags: 0
