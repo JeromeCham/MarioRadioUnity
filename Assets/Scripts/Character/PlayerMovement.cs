@@ -116,14 +116,16 @@ public class PlayerMovement : MonoBehaviour
         }*/
     }
 
-    public float takeDmg(float dmg, float currentCooldown, float maxCooldown)
+    public float takeDmg(float dmg, float currentCooldown, float maxCooldown, string name)
     {
         if (currentCooldown <= 0)
         {
             currentCooldown += maxCooldown;
             health.CurrentValue -= dmg;
+            Debug.Log("Taking damage from" + name);
             return currentCooldown;
         }
+        Debug.Log("Taking damage from" + name);
         return currentCooldown;
     }
 

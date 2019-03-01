@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 
     public static Inventory instance;
     public bool gun = false;
+    public bool drop = false;
     private void Awake()
     {
         if (instance != null)
@@ -32,16 +33,14 @@ public class Inventory : MonoBehaviour
             Debug.Log("Not enough room");
             return false;
         }
-
-
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-        int index = items.FindIndex(Item => item.name == "Gun");
-        if (index >= 0)
+
+        if (item.name == "Gun")
         {
-            Debug.Log("allo");
             gun = true;
         }
+        
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
         return true;
@@ -51,6 +50,11 @@ public class Inventory : MonoBehaviour
         items.Remove(item);
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
+        if (item.name == "Gun")
+        {
+            gun = false;
+        }
+        drop = true;
     }
 }
 
