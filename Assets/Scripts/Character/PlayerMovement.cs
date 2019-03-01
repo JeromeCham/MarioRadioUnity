@@ -131,10 +131,8 @@ public class PlayerMovement : MonoBehaviour
         {
             currentCooldown += maxCooldown;
             health.CurrentValue -= dmg;
-            Debug.Log("Taking damage from" + name);
             return currentCooldown;
         }
-        Debug.Log("Taking damage from" + name);
         return currentCooldown;
     }
 
