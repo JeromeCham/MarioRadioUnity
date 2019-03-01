@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ButtonPause : MonoBehaviour
 {
     private bool isPaused = false;
     private bool isInInventory = false;
+    int x = 0;
 
     [SerializeField]
     private GameObject pauseMenuUI;
@@ -23,12 +23,12 @@ public class ButtonPause : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && isInInventory == false)
+        if (Input.GetKeyDown(KeyCode.P))
         {
             PauseGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.I) && isPaused == false)
+        if (Input.GetKeyDown(KeyCode.I))
         {
             InventoryGame();
         }
@@ -36,41 +36,49 @@ public class ButtonPause : MonoBehaviour
 
     public void PauseGame()
     {
-        isPaused = !isPaused;
+        x++;
+        Debug.Log(x);
+        if(isInInventory == false)
+        {
+            isPaused = !isPaused;
 
-        if (isPaused == true)
-        {
-            Time.timeScale = 0;
-            AudioListener.pause = true;
-            pauseMenuUI.SetActive(true);
-        }
-        else
-        {
-            Time.timeScale = 1;
-            AudioListener.pause = false;
-            pauseMenuUI.SetActive(false);
+            if (isPaused == true)
+            {
+                Time.timeScale = 0;
+                AudioListener.pause = true;
+                pauseMenuUI.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                AudioListener.pause = false;
+                pauseMenuUI.SetActive(false);
+            }
         }
     }
 
     public void InventoryGame()
     {
-        isInInventory = !isInInventory;
+        if (isPaused == false)
+        {
+            isInInventory = !isInInventory;
 
-        if (isInInventory == true)
-        {
-            Time.timeScale = 0;
-            AudioListener.pause = true;
-            inventoryMenuUI.SetActive(true);
-            outInventory.SetActive(false);
-            inInventory.SetActive(true);
-        }
-        else
-        {
-            Time.timeScale = 1;
-            AudioListener.pause = false;
-            inventoryMenuUI.SetActive(false);
-            outInventory.SetActive(true);
-            inInventory.SetActive(false);
+            if (isInInventory == true)
+            {
+                Time.timeScale = 0;
+                AudioListener.pause = true;
+                inventoryMenuUI.SetActive(true);
+                outInventory.SetActive(false);
+                inInventory.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                AudioListener.pause = false;
+                inventoryMenuUI.SetActive(false);
+                outInventory.SetActive(true);
+                inInventory.SetActive(false);
+            }
         }
     }
 
