@@ -219,7 +219,7 @@ Transform:
   - {fileID: 409094321}
   - {fileID: 910668076}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74088608
 GameObject:
@@ -2287,8 +2287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PortA: {x: 14.17, y: 9.11, z: 0}
   PortB: {x: 35.56, y: 6.55, z: 0}
-  portCooldownCurrent: 2
-  portCooldownMax: 2
 --- !u!1 &419752473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,7 +2300,6 @@ GameObject:
   - component: {fileID: 419752476}
   - component: {fileID: 419752475}
   - component: {fileID: 419752474}
-  - component: {fileID: 419752479}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Weapon
@@ -2545,7 +2542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d45ca48bc89124db88e09349ebbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraBaseHeight: -2.6
+  cameraBaseHeight: -0.4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3426,7 +3423,7 @@ Transform:
   - {fileID: 1758294571}
   - {fileID: 260485480}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &650298734
 MonoBehaviour:
@@ -4659,7 +4656,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 227004031}
-  - {fileID: 650298733}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4784,8 +4780,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PortA: {x: 14.17, y: 9.11, z: 0}
   PortB: {x: 35.56, y: 6.55, z: 0}
-  portCooldownCurrent: 2
-  portCooldownMax: 2
 --- !u!1 &911799320
 GameObject:
   m_ObjectHideFlags: 0
@@ -6498,7 +6492,7 @@ Transform:
   - {fileID: 1261548522}
   - {fileID: 1530078549}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1455578550
 GameObject:
