@@ -6,8 +6,9 @@ public class Activator : MonoBehaviour
 {
     public bool isActivated = false;
     public bool onActivator = false;
-    Vector3 doorPositionInitial = new Vector3(4.35f, -3.7f, 0f);
-    Vector3 doorPositionFinal = new Vector3(4.35f, -1f, 0f);
+    public Vector3 doorPositionInitial = new Vector3(4.35f, -3.7f, 0f);
+    public Vector3 doorPositionFinal = new Vector3(4.35f, -1f, 0f);
+    public string nom;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class Activator : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(!isActivated);
         transform.GetChild(1).gameObject.SetActive(isActivated);
-        GameObject Gate = GameObject.Find("Gate");
+        GameObject Gate = GameObject.Find(nom);
         DoorOpenClose gate1 = Gate.transform.GetChild(0).GetComponent<DoorOpenClose>();
 
         if (onActivator && Input.GetKeyDown(KeyCode.E))
