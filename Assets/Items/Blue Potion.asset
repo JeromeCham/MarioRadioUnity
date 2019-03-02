@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Blue Potion
+  m_Name: Blue potion
   m_EditorClassIdentifier: Assembly-CSharp::BluePotion
-  name: potion bleue
+  name: Blue potion
   icon: {fileID: 21300000, guid: 4abdec2982f921246b39afd26154f039, type: 3}
   isDefaultItem: 0
