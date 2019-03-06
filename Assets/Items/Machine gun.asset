@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e35295cb9bd2e84ba3e3135004e7e24, type: 3}
+  m_Name: Machine gun
+  m_EditorClassIdentifier: 
+  name: Machine gun
+  icon: {fileID: 21300000, guid: 75e0268cf423ffe408eae57019b296a4, type: 3}
+  isDefaultItem: 0

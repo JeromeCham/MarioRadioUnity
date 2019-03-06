@@ -13,6 +13,7 @@ TagManager:
   - green potion
   - Weapon
   - red potion
+  - Magazine
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,6 @@ TagManager:
   - Activator
   - 
   - Potion
-  - 
   - 
   - 
   - 

@@ -34,7 +34,12 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
-        if (item != null && item.Use())
+        if(item.name == "Gun" || item.name == "Machine gun")
+        {
+            Inventory.instance.SelectWeapon(item);
+            Debug.Log("allo");
+        }
+        if (item != null && item.Use() && item.name != "Gun" && item.name != "Machine gun")
         {
             item.Use();
             Inventory.instance.Remove(item);

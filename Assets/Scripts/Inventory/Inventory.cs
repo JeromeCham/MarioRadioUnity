@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     public bool gun = false;
     public bool drop = false;
+    public string selectobject = " ";
     public string objectname = " ";
     private void Awake()
     {
@@ -37,8 +38,8 @@ public class Inventory : MonoBehaviour
         }
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-        
-        if (item.name == "Gun")
+        //objectname = item.name;
+        if (item.name == "Gun" || item.name == "Machine gun")
         {
             gun = true;
         }
@@ -46,6 +47,7 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback.Invoke();
         return true;
     }
+
     public void Remove(Item item)
     {
         Debug.Log("Removing " + item.name + " from inventory");
@@ -53,7 +55,7 @@ public class Inventory : MonoBehaviour
         objectname = item.name;
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
-        if(item.name == "Gun")
+        if(item.name == "Gun" || item.name == "Machine gun")
         {
             gun = false;
         }
@@ -62,6 +64,10 @@ public class Inventory : MonoBehaviour
     public void Drop(Item item)
     {
         drop = true;
+    }
+    public void SelectWeapon(Item item)
+    {
+        selectobject = item.name;
     }
 }
 
