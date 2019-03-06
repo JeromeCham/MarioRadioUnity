@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public BoxCollider2D collider;
+    //public BoxCollider2D collider;
     public Item item;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,6 +24,6 @@ public class ItemPickup : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Picking up " + item.name);
         }
-        
+
     }
 }

@@ -9,9 +9,10 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public bool isDefaultItem = false;
 
+
     public virtual bool Use()
     {
-        Debug.Log("Using " + name);
+        //Debug.Log("Using " + name);
         return true;
     }
 }

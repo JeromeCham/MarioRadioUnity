@@ -5,10 +5,10 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     #region Singleton
-
     public static Inventory instance;
     public bool gun = false;
     public bool drop = false;
+    public string objectname = " ";
     private void Awake()
     {
         if (instance != null)
@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
         }
         instance = this;
     }
+
     #endregion
 
     public delegate void OnItemChanged();
@@ -25,6 +26,7 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
     public int space = 6;
+    
 
     public bool Add(Item item)
     {
@@ -35,25 +37,30 @@ public class Inventory : MonoBehaviour
         }
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-
+        
         if (item.name == "Gun")
         {
             gun = true;
         }
-        
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
         return true;
     }
     public void Remove(Item item)
     {
+        Debug.Log("Removing " + item.name + " from inventory");
         items.Remove(item);
+        objectname = item.name;
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
-        if (item.name == "Gun")
+        if(item.name == "Gun")
         {
             gun = false;
         }
+        //drop = true;
+    }
+    public void Drop(Item item)
+    {
         drop = true;
     }
 }

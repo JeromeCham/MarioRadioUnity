@@ -975,6 +975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: 0
   drop: 0
+  objectname: ' '
   items: []
   space: 6
   FirePoint: {fileID: 177682773}
@@ -986,6 +987,15 @@ MonoBehaviour:
   GunPrefab: {fileID: 6173623888468327262, guid: 66aa8190858daa74da8c863783245127,
     type: 3}
   gun2: {fileID: 0}
+  GreenPotionPrefab: {fileID: 5998876785184312684, guid: 9c294e091009c2e4aa1bf70387910867,
+    type: 3}
+  GreenPotion: {fileID: 0}
+  RedPotionPrefab: {fileID: 1235902627372454801, guid: 0f5d91bc24d642c4390f67499ba3fe40,
+    type: 3}
+  RedPotion: {fileID: 0}
+  BluePotionPrefab: {fileID: 3019476235467119352, guid: 72dd646b1b844db46a2246aeeb6b530b,
+    type: 3}
+  BluePotion: {fileID: 0}
   count: 0
 --- !u!114 &207696944
 MonoBehaviour:
@@ -1001,8 +1011,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: 0
   drop: 0
+  objectname: ' '
   items: []
-  space: 2
+  space: 6
 --- !u!1 &227004030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,8 +1146,8 @@ GameObject:
   - component: {fileID: 228592920}
   - component: {fileID: 228592919}
   - component: {fileID: 228592918}
-  - component: {fileID: 228592917}
   - component: {fileID: 228592916}
+  - component: {fileID: 228592917}
   m_Layer: 13
   m_Name: Blue potion
   m_TagString: red potion
@@ -1163,21 +1174,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &228592917
-MonoBehaviour:
+--- !u!50 &228592917
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228592915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  other: {fileID: 207696940}
-  other2: {fileID: 207696934}
-  other3: {fileID: 1790216941}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &228592918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,7 +1207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843dfe6b49f3d884885d61bc15f25e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 228592919}
   item: {fileID: 11400000, guid: 8ca9a6395e9e84948b5702b79a26e4e4, type: 2}
 --- !u!61 &228592919
 BoxCollider2D:
@@ -1202,7 +1218,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.11001694, y: -0.11687493}
@@ -1823,8 +1839,8 @@ GameObject:
   - component: {fileID: 389082209}
   - component: {fileID: 389082208}
   - component: {fileID: 389082211}
-  - component: {fileID: 389082212}
   - component: {fileID: 389082213}
+  - component: {fileID: 389082214}
   m_Layer: 13
   m_Name: Green potion
   m_TagString: green potion
@@ -1842,7 +1858,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.11001694, y: -0.11687493}
@@ -1932,23 +1948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843dfe6b49f3d884885d61bc15f25e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 389082208}
   item: {fileID: 11400000, guid: 8ad7be381c1e153419e4c74c54e6ebbb, type: 2}
---- !u!114 &389082212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389082207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  other: {fileID: 207696940}
-  other2: {fileID: 207696934}
-  other3: {fileID: 1790216941}
 --- !u!95 &389082213
 Animator:
   serializedVersion: 3
@@ -1968,6 +1968,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &389082214
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389082207}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &396759568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2427,6 +2448,7 @@ GameObject:
   - component: {fileID: 419752476}
   - component: {fileID: 419752475}
   - component: {fileID: 419752474}
+  - component: {fileID: 419752479}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Weapon
@@ -2461,7 +2483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843dfe6b49f3d884885d61bc15f25e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 419752476}
   item: {fileID: 11400000, guid: 4cadb78dfe2fa1a4daa81785428e4a14, type: 2}
 --- !u!61 &419752476
 BoxCollider2D:
@@ -2551,6 +2572,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &419752479
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419752473}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &509191191
 GameObject:
   m_ObjectHideFlags: 0
@@ -5307,8 +5349,8 @@ GameObject:
   - component: {fileID: 1051546546}
   - component: {fileID: 1051546545}
   - component: {fileID: 1051546544}
-  - component: {fileID: 1051546543}
   - component: {fileID: 1051546542}
+  - component: {fileID: 1051546548}
   m_Layer: 13
   m_Name: red potion
   m_TagString: red potion
@@ -5335,21 +5377,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1051546543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051546541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  other: {fileID: 207696940}
-  other2: {fileID: 207696934}
-  other3: {fileID: 1790216941}
 --- !u!114 &1051546544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5362,7 +5389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843dfe6b49f3d884885d61bc15f25e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 1051546545}
   item: {fileID: 11400000, guid: 2916890f854410c4299b69d581d4d703, type: 2}
 --- !u!61 &1051546545
 BoxCollider2D:
@@ -5374,7 +5400,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.11001694, y: -0.11687493}
@@ -5452,6 +5478,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1051546548
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051546541}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1076064517
 GameObject:
   m_ObjectHideFlags: 0

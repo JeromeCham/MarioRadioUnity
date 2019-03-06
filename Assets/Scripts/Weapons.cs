@@ -9,9 +9,6 @@ public class Weapons : Inventory
     public GameObject bullet;
     public float bulletLife = 1;
 
-
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && gun == true)
@@ -32,13 +29,40 @@ public class Weapons : Inventory
 
 
     public Transform DropPoint;
+
     public GameObject GunPrefab;
     public GameObject gun2;
+
+    public GameObject GreenPotionPrefab;
+    public GameObject GreenPotion;
+
+    public GameObject RedPotionPrefab;
+    public GameObject RedPotion;
+
+    public GameObject BluePotionPrefab;
+    public GameObject BluePotion;
+
     public int count = 0;
+
 
     void Create()
     {
-        gun2 = (GameObject)Instantiate(GunPrefab, DropPoint.position, DropPoint.rotation);
+        switch (objectname)
+        {
+            case "Gun":
+                gun2 = (GameObject)Instantiate(GunPrefab, DropPoint.position, DropPoint.rotation);
+                break;
+            case "Green potion":
+                GreenPotion = (GameObject)Instantiate(GreenPotionPrefab, DropPoint.position, DropPoint.rotation);
+                break;
+            case "Red potion":
+                RedPotion = (GameObject)Instantiate(RedPotionPrefab, DropPoint.position, DropPoint.rotation);
+                break;
+            case "Blue potion":
+                BluePotion = (GameObject)Instantiate(BluePotionPrefab, DropPoint.position, DropPoint.rotation);
+                break;
+
+        }
         count = 0;
         drop = false;
     }

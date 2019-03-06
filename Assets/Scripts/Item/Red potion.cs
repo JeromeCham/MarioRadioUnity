@@ -9,6 +9,7 @@ public class Redpotion : Item
     override
     public bool Use()
     {
+        Debug.Log("Using " + name);
         player = FindObjectOfType<PlayerMovement>();
 
         player.RedPotion();

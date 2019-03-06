@@ -10,6 +10,7 @@ public class GreenPotion : Item
     override
     public bool Use()
     {
+        Debug.Log("Using " + name);
         player = FindObjectOfType<PlayerMovement>();
         if (!player.isUsingGreenPotion && !player.isUsingBluePotion)
         {
@@ -18,4 +19,13 @@ public class GreenPotion : Item
         }
         return false;
     }
+    /*override
+    public bool Use()
+    {
+        Debug.Log("Using " + name);
+        player = FindObjectOfType<PlayerMovement>();
+
+        player.GreenPotion();
+        return true;
+    }*/
 }
