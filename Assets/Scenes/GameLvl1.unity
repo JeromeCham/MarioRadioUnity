@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 207696941}
   - component: {fileID: 207696943}
   - component: {fileID: 207696944}
+  - component: {fileID: 207696945}
   m_Layer: 8
   m_Name: PlayerFox
   m_TagString: Player
@@ -1021,6 +1022,20 @@ MonoBehaviour:
   ammo: 0
   items: []
   space: 6
+--- !u!114 &207696945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207696933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ca5ac8f5a48d84e908c4c6dd140f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  money: 50
 --- !u!1 &227004030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,28 +3651,13 @@ GameObject:
   - component: {fileID: 743002954}
   - component: {fileID: 743002953}
   - component: {fileID: 743002952}
-  - component: {fileID: 743002951}
   m_Layer: 12
   m_Name: AmmoShop
-  m_TagString: Untagged
+  m_TagString: Shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &743002951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743002950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2ca5ac8f5a48d84e908c4c6dd140f2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 0
-  money: 50
 --- !u!61 &743002952
 BoxCollider2D:
   m_ObjectHideFlags: 0

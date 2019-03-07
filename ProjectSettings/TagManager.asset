@@ -14,6 +14,7 @@ TagManager:
   - Weapon
   - red potion
   - Magazine
+  - Shop
   layers:
   - Default
   - TransparentFX
