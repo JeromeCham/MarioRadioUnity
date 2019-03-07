@@ -8,11 +8,10 @@ public class Weapons : Inventory
     public GameObject bulletPrefab;
     public GameObject bullet;
     public float bulletLife = 1;
-    public int ammo = 10;
 
     void Update()
     {
-        if(gun == true)
+        if (gun == true)
         {
             Fire();
         }
@@ -51,7 +50,7 @@ public class Weapons : Inventory
     {
         if (other.tag == "Magazine")
         {
-            ammo += 30;
+            AddMagazine();
             Destroy(other.gameObject);
         }
     }

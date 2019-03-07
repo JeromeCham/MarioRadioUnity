@@ -37,7 +37,6 @@ public class InventorySlot : MonoBehaviour
         if(item.name == "Gun" || item.name == "Machine gun")
         {
             Inventory.instance.SelectWeapon(item);
-            Debug.Log("allo");
         }
         if (item != null && item.Use() && item.name != "Gun" && item.name != "Machine gun")
         {

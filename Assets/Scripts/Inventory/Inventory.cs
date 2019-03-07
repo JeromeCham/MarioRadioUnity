@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public bool drop = false;
     public string selectobject = " ";
     public string objectname = " ";
+    public int ammo = 0;
     private void Awake()
     {
         if (instance != null)
@@ -27,7 +28,7 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
     public int space = 6;
-    
+
 
     public bool Add(Item item)
     {
@@ -38,7 +39,7 @@ public class Inventory : MonoBehaviour
         }
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-        //objectname = item.name;
+        selectobject = item.name;
         if (item.name == "Gun" || item.name == "Machine gun")
         {
             gun = true;
@@ -55,7 +56,7 @@ public class Inventory : MonoBehaviour
         objectname = item.name;
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
-        if(item.name == "Gun" || item.name == "Machine gun")
+        if (item.name == "Gun" || item.name == "Machine gun")
         {
             gun = false;
         }
@@ -69,5 +70,8 @@ public class Inventory : MonoBehaviour
     {
         selectobject = item.name;
     }
+    public void AddMagazine()
+    {
+        ammo += 30;
+    }
 }
-
