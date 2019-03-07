@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gun
   m_EditorClassIdentifier: 
   name: Gun
-  icon: {fileID: 21300000, guid: 75e0268cf423ffe408eae57019b296a4, type: 3}
+  icon: {fileID: 21300000, guid: d936eb08cd6b91e47888c66a20f77d8e, type: 3}
   isDefaultItem: 0
