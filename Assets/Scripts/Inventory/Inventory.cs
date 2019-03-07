@@ -39,9 +39,10 @@ public class Inventory : MonoBehaviour
         }
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-        selectobject = item.name;
+        
         if (item.name == "Gun" || item.name == "Machine gun")
         {
+            selectobject = item.name;
             gun = true;
         }
         if (onItemChangedCallback != null)
@@ -60,7 +61,6 @@ public class Inventory : MonoBehaviour
         {
             gun = false;
         }
-        //drop = true;
     }
     public void Drop(Item item)
     {
