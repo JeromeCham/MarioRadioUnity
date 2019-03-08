@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
             gun = false;
+            selectobject = null;
         }
     }
     public void Drop(Item item)
@@ -71,6 +72,7 @@ public class Inventory : MonoBehaviour
     public void SelectWeapon(Item item)
     {
         selectobject = item.name;
+        gun = true;
     }
 
     public void AddMagazine()

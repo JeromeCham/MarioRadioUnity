@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Weapons : Inventory
 {
+    [SerializeField]
+    private GameObject pistol;
+
+    [SerializeField]
+    private GameObject machineGun;
+
+    [SerializeField]
+    private GameObject rocketLauncher;
+
     public Transform FirePoint;
     public GameObject bulletPrefab;
     public GameObject bullet;
@@ -18,10 +27,37 @@ public class Weapons : Inventory
         {
             Fire();
         }
+
         if (drop == true && count <= 1)
         {
             Create();
             count += 1;
+        }
+        
+        switch (selectobject)
+        {
+            case "Gun":
+                machineGun.SetActive(false);
+                rocketLauncher.SetActive(false);
+                pistol.SetActive(true);
+                break;
+
+            case "Machine gun":
+                pistol.SetActive(false);
+                rocketLauncher.SetActive(false);
+                machineGun.SetActive(true);
+                break;
+
+            case "RocketLauncher":
+                pistol.SetActive(false);
+                machineGun.SetActive(false);
+                rocketLauncher.SetActive(true);
+                break;
+            default:
+                pistol.SetActive(false);
+                machineGun.SetActive(false);
+                rocketLauncher.SetActive(false);
+                break;
         }
     }
 
@@ -32,42 +68,28 @@ public class Weapons : Inventory
             case "Gun":
                 if (Input.GetButtonDown("Fire1") && ammo > 0)
                 {
-                    Shoot();
+                    bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+                    Destroy(bullet, bulletLife);
+                    ammo -= 1;
                 }
                 break;
             case "Machine gun":
                 if (Input.GetButton("Fire1") && ammo > 0)
                 {
-                    Shoot();
+                    bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+                    Destroy(bullet, bulletLife);
+                    ammo -= 1;
                 }
                 break;
             case "RocketLauncher":
                 if (Input.GetButtonDown("Fire1") && ammo > 0)
                 {
-                    Shoot();
+                    Rocket = (GameObject)Instantiate(RocketPrefab, FirePoint.position, FirePoint.rotation);
+                    Destroy(Rocket, RocketLife);
+                    ammo -= 1;
                 }
                 break;
         }
-    }
-
-    void Shoot()
-    {
-        switch (selectobject)
-        {
-            case "Gun":
-                bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
-                Destroy(bullet, bulletLife);
-                break;
-            case "Machine gun":
-                bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
-                Destroy(bullet, bulletLife);
-                break;
-            case "RocketLauncher":
-                Rocket = (GameObject)Instantiate(RocketPrefab, FirePoint.position, FirePoint.rotation);
-                Destroy(Rocket, RocketLife);
-                break;
-        }
-        ammo -= 1;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
