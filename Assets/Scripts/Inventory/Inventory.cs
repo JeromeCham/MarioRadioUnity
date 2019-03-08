@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     public string selectobject = " ";
     public string objectname = " ";
     public int ammo = 0;
+
     private void Awake()
     {
         if (instance != null)
@@ -66,12 +67,19 @@ public class Inventory : MonoBehaviour
     {
         drop = true;
     }
+
     public void SelectWeapon(Item item)
     {
         selectobject = item.name;
     }
+
     public void AddMagazine()
     {
         ammo += 30;
+    }
+
+    public int NbAmmo()
+    {
+        return ammo;
     }
 }

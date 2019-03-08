@@ -2,21 +2,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private Stat health;
 
-    public CharacterController2D controller;
-    public Animator animator;
-    public Rigidbody2D rb;
+    [SerializeField]
+    private int money = 50;
+
+    [SerializeField]
+    private CharacterController2D controller;
+
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private Rigidbody2D rb;
 
     [SerializeField]
     private float runSpeed = 40f;
 
     [SerializeField]
     private float minimumHeight = -20f;
+
+    [SerializeField]
+    private TextMeshProUGUI moneyText;
+
+    [SerializeField]
+    private TextMeshProUGUI ammoText;
+
+    private string tempMoney;
+    private string tempAmmo;
+    private int ammo;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -25,15 +44,28 @@ public class PlayerMovement : MonoBehaviour
     public bool isUsingBluePotion = false;
     int timerGreen = 0;
     int timerBlue = 0;
+    private bool active = false;
 
     private void Awake()
     {
         health.Initialized();
+        tempMoney = moneyText.text;
+        tempAmmo = ammoText.text;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        if (active == true && Input.GetKeyDown(KeyCode.E) && money > 0)
+        {
+            Weapons.instance.AddMagazine();
+            money -= 10;
+        }
+
+        ammo = Weapons.instance.NbAmmo();
+
+        moneyText.text = money + tempMoney;
+        ammoText.text = ammo + tempAmmo;
+
         if (isUsingGreenPotion) timerGreen++;
         if (timerGreen == 1000)
         {
@@ -74,10 +106,12 @@ public class PlayerMovement : MonoBehaviour
         {
             health.CurrentValue += 10;
         }
+
         if (health.CurrentValue == 0)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+
         if (rb.velocity.y > 0 && controller.getGrounded() == false)
         {
             animator.SetBool("IsJumping", true);
@@ -118,11 +152,25 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameManager>().NextLevel();
             Debug.Log("Finish");
         }
+
+        if (other.tag == "Shop")
+        {
+            active = true;
+        }
+
         /*if (other.tag == "green potion")
         {
             Debug.Log("Potion verte");
             Destroy(other.gameObject);
         }*/
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Shop")
+        {
+            active = false;
+        }
     }
 
     public float takeDmg(float dmg, float currentCooldown, float maxCooldown, string name)
@@ -135,6 +183,7 @@ public class PlayerMovement : MonoBehaviour
         }
         return currentCooldown;
     }
+
 
     public void takeDmg(float dmg)
     {

@@ -21,6 +21,7 @@ public class Weapons : Inventory
             count += 1;
         }
     }
+
     void Fire()
     {
         switch (selectobject)
@@ -39,6 +40,7 @@ public class Weapons : Inventory
                 break;
         }
     }
+
     void Shoot()
     {
         bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
@@ -50,12 +52,12 @@ public class Weapons : Inventory
     {
         if (other.tag == "Magazine")
         {
-            AddMagazine();
+            Weapons.instance.AddMagazine();
             Destroy(other.gameObject);
         }
     }
 
-    public Transform DropPoint;
+public Transform DropPoint;
 
     public GameObject GunPrefab;
     public GameObject gun2;
