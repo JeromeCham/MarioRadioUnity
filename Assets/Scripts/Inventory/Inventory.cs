@@ -41,7 +41,7 @@ public class Inventory : MonoBehaviour
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
         
-        if (item.name == "Gun" || item.name == "Machine gun")
+        if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
             selectobject = item.name;
             gun = true;
@@ -58,7 +58,7 @@ public class Inventory : MonoBehaviour
         objectname = item.name;
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
-        if (item.name == "Gun" || item.name == "Machine gun")
+        if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
             gun = false;
         }

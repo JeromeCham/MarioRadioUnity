@@ -7,7 +7,10 @@ public class Weapons : Inventory
     public Transform FirePoint;
     public GameObject bulletPrefab;
     public GameObject bullet;
+    public GameObject RocketPrefab;
+    public GameObject Rocket;
     public float bulletLife = 1;
+    public float RocketLife = 1;
 
     void Update()
     {
@@ -38,13 +41,32 @@ public class Weapons : Inventory
                     Shoot();
                 }
                 break;
+            case "RocketLauncher":
+                if (Input.GetButtonDown("Fire1") && ammo > 0)
+                {
+                    Shoot();
+                }
+                break;
         }
     }
 
     void Shoot()
     {
-        bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
-        Destroy(bullet, bulletLife);
+        switch (selectobject)
+        {
+            case "Gun":
+                bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+                Destroy(bullet, bulletLife);
+                break;
+            case "Machine gun":
+                bullet = (GameObject)Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+                Destroy(bullet, bulletLife);
+                break;
+            case "RocketLauncher":
+                Rocket = (GameObject)Instantiate(RocketPrefab, FirePoint.position, FirePoint.rotation);
+                Destroy(Rocket, RocketLife);
+                break;
+        }
         ammo -= 1;
     }
 
@@ -74,6 +96,9 @@ public Transform DropPoint;
     public GameObject MachinegunPrefab;
     public GameObject Machinegun2;
 
+    public GameObject RocketLauncherPrefab;
+    public GameObject RocketLauncher;
+
     public int count = 0;
 
 
@@ -95,6 +120,9 @@ public Transform DropPoint;
                 break;
             case "Machine gun":
                 Machinegun2 = (GameObject)Instantiate(MachinegunPrefab, DropPoint.position, DropPoint.rotation);
+                break;
+            case "RocketLauncher":
+                RocketLauncher = (GameObject)Instantiate(RocketLauncherPrefab, DropPoint.position, DropPoint.rotation);
                 break;
 
         }
