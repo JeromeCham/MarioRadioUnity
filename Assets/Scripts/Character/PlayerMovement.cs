@@ -33,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI ammoText;
 
+    [SerializeField]
+    private GameObject bluePotion;
+
+    [SerializeField]
+    private GameObject greenPotion;
+
     private string tempMoney;
     private string tempAmmo;
     private int ammo;
@@ -55,6 +61,24 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        if(isUsingGreenPotion == true)
+        {
+            greenPotion.SetActive(true);
+        }
+        else
+        {
+            greenPotion.SetActive(false);
+        }
+
+        if (isUsingBluePotion == true)
+        {
+            bluePotion.SetActive(true);
+        }
+        else
+        {
+            bluePotion.SetActive(false);
+        }
+
         if (active == true && Input.GetKeyDown(KeyCode.E) && money > 0)
         {
             Weapons.instance.AddMagazine();
