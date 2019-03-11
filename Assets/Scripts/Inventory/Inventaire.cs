@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Inventaire : MonoBehaviour
 {
@@ -29,16 +29,19 @@ public class Inventaire : MonoBehaviour
     [SerializeField]
     private Potion potionbleue;
 
+    [SerializeField]
+    private GameObject imageArmeUI;
+
     #region Singleton
     public static Inventaire instance;
     private bool shoot = false;
     private bool drop = false;
 
     [SerializeField]
-    private string selectobject = " ";
+    private string selectobject = "";
 
     [SerializeField]
-    private string objectname = " ";
+    private string objectname = "";
 
     private int ammo = 0;
     private int count = 0;
@@ -63,15 +66,10 @@ public class Inventaire : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        pistolet.Nom = "Pistolet";
-        mitraillette.Nom = "Mitraillette";
-        bazouka.Nom = "Bazouka";
-    }
 
     void Update()
     {
+        
         if (shoot == true)
         {
             Fire();
@@ -98,6 +96,10 @@ public class Inventaire : MonoBehaviour
         {
             selectobject = item.name;
             shoot = true;
+            imageArmeUI.GetComponent<Image>().sprite = item.icon;
+            var tempcolor = imageArmeUI.GetComponent<Image>().color;
+            tempcolor.a = 255f;
+            imageArmeUI.GetComponent<Image>().color = tempcolor;
         }
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
@@ -114,6 +116,10 @@ public class Inventaire : MonoBehaviour
         {
             shoot = false;
             selectobject = null;
+            imageArmeUI.GetComponent<Image>().sprite = null;
+            var tempcolor = imageArmeUI.GetComponent<Image>().color;
+            tempcolor.a = 0f;
+            imageArmeUI.GetComponent<Image>().color = tempcolor;
         }
     }
     public void Drop(Item item)
@@ -124,6 +130,10 @@ public class Inventaire : MonoBehaviour
     {
         selectobject = item.name;
         shoot = true;
+        imageArmeUI.GetComponent<Image>().sprite = item.icon;
+        var tempcolor = imageArmeUI.GetComponent<Image>().color;
+        tempcolor.a = 255f;
+        imageArmeUI.GetComponent<Image>().color = tempcolor;
     }
     public void AddMagazine()
     {
