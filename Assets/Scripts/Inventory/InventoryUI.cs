@@ -5,13 +5,13 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
-    Inventory inventory;
+    Inventaire inventory;
     InventorySlot[] slots;
 
     // Start is called before the first frame update
     void Start()
     {
-        inventory = Inventory.instance;
+        inventory = Inventaire.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();

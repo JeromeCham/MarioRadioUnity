@@ -28,21 +28,21 @@ public class InventorySlot : MonoBehaviour
 
     public void OnRemoveButton()
     {
-        Inventory.instance.Remove(item);
-        Inventory.instance.Drop(item);
+        Inventaire.instance.Remove(item);
+        Inventaire.instance.Drop(item);
     }
 
     public void UseItem()
     {
         if(item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
-            Inventory.instance.SelectWeapon(item);
+            Inventaire.instance.SelectWeapon(item);
         }
 
         if (item != null && item.Use() && item.name != "Gun" && item.name != "Machine gun" && item.name != "RocketLauncher")
         {
             item.Use();
-            Inventory.instance.Remove(item);
+            Inventaire.instance.Remove(item);
         }
     }
 }

@@ -81,11 +81,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (active == true && Input.GetKeyDown(KeyCode.E) && money > 0)
         {
-            Weapons.instance.AddMagazine();
+            Inventaire.instance.AddMagazine();
             money -= 10;
         }
 
-        ammo = Weapons.instance.NbAmmo();
+        ammo = Inventaire.instance.NbAmmo();
 
         moneyText.text = money + tempMoney;
         ammoText.text = ammo + tempAmmo;

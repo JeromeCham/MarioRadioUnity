@@ -739,8 +739,7 @@ GameObject:
   - component: {fileID: 207696940}
   - component: {fileID: 207696942}
   - component: {fileID: 207696941}
-  - component: {fileID: 207696943}
-  - component: {fileID: 207696944}
+  - component: {fileID: 207696945}
   m_Layer: 8
   m_Name: PlayerFox
   m_TagString: Player
@@ -1004,7 +1003,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19898951, y: 0.23274927}
   m_EdgeRadius: 0
---- !u!114 &207696943
+--- !u!114 &207696945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1013,65 +1012,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 207696933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8cb09ebcb0328b419579fe74fc14dca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2adbddcde37e8c64f891adcce4c1c714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: 0
-  drop: 0
+  firePoint: {fileID: 177682773}
+  dropPoint: {fileID: 1683173435}
+  pistolet:
+    nom: 
+    gunPrefab: {fileID: 6173623888468327262, guid: 66aa8190858daa74da8c863783245127,
+      type: 3}
+    gun: {fileID: 0}
+    bulletPrefab: {fileID: 5698325997075960966, guid: 54a014356448f9745b44e1835d33f4d8,
+      type: 3}
+    bullet: {fileID: 0}
+    bulletLife: 1
+    imageUI: {fileID: 1904395975}
+  mitraillette:
+    nom: 
+    gunPrefab: {fileID: 5393166599197017399, guid: d655d125c6ffa404cb274b29e9053caa,
+      type: 3}
+    gun: {fileID: 0}
+    bulletPrefab: {fileID: 5698325997075960966, guid: 54a014356448f9745b44e1835d33f4d8,
+      type: 3}
+    bullet: {fileID: 0}
+    bulletLife: 1
+    imageUI: {fileID: 692253902}
+  bazouka:
+    nom: 
+    gunPrefab: {fileID: 7988047578761449635, guid: 0a60de604e1e8644e8b9fc666cb240be,
+      type: 3}
+    gun: {fileID: 0}
+    bulletPrefab: {fileID: 4818967521923939946, guid: 317ee6cf4bc356e4b86e9d120bd4811d,
+      type: 3}
+    bullet: {fileID: 0}
+    bulletLife: 3
+    imageUI: {fileID: 1929410149}
+  potionverte:
+    potionPrefab: {fileID: 5998876785184312684, guid: 9c294e091009c2e4aa1bf70387910867,
+      type: 3}
+    potion2: {fileID: 0}
+  potionrouge:
+    potionPrefab: {fileID: 1235902627372454801, guid: 0f5d91bc24d642c4390f67499ba3fe40,
+      type: 3}
+    potion2: {fileID: 0}
+  potionbleue:
+    potionPrefab: {fileID: 3019476235467119352, guid: 72dd646b1b844db46a2246aeeb6b530b,
+      type: 3}
+    potion2: {fileID: 0}
   selectobject: ' '
   objectname: ' '
-  ammo: 0
-  items: []
-  space: 6
-  pistol: {fileID: 1904395975}
-  machineGun: {fileID: 692253902}
-  rocketLauncher: {fileID: 1929410149}
-  FirePoint: {fileID: 177682773}
-  bulletPrefab: {fileID: 5698325997075960966, guid: 54a014356448f9745b44e1835d33f4d8,
-    type: 3}
-  bullet: {fileID: 0}
-  RocketPrefab: {fileID: 4818967521923939946, guid: 317ee6cf4bc356e4b86e9d120bd4811d,
-    type: 3}
-  Rocket: {fileID: 0}
-  bulletLife: 1
-  RocketLife: 3
-  DropPoint: {fileID: 1683173435}
-  GunPrefab: {fileID: 6173623888468327262, guid: 66aa8190858daa74da8c863783245127,
-    type: 3}
-  gun2: {fileID: 0}
-  GreenPotionPrefab: {fileID: 5998876785184312684, guid: 9c294e091009c2e4aa1bf70387910867,
-    type: 3}
-  GreenPotion: {fileID: 0}
-  RedPotionPrefab: {fileID: 1235902627372454801, guid: 0f5d91bc24d642c4390f67499ba3fe40,
-    type: 3}
-  RedPotion: {fileID: 0}
-  BluePotionPrefab: {fileID: 3019476235467119352, guid: 72dd646b1b844db46a2246aeeb6b530b,
-    type: 3}
-  BluePotion: {fileID: 0}
-  MachinegunPrefab: {fileID: 5393166599197017399, guid: d655d125c6ffa404cb274b29e9053caa,
-    type: 3}
-  Machinegun2: {fileID: 0}
-  RocketLauncherPrefab: {fileID: 7988047578761449635, guid: 0a60de604e1e8644e8b9fc666cb240be,
-    type: 3}
-  RocketLauncher: {fileID: 0}
-  count: 0
---- !u!114 &207696944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207696933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b196718026e9f1b4aab79847cdd10228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gun: 0
-  drop: 0
-  selectobject: ' '
-  objectname: ' '
-  ammo: 0
   items: []
   space: 6
 --- !u!1 &227004030
