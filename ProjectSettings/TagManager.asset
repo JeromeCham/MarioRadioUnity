@@ -15,6 +15,7 @@ TagManager:
   - red potion
   - Magazine
   - Shop
+  - blue potion
   layers:
   - Default
   - TransparentFX

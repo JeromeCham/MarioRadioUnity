@@ -9,6 +9,7 @@ public class InventorySlot : MonoBehaviour
     public Button removeButton;
     public TextMeshProUGUI description;
     Item item;
+    PlayerMovement player;
 
     public void AddItem(Item newItem)
     {
@@ -38,12 +39,14 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
+        player = FindObjectOfType<PlayerMovement>();
+
         if(item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
             Inventaire.instance.SelectWeapon(item);
         }
 
-        if (item != null && item.Use() && item.name != "Gun" && item.name != "Machine gun" && item.name != "RocketLauncher")
+        if (item != null && item.name != "Gun" && item.name != "Machine gun" && item.name != "RocketLauncher" && !player.isUsingBluePotion && !player.isUsingGreenPotion)
         {
             item.Use();
             Inventaire.instance.Remove(item);
