@@ -5,25 +5,50 @@ using UnityEngine;
 public class Follow : MonoBehaviour
 {
     [SerializeField]
+    private Transform firePoint;
+
+    [SerializeField]
     private BlobFollow enemy;
 
+    [SerializeField]
+    private Arme blobgun;
+
+    private bool shoot = false;
+
+    private float countdown = 0f;
+
+    void Update()
+    {
+        if (shoot == true && countdown > 20)
+        {
+            Shot();
+        }
+
+        countdown += 1;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             enemy.Target = other.gameObject;
-            //Debug.Log("Target locked");
+            shoot = true;
+
         }
     }
-
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            shoot = false;
             enemy.Target = null;
-            //Debug.Log("Target not locked");
         }
     }
-
+    void Shot()
+    {
+        blobgun.Bullet = (GameObject)Instantiate(blobgun.BulletPrefab, firePoint.position, firePoint.rotation);
+        Destroy(blobgun.Bullet, blobgun.BulletLife);
+        countdown = 0;
+    }
 }
+
 
