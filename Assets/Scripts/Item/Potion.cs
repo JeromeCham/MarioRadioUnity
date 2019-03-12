@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class Potion
+public class Potion : Item
 {
     [SerializeField]
     private GameObject potionPrefab;
@@ -12,7 +12,7 @@ public class Potion
     [SerializeField]
     private GameObject potion2;
 
-  
     public GameObject PotionPrefab { get => potionPrefab; set => potionPrefab = value; }
     public GameObject Potion2 { get => potion2; set => potion2 = value; }
+
 }
