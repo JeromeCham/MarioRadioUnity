@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Green potion
   icon: {fileID: 21300000, guid: 46402a092826d2a49a50257186303e3b, type: 3}
   isDefaultItem: 0
+  description: "Immunit\xE9 contre la radioactivit\xE9"

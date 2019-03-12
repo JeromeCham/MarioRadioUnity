@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Gun
   icon: {fileID: 21300000, guid: d936eb08cd6b91e47888c66a20f77d8e, type: 3}
   isDefaultItem: 0
+  description: "Tire une balle \xE0 la fois"

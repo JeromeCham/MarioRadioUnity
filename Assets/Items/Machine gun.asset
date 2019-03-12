@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Machine gun
   icon: {fileID: 21300000, guid: dda9c144d5eb2b342b6aac236bec9cdb, type: 3}
   isDefaultItem: 0
+  description: "Tire plusieurs balles \xE0 la fois"

@@ -15,3 +15,4 @@ MonoBehaviour:
   name: RocketLauncher
   icon: {fileID: 21300000, guid: 15b72d776a634ee49a0419713f34b08b, type: 3}
   isDefaultItem: 0
+  description: Tire un missile qui explose en touchant un ennemi

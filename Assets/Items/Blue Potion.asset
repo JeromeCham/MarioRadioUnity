@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Blue potion
   icon: {fileID: 21300000, guid: 4abdec2982f921246b39afd26154f039, type: 3}
   isDefaultItem: 0
+  description: Vous permet de sauter plus haut
