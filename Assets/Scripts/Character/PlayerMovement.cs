@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private Stat health;
 
     [SerializeField]
+    public Stat neutraliser;
+
+    [SerializeField]
     private int money = 50;
 
     [SerializeField]
@@ -54,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        neutraliser.Initialized();
         health.Initialized();
         tempMoney = moneyText.text;
         tempAmmo = ammoText.text;
@@ -125,6 +129,9 @@ public class PlayerMovement : MonoBehaviour
         {
             health.CurrentValue -= 10;
         }
+        if (Input.GetKeyDown(KeyCode.X)) neutraliser.CurrentValue += 1;
+
+        if (Input.GetKeyDown(KeyCode.Z)) neutraliser.CurrentValue -= 1;
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -231,4 +238,5 @@ public class PlayerMovement : MonoBehaviour
         isUsingBluePotion = true;
         if (timerBlue <= 1000) controller.m_JumpForce += 200;
     }
+
 }
