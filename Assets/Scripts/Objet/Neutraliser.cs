@@ -8,11 +8,14 @@ public class Neutraliser : MonoBehaviour
 
     private PlayerMovement player;
 
+    [SerializeField]
+    private GameObject bar;
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-
+            bar.SetActive(true);
             player = other.GetComponentInParent<PlayerMovement>();
             player.neutraliser.CurrentValue += 1;
             Destroy(gameObject);

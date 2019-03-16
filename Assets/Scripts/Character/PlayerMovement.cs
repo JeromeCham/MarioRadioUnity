@@ -129,9 +129,6 @@ public class PlayerMovement : MonoBehaviour
         {
             health.CurrentValue -= 10;
         }
-        if (Input.GetKeyDown(KeyCode.X)) neutraliser.CurrentValue += 1;
-
-        if (Input.GetKeyDown(KeyCode.Z)) neutraliser.CurrentValue -= 1;
 
         if (Input.GetKeyDown(KeyCode.W))
         {
