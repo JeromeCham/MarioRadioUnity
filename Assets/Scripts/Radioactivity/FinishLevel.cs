@@ -10,7 +10,7 @@ public class FinishLevel : MonoBehaviour
     {
         player = other.GetComponentInParent<PlayerMovement>();
 
-        if (other.tag == "Player" && player.neutraliser.CurrentValue == 10)
+        if (other.tag == "Player" && player.Neutraliser.CurrentValue == 10 && player.Health.CurrentValue > 0)
         {
             FindObjectOfType<GameManager>().NextLevel();
             Debug.Log("collision");

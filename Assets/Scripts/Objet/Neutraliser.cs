@@ -17,7 +17,7 @@ public class Neutraliser : MonoBehaviour
         {
             bar.SetActive(true);
             player = other.GetComponentInParent<PlayerMovement>();
-            player.neutraliser.CurrentValue += 1;
+            player.Neutraliser.CurrentValue += 1;
             Destroy(gameObject);
         }
     }

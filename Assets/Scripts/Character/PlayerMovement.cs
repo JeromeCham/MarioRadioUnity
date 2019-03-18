@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Stat health;
 
     [SerializeField]
-    public Stat neutraliser;
+    private Stat neutraliser;
 
     [SerializeField]
     private int money = 50;
@@ -55,10 +55,36 @@ public class PlayerMovement : MonoBehaviour
     int timerBlue = 0;
     private bool active = false;
 
+    public Stat Neutraliser
+    {
+        get
+        {
+            return neutraliser;
+        }
+
+        set
+        {
+            neutraliser = value;
+        }
+    }
+
+    public Stat Health
+    {
+        get
+        {
+            return health;
+        }
+
+        set
+        {
+            health = value;
+        }
+    }
+
     private void Awake()
     {
-        neutraliser.Initialized();
-        health.Initialized();
+        Neutraliser.Initialized();
+        Health.Initialized();
         tempMoney = moneyText.text;
         tempAmmo = ammoText.text;
     }
@@ -127,15 +153,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            health.CurrentValue -= 10;
+            Health.CurrentValue -= 10;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            health.CurrentValue += 10;
+            Health.CurrentValue += 10;
         }
 
-        if (health.CurrentValue == 0)
+        if (Health.CurrentValue == 0)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
@@ -206,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
         if (currentCooldown <= 0)
         {
             currentCooldown += maxCooldown;
-            health.CurrentValue -= dmg;
+            Health.CurrentValue -= dmg;
             return currentCooldown;
         }
         return currentCooldown;
@@ -215,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void takeDmg(float dmg)
     {
-        health.CurrentValue -= dmg;
+        Health.CurrentValue -= dmg;
     }
 
     public void GreenPotion()
@@ -226,8 +252,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void RedPotion()
     {
-        health.CurrentValue += 50;
-        if (health.CurrentValue > 100) health.CurrentValue = 100;
+        Health.CurrentValue += 50;
+        if (Health.CurrentValue > 100) Health.CurrentValue = 100;
     }
 
     public void BluePotion()

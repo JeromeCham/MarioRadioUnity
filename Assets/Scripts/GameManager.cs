@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    bool gameHasEnded = false;
+    private bool gameHasEnded = false;
 
-    public float restartDelay = 0f;
+    [SerializeField]
+    private float restartDelay = 0f;
 
     public void EndGame()
     {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    void Restart()
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
