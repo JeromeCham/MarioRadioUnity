@@ -378,11 +378,9 @@ Transform:
   m_Children:
   - {fileID: 2004514720}
   - {fileID: 825152271}
-  - {fileID: 650298733}
   - {fileID: 1422804252}
-  - {fileID: 409094321}
-  - {fileID: 910668076}
   - {fileID: 743002954}
+  - {fileID: 1966837649}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3185,11 +3183,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409094320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.742886, y: 7.0971346, z: 0.35573184}
+  m_LocalPosition: {x: 14.17, y: 9.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 64681792}
-  m_RootOrder: 4
+  m_Father: {fileID: 1966837649}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &409094322
 BoxCollider2D:
@@ -4664,7 +4662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &650298733
 Transform:
   m_ObjectHideFlags: 0
@@ -4673,13 +4671,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650298732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.997115, y: -2.9128647, z: 0.51979434}
+  m_LocalPosition: {x: -10.910001, y: 2.8000002, z: 0.24609375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1758294571}
   - {fileID: 260485480}
-  m_Father: {fileID: 64681792}
-  m_RootOrder: 2
+  m_Father: {fileID: 825152271}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &650298734
 MonoBehaviour:
@@ -4697,7 +4695,7 @@ MonoBehaviour:
   onActivator: 0
   doorPositionInitial: {x: 4.35, y: -3.7, z: 0}
   doorPositionFinal: {x: 4.35, y: -1, z: 0}
-  nom: 
+  nom: Gate 1
 --- !u!58 &650298735
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5010,7 +5008,7 @@ Transform:
   m_LocalScale: {x: 3.506, y: 4.091, z: 1}
   m_Children: []
   m_Father: {fileID: 64681792}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &747430051
 GameObject:
@@ -6250,6 +6248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 227004031}
+  - {fileID: 650298733}
   m_Father: {fileID: 64681792}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6416,11 +6415,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910668075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.132885, y: 4.537135, z: 0.35573184}
+  m_LocalPosition: {x: 35.56, y: 6.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 64681792}
-  m_RootOrder: 5
+  m_Father: {fileID: 1966837649}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &910668077
 BoxCollider2D:
@@ -8591,7 +8590,7 @@ GameObject:
   - component: {fileID: 1261548524}
   - component: {fileID: 1261548523}
   m_Layer: 0
-  m_Name: GateCollider
+  m_Name: Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9460,7 +9459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1422804252
 Transform:
   m_ObjectHideFlags: 0
@@ -9469,13 +9468,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422804251}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 25.832886, y: -1.2528648, z: 0.35573184}
+  m_LocalPosition: {x: 25.8, y: -1.25, z: 0.35573184}
   m_LocalScale: {x: 1.0300004, y: 2.800001, z: 1.03}
   m_Children:
   - {fileID: 1261548522}
   - {fileID: 1530078549}
   m_Father: {fileID: 64681792}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1454923750
 GameObject:
@@ -9993,9 +9992,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActivated: 0
   onActivator: 0
-  doorPositionInitial: {x: 4.35, y: -3.7, z: 0}
-  doorPositionFinal: {x: 4.35, y: -1, z: 0}
-  nom: 
+  doorPositionInitial: {x: 24, y: 0.76, z: 0}
+  doorPositionFinal: {x: 32, y: 0.76, z: 0}
+  nom: Trap 1
 --- !u!4 &1530078549
 Transform:
   m_ObjectHideFlags: 0
@@ -19602,6 +19601,38 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1954564657}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1966837648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966837649}
+  m_Layer: 0
+  m_Name: Teleporteur A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1966837649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966837648}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5728853, y: -2.0128648, z: 0.35573184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 409094321}
+  - {fileID: 910668076}
+  m_Father: {fileID: 64681792}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991416702
 GameObject:
   m_ObjectHideFlags: 0

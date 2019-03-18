@@ -6,8 +6,8 @@ public class Activator : MonoBehaviour
 {
     public bool isActivated = false;
     public bool onActivator = false;
-    public Vector3 doorPositionInitial = new Vector3(4.35f, -3.7f, 0f);
-    public Vector3 doorPositionFinal = new Vector3(4.35f, -1f, 0f);
+    public Vector3 doorPositionInitial = new Vector3(0f, 0f, 0f);
+    public Vector3 doorPositionFinal = new Vector3(0f, 0f, 0f);
     public string nom;
 
     // Start is called before the first frame update
@@ -15,7 +15,6 @@ public class Activator : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(!isActivated);
         transform.GetChild(1).gameObject.SetActive(isActivated);
-        
     }
 
     // Update is called once per frame
