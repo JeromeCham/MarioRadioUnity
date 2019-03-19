@@ -22,6 +22,9 @@ public class ButtonPause : MonoBehaviour
     [SerializeField]
     private GameObject inInventory;
 
+    [SerializeField]
+    private PlayerMovement player;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -58,7 +61,8 @@ public class ButtonPause : MonoBehaviour
 
     public void InventoryGame()
     {
-        if (isPaused == false)
+        player = FindObjectOfType<PlayerMovement>();
+        if (isPaused == false && player.IsDead == false)
         {
             isInInventory = !isInInventory;
 

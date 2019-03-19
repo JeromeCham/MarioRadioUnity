@@ -42,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject greenPotion;
 
+    [SerializeField]
+    private Collider2D[] colliderList;
+
     private string tempMoney;
     private string tempAmmo;
     private int ammo;
@@ -54,6 +57,9 @@ public class PlayerMovement : MonoBehaviour
     int timerGreen = 0;
     int timerBlue = 0;
     private bool active = false;
+    private bool isDead;
+
+
 
     public Stat Neutraliser
     {
@@ -81,17 +87,35 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public bool IsDead
+    {
+        get
+        {
+            return isDead;
+        }
+
+        set
+        {
+            isDead = value;
+        }
+    }
+
     private void Awake()
     {
         Neutraliser.Initialized();
         Health.Initialized();
         tempMoney = moneyText.text;
         tempAmmo = ammoText.text;
+        isDead = false;
+        animator.SetBool("IsDead", false);
     }
     
     void Update()
     {
-        if(isUsingGreenPotion == true)
+
+        if (health.CurrentValue == 0) Die();
+
+        if (isUsingGreenPotion == true)
         {
             greenPotion.SetActive(true);
         }
@@ -161,11 +185,6 @@ public class PlayerMovement : MonoBehaviour
             Health.CurrentValue += 10;
         }
 
-        if (Health.CurrentValue == 0)
-        {
-            FindObjectOfType<GameManager>().EndGame();
-        }
-
         if (rb.velocity.y > 0 && controller.getGrounded() == false)
         {
             animator.SetBool("IsJumping", true);
@@ -181,33 +200,37 @@ public class PlayerMovement : MonoBehaviour
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
-        animator.SetBool("IsFalling", false);
+        animator.SetBool( "IsFalling", false);
     }
 
     public void OnCrouching(bool isCrouching)
     {
-        animator.SetBool("IsCrouching", isCrouching);
+        if (!isDead) animator.SetBool("IsCrouching", isCrouching);
     }
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
+        if (!isDead)
+        {
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+            jump = false;
+        }
+
         if (rb.position.y < minimumHeight)
         {
-            FindObjectOfType<GameManager>().EndGame();
+            Die();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Finish")
+        if (other.tag == "Finish" && !isDead)
         {
             FindObjectOfType<GameManager>().NextLevel();
             Debug.Log("Finish");
         }
 
-        if (other.tag == "Shop")
+        if (other.tag == "Shop" && !isDead)
         {
             active = true;
         }
@@ -221,7 +244,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Shop")
+        if (other.tag == "Shop" && !isDead)
         {
             active = false;
         }
@@ -246,20 +269,39 @@ public class PlayerMovement : MonoBehaviour
 
     public void GreenPotion()
     {
-        isUsingGreenPotion = true;
+        if (!isDead) isUsingGreenPotion = true;
         //if (timer <= 1000) runSpeed += 100;
     }
 
     public void RedPotion()
     {
-        Health.CurrentValue += 50;
-        if (Health.CurrentValue > 100) Health.CurrentValue = 100;
+        if (!isDead)
+        {
+            Health.CurrentValue += 50;
+            if (Health.CurrentValue > 100) Health.CurrentValue = 100;
+        }       
     }
 
     public void BluePotion()
     {
-        isUsingBluePotion = true;
-        if (timerBlue <= 1000) controller.m_JumpForce += 200;
+        if (!isDead)
+        {
+            isUsingBluePotion = true;
+            if (timerBlue <= 1000) controller.m_JumpForce += 200;
+        }
     }
 
+    public void Die()
+    {
+        animator.SetBool("IsDead", true);
+        isDead = true;
+        rb.velocity = new Vector2(0, 0.6f);
+        FindObjectOfType<GameManager>().EndGame();
+
+        for (int i = 0; i < colliderList.Length; i++)
+        {
+            colliderList[i].enabled = false;
+        }
+     
+    }
 }

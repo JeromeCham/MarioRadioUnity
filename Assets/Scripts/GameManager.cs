@@ -1,5 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,17 +9,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float restartDelay = 0f;
 
+    [SerializeField]
+    private GameObject text;
+
     public void EndGame()
     {
         if (gameHasEnded == false)
         {
+            text.SetActive(true);
             gameHasEnded = true;
             Debug.Log("GAME OVER");
             Invoke("Restart", restartDelay);
         }
     }
 
-    public void EndLevel()
+    /*public void EndLevel()
     {
         if (gameHasEnded == false)
         {
@@ -26,7 +31,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Niveau terminé");
             Invoke("Restart", restartDelay);
         }
-    }
+    }*/
 
     public  void NextLevel()
     {
