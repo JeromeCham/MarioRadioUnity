@@ -240,12 +240,6 @@ public class PlayerMovement : MonoBehaviour
         {
             active = true;
         }
-
-        /*if (other.tag == "green potion")
-        {
-            Debug.Log("Potion verte");
-            Destroy(other.gameObject);
-        }*/
     }
 
     private void OnTriggerExit2D(Collider2D other)
