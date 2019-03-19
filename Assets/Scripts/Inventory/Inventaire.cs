@@ -169,7 +169,7 @@ public class Inventaire : MonoBehaviour
                 {
                     bazouka.Bullet = (GameObject)Instantiate(bazouka.BulletPrefab, firePoint.position, firePoint.rotation);
                     Destroy(bazouka.Bullet, bazouka.BulletLife);
-                    ammo -= 1;
+                    ammo -= 10;
                 }
                 break;
         }
