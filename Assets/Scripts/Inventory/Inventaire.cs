@@ -90,7 +90,7 @@ public class Inventaire : MonoBehaviour
         }
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-        //selectobject = item.name;
+        selectobject = item.name;
         Debug.Log(item.name);
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
@@ -160,6 +160,10 @@ public class Inventaire : MonoBehaviour
                 if (Input.GetButtonDown("Fire1") && ammo > 0)
                 {
                     pistolet.Bullet = (GameObject)Instantiate(pistolet.BulletPrefab, firePoint.position, firePoint.rotation);
+                    void OnCollisionEnter2D(Collision2D col)
+                    {
+
+                    }
                     Destroy(pistolet.Bullet, pistolet.BulletLife);
                     ammo -= 1;
                 }

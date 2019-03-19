@@ -45,7 +45,8 @@ public class Arme
     }
     public GameObject Gun
     {
-        get => gun; set => gun = value;
+        get => gun;
+        set => gun = value;
     }
     
 }

@@ -1513,8 +1513,8 @@ GameObject:
   m_Component:
   - component: {fileID: 227004031}
   - component: {fileID: 227004033}
-  - component: {fileID: 227004032}
   - component: {fileID: 227004034}
+  - component: {fileID: 227004032}
   m_Layer: 0
   m_Name: GateCollider
   m_TagString: Untagged
@@ -1530,8 +1530,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227004030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.791, y: 0.825, z: 1}
+  m_LocalPosition: {x: -0.65, y: -0.22, z: 0}
+  m_LocalScale: {x: 2.0432227, y: 2.027084, z: 1}
   m_Children: []
   m_Father: {fileID: 825152271}
   m_RootOrder: 0
@@ -1553,14 +1553,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 3.38}
-    newSize: {x: 1.26, y: 3.38}
+    oldSize: {x: 0.32, y: 1.28}
+    newSize: {x: 0.32, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.26, y: 3.38}
+  m_Size: {x: 0.32, y: 1.28}
   m_EdgeRadius: 0
 --- !u!212 &227004033
 SpriteRenderer:
@@ -1599,12 +1599,12 @@ SpriteRenderer:
   m_SortingLayerID: -1798421931
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a9bba5fe40031944588a17336e30b874, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d495fc1db451d434bb5b64b36e0da371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 3.38}
+  m_Size: {x: 0.32, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3819,7 +3819,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8e279f820ffa61741a007156774b4e7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0038b54a8db33b24abcb27ef9b498d40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4841,8 +4841,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650298732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.910001, y: 2.8000002, z: 0.24609375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.11, y: -1.03, z: 0.24609375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1758294571}
@@ -4864,8 +4864,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActivated: 0
   onActivator: 0
-  doorPositionInitial: {x: 4.35, y: -3.7, z: 0}
-  doorPositionFinal: {x: 4.35, y: -1, z: 0}
+  doorPositionInitial: {x: 4.19, y: -3.83, z: 0}
+  doorPositionFinal: {x: 4.19, y: -1.2, z: 0}
   nom: Gate 1
 --- !u!58 &650298735
 CircleCollider2D:
@@ -6824,7 +6824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825152270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.92, y: -5.712865, z: 0.2737006}
+  m_LocalPosition: {x: 6.4, y: -5.61, z: 0.2737006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 227004031}
