@@ -1487,9 +1487,9 @@ MonoBehaviour:
       type: 3}
     bullet: {fileID: 0}
     bulletLife: 3
-  potionverte: {fileID: 0}
-  potionrouge: {fileID: 0}
-  potionbleue: {fileID: 0}
+  potionverte: {fileID: 11400000, guid: c0bc3cf58fc382a489063ae96fbbac8f, type: 2}
+  potionrouge: {fileID: 11400000, guid: 2916890f854410c4299b69d581d4d703, type: 2}
+  potionbleue: {fileID: 11400000, guid: 8ca9a6395e9e84948b5702b79a26e4e4, type: 2}
   imageArmeUI: {fileID: 1904395975}
   selectobject: ' '
   objectname: ' '

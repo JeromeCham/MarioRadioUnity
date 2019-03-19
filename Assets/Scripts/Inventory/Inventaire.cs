@@ -90,7 +90,7 @@ public class Inventaire : MonoBehaviour
         }
         Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-        selectobject = item.name;
+        //selectobject = item.name;
         Debug.Log(item.name);
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
