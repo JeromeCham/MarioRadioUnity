@@ -16,6 +16,7 @@ TagManager:
   - Magazine
   - Shop
   - blue potion
+  - pont
   layers:
   - Default
   - TransparentFX
