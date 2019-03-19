@@ -16,5 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 4abdec2982f921246b39afd26154f039, type: 3}
   isDefaultItem: 0
   description: Permet de sauter plus haut
-  potionPrefab: {fileID: 0}
+  potionPrefab: {fileID: 3019476235467119352, guid: 72dd646b1b844db46a2246aeeb6b530b,
+    type: 3}
   potion2: {fileID: 0}

@@ -41,13 +41,21 @@ public class Activator : MonoBehaviour
 
     bool OnTriggerEnter2D(Collider2D col)
     {
-        onActivator = true;
+        if (col.tag == "Player")
+        {
+            onActivator = true;
+            return onActivator;
+        }
         return onActivator;
     }
 
     bool OnTriggerExit2D(Collider2D col)
     {
-        onActivator = false;
+        if (col.tag == "Player")
+        {
+            onActivator = false;
+            return onActivator;
+        }
         return onActivator;
     }
 }
