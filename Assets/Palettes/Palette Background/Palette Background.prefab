@@ -44,6 +44,24 @@ Tilemap:
   - first: {x: -5, y: -6, z: 0}
     second:
       m_TileIndex: 10
+      m_TileSpriteIndex: 16
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: -3, y: -5, z: 0}
+    second:
+      m_TileIndex: 14
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: -2, y: -5, z: 0}
+    second:
+      m_TileIndex: 16
       m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -77,10 +95,10 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 0, y: -4, z: 0}
+  - first: {x: 1, y: -4, z: 0}
     second:
-      m_TileIndex: 14
-      m_TileSpriteIndex: 14
+      m_TileIndex: 15
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -89,7 +107,7 @@ Tilemap:
   - first: {x: -4, y: -2, z: 0}
     second:
       m_TileIndex: 7
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -98,7 +116,7 @@ Tilemap:
   - first: {x: -3, y: -2, z: 0}
     second:
       m_TileIndex: 6
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -207,16 +225,18 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 7594d4f0b6b22d145bbe192408038cff, type: 2}
   - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 3673052cd006efc4ca8b2cd13d9e85e1, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 2708d23495e718546945d396eccf454f, type: 2}
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: efdec32ad5c607341897d48d28643dde, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: fad26b059e5bd1b43922eb1fede119be, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 22b42bc38def3894b8906ae71be38f05, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: f56089c0e9d834d4e9c548e37abe723c, type: 3}
+    m_Data: {fileID: 21300000, guid: 9675202cd61736b4f9d4231d59d8058d, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 258ced7a9926407449da3faa6b1b7fb0, type: 3}
   - m_RefCount: 1
@@ -232,7 +252,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: eae21b6afb9812b459f674a62cab8799, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: aa66532c0125a6e458b8a3e585dd088a, type: 3}
+    m_Data: {fileID: 21300000, guid: f56089c0e9d834d4e9c548e37abe723c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 472c763bc1355824a9bfa143f156c285, type: 3}
   - m_RefCount: 1
@@ -240,11 +260,13 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 16732bd50757fe94a88ac65f2e6f20d8, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: aa66532c0125a6e458b8a3e585dd088a, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 095ad3294c835a849b1c6999fe3d1c8f, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 9924a8d5292df2a418e34e9a9739cb7d, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 15
+  - m_RefCount: 17
     m_Data:
       e00: 1
       e01: 0
@@ -263,14 +285,14 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 15
+  - m_RefCount: 17
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   - m_RefCount: 0
-    m_Data: {r: 3.0517e-41, g: 3.0517e-41, b: 3.0517e-41, a: 3.0517e-41}
-  - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 0
+    m_Data: {r: 1e-45, g: 1e-45, b: 1e-45, a: 1e-45}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -5, y: -8, z: 0}
