@@ -17,6 +17,8 @@ TagManager:
   - Shop
   - blue potion
   - pont
+  - Gate
+  - Tilemap solid
   layers:
   - Default
   - TransparentFX

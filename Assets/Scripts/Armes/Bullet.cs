@@ -35,6 +35,14 @@ public class Bullet : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        if (hitInfo.tag == "Gate")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.tag == "Tilemap solid")
+        {
+            Destroy(gameObject);
+        }
         else
         {
             if (destroy == true)
