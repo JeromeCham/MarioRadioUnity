@@ -19,6 +19,8 @@ TagManager:
   - pont
   - Gate
   - Tilemap solid
+  - MagazineMitraillette
+  - MagazineBazouka
   layers:
   - Default
   - TransparentFX

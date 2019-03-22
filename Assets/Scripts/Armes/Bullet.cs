@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
             Shooting enemy = hitInfo.GetComponent<Shooting>();
             if (enemy != null)
             {
-                enemy.TakeDamage(10);
+                enemy.TakeDamage(5);
             }
             Destroy(gameObject);
         }
