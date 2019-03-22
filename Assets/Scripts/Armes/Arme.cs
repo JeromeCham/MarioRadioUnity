@@ -21,6 +21,9 @@ public class Arme
     [SerializeField]
     private float bulletLife = 1;
 
+    [SerializeField]
+    private int ammo = 1;
+
     public GameObject BulletPrefab
     {
         get => bulletPrefab;
@@ -48,6 +51,10 @@ public class Arme
         get => gun;
         set => gun = value;
     }
-    
+    public int Ammo
+    {
+        get => ammo;
+        set => ammo = value;
+    }
 }
 

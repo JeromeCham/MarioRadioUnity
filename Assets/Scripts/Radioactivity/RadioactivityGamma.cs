@@ -27,6 +27,8 @@ public class RadioactivityGamma : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            // L'équation pour la radioactivité n'est pas exacte; la vraie implique un 1/r^2, mais ceci rend les dégats complètement insignifiants.
+            //Jérôme: Je vais voir ce que je peux faire pour la rendre plus proche à la vraie formule.
             float radius = (gameObject.GetComponent<Collider2D>() as CircleCollider2D).radius;
             PlayerMovement player = col.GetComponent<PlayerMovement>();
             float proximity = Vector2.Distance(gameObject.transform.position, player.transform.position);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ceiling : MonoBehaviour
+public class ceiling : CharacterController2D
 {
     [SerializeField]
     private Collider2D pont;

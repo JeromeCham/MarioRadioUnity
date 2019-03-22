@@ -37,7 +37,7 @@ public class Rocket : MonoBehaviour
             Shooting enemy = hitInfo.GetComponent<Shooting>();
             if (enemy != null)
             {
-                enemy.TakeDamage(5);
+                enemy.TakeDamage(50);
             }
 
             hit = true;

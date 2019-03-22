@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Stat neutraliser;
 
     [SerializeField]
-    private int money = 50;
+    private Stat level;
+
+    public int exp;
 
     [SerializeField]
     private CharacterController2D controller;
@@ -31,12 +33,6 @@ public class PlayerMovement : MonoBehaviour
     private float minimumHeight = -20f;
 
     [SerializeField]
-    private TextMeshProUGUI moneyText;
-
-    [SerializeField]
-    private TextMeshProUGUI ammoText;
-
-    [SerializeField]
     private GameObject bluePotion;
 
     [SerializeField]
@@ -45,9 +41,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Collider2D[] colliderList;
 
-    private string tempMoney;
-    private string tempAmmo;
-    private int ammo;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -58,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     int timerBlue = 0;
     private bool active = false;
     private bool isDead;
+    private int moneytemp;
 
 
 
@@ -87,6 +81,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public Stat Level
+    {
+        get
+        {
+            return level;
+        }
+
+        set
+        {
+            level = value;
+        }
+    }
+
     public bool IsDead
     {
         get
@@ -104,8 +111,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Neutraliser.Initialized();
         Health.Initialized();
-        tempMoney = moneyText.text;
-        tempAmmo = ammoText.text;
+        
         isDead = false;
         animator.SetBool("IsDead", false);
     }
@@ -133,16 +139,14 @@ public class PlayerMovement : MonoBehaviour
             bluePotion.SetActive(false);
         }
 
-        if (active == true && Input.GetKeyDown(KeyCode.E) && money > 0)
+        moneytemp = Inventaire.instance.Nbmoney();
+        if (active == true && Input.GetKeyDown(KeyCode.E) && moneytemp > 0)
         {
-            Inventaire.instance.AddMagazine();
-            money -= 10;
+            Inventaire.instance.AddMagazinePistolet();
+            Inventaire.instance.MoinsShop();
         }
 
-        ammo = Inventaire.instance.NbAmmo();
-
-        moneyText.text = money + tempMoney;
-        ammoText.text = ammo + tempAmmo;
+       
 
         if (isUsingGreenPotion) timerGreen++;
         if (timerGreen == 1000)
