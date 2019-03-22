@@ -5489,7 +5489,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0021184832, y: -0.067564435}
+  m_Offset: {x: -0.0021184832, y: -0.07294886}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5500,7 +5500,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13061374, y: 0.21910639}
+  m_Size: {x: 0.13061374, y: 0.18679953}
   m_EdgeRadius: 0
 --- !u!114 &801982547
 MonoBehaviour:
@@ -5514,6 +5514,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a4b909ab99ad04caa5d0037e522c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_JumpForce: 800
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.05
+  m_AirControl: 0
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  m_GroundCheck: {fileID: 0}
+  m_CeilingCheck: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 0}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CharacterController2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   pont: {fileID: 754855557}
 --- !u!1 &816672995
 GameObject:
