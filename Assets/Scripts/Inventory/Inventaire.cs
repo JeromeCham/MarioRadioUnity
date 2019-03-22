@@ -2,9 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Inventaire : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI moneyText;
+
+    [SerializeField]
+    private TextMeshProUGUI ammoText;
+
+    [SerializeField]
+    private int money = 50;
+
     [SerializeField]
     private Transform firePoint;
 
@@ -46,8 +56,11 @@ public class Inventaire : MonoBehaviour
     [SerializeField]
     private string objectname = "";
 
-    private int ammo = 0;
     private int count = 0;
+
+    private string tempMoney;
+    private string tempAmmo;
+    private int ammo=0;
 
     #endregion
 
@@ -61,6 +74,9 @@ public class Inventaire : MonoBehaviour
 
     private void Awake()
     {
+        tempMoney = moneyText.text;
+        tempAmmo = ammoText.text;
+
         if (instance != null)
         {
             Debug.LogWarning("Plus qu'un inventaire");
@@ -72,6 +88,22 @@ public class Inventaire : MonoBehaviour
 
     void Update()
     {
+        switch (selectobject)
+        {
+            case "Machine gun":
+                    ammo = NbAmmoMitraillette();
+                break;
+            case "Gun":
+                    ammo = NbAmmoPistolet();
+                break;
+            case "RocketLauncher":
+                    ammo = NbAmmoBazouka();
+                break;
+        }
+        
+
+        moneyText.text = money + tempMoney;
+        ammoText.text = ammo + tempAmmo;
         
         if (shoot == true)
         {
@@ -138,13 +170,41 @@ public class Inventaire : MonoBehaviour
         tempcolor.a = 255f;
         imageArmeUI.GetComponent<Image>().color = tempcolor;
     }
-    public void AddMagazine()
+    public void AddMagazinePistolet()
     {
-        ammo += 30;
+        pistolet.Ammo += 30;
     }
-    public int NbAmmo()
+    public int NbAmmoPistolet()
     {
-        return ammo;
+        return pistolet.Ammo;
+    }
+
+    public void AddMagazineMitraillette()
+    {
+        mitraillette.Ammo += 50;
+    }
+    public int NbAmmoMitraillette()
+    {
+        return mitraillette.Ammo;
+    }
+
+    public void AddMagazineBazouka()
+    {
+        bazouka.Ammo += 5;
+    }
+    public int NbAmmoBazouka()
+    {
+        return bazouka.Ammo;
+    }
+
+    public int Nbmoney()
+    {
+        return money;
+    }
+    public int MoinsShop()
+    {
+        money-=10;
+        return money;
     }
 
     private void Fire()
@@ -152,27 +212,27 @@ public class Inventaire : MonoBehaviour
         switch (selectobject)
         {
             case "Machine gun":
-                if (Input.GetButton("Fire1") && ammo > 0)
+                if (Input.GetButton("Fire1") && mitraillette.Ammo > 0)
                 {
                     mitraillette.Bullet = (GameObject)Instantiate(mitraillette.BulletPrefab, firePoint.position, firePoint.rotation);
                     Destroy(mitraillette.Bullet, mitraillette.BulletLife);
-                    ammo -= 1;
+                    mitraillette.Ammo -= 1;
                 }
                 break;
             case "Gun":
-                if (Input.GetButtonDown("Fire1") && ammo > 0)
+                if (Input.GetButtonDown("Fire1") && pistolet.Ammo > 0)
                 {
                     pistolet.Bullet = (GameObject)Instantiate(pistolet.BulletPrefab, firePoint.position, firePoint.rotation);
                     Destroy(pistolet.Bullet, pistolet.BulletLife);
-                    ammo -= 1;
+                    pistolet.Ammo -= 1;
                 }
                 break;
             case "RocketLauncher":
-                if (Input.GetButtonDown("Fire1") && ammo > 0)
+                if (Input.GetButtonDown("Fire1") && bazouka.Ammo > 0)
                 {
                     bazouka.Bullet = (GameObject)Instantiate(bazouka.BulletPrefab, firePoint.position, firePoint.rotation);
                     Destroy(bazouka.Bullet, bazouka.BulletLife);
-                    ammo -= 10;
+                    bazouka.Ammo -= 1;
                 }
                 break;
         }
@@ -208,7 +268,17 @@ public class Inventaire : MonoBehaviour
     {
         if (other.tag == "Magazine")
         {
-            Inventaire.instance.AddMagazine();
+            Inventaire.instance.AddMagazinePistolet();
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "MagazineMitraillette")
+        {
+            Inventaire.instance.AddMagazineMitraillette();
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "MagazineBazouka")
+        {
+            Inventaire.instance.AddMagazinePistolet();
             Destroy(other.gameObject);
         }
     }

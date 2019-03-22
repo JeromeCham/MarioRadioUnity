@@ -17,6 +17,10 @@ TagManager:
   - Shop
   - blue potion
   - pont
+  - Gate
+  - Tilemap solid
+  - MagazineMitraillette
+  - MagazineBazouka
   layers:
   - Default
   - TransparentFX
