@@ -13,6 +13,11 @@ public class PlayerMovement : MonoBehaviour
     private Stat neutraliser;
 
     [SerializeField]
+    private Stat level;
+
+    public int exp;
+
+    [SerializeField]
     private CharacterController2D controller;
 
     [SerializeField]
@@ -26,8 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private float minimumHeight = -20f;
-
-    
 
     [SerializeField]
     private GameObject bluePotion;
@@ -75,6 +78,19 @@ public class PlayerMovement : MonoBehaviour
         set
         {
             health = value;
+        }
+    }
+
+    public Stat Level
+    {
+        get
+        {
+            return level;
+        }
+
+        set
+        {
+            level = value;
         }
     }
 

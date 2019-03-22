@@ -1379,6 +1379,11 @@ MonoBehaviour:
     bar: {fileID: 1389268684}
     maxVal: 10
     currentVal: 0
+  level:
+    bar: {fileID: 0}
+    maxVal: 0
+    currentVal: 0
+  exp: 0
   controller: {fileID: 207696936}
   animator: {fileID: 207696941}
   rb: {fileID: 207696935}
@@ -1390,7 +1395,7 @@ MonoBehaviour:
   - {fileID: 207696934}
   - {fileID: 207696942}
   - {fileID: 207696940}
-  isUsingGreenPotion: 0
+  isUsingGreenPotion: 1
   isUsingBluePotion: 0
 --- !u!58 &207696940
 CircleCollider2D:
@@ -9810,7 +9815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1330656349
 MonoBehaviour:
   m_ObjectHideFlags: 0
