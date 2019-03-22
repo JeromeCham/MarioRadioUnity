@@ -1473,6 +1473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 404170452}
   ammoText: {fileID: 1041363546}
+  AmmoText2: {fileID: 1041363544}
   money: 50
   firePoint: {fileID: 177682773}
   dropPoint: {fileID: 1683173435}

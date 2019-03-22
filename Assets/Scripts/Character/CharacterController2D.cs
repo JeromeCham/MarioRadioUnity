@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.Events;
 
 
@@ -84,6 +83,7 @@ public class CharacterController2D : MonoBehaviour
             }
 
         }
+
 
     }
 
@@ -191,7 +191,6 @@ public class CharacterController2D : MonoBehaviour
 
         transform.Rotate(0f, 180f, 0f);
     }
-
     public bool getGrounded()
     {
         return m_Grounded;

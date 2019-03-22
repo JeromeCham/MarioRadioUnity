@@ -13,6 +13,10 @@ public class Inventaire : MonoBehaviour
     private TextMeshProUGUI ammoText;
 
     [SerializeField]
+    private GameObject AmmoText2;
+
+
+    [SerializeField]
     private int money = 50;
 
     [SerializeField]
@@ -99,11 +103,21 @@ public class Inventaire : MonoBehaviour
             case "RocketLauncher":
                     ammo = NbAmmoBazouka();
                 break;
+            default:
+                ammo = -1;
+                break;
         }
-        
-
         moneyText.text = money + tempMoney;
+        if(ammo == -1)
+        {
+            AmmoText2.SetActive(false);
+        }
+        else
+        {
+            AmmoText2.SetActive(true);
+        }
         ammoText.text = ammo + tempAmmo;
+        
         
         if (shoot == true)
         {
