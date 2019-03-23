@@ -4756,9 +4756,10 @@ GameObject:
   m_Component:
   - component: {fileID: 648425039}
   - component: {fileID: 648425041}
+  - component: {fileID: 648425042}
   m_Layer: 8
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: pont2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4796,6 +4797,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &648425042
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648425038}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0019644722, y: 0.0064402097}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.13955455, y: 0.008192194}
+  m_EdgeRadius: 0
 --- !u!1 &650298732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5250,9 +5277,11 @@ GameObject:
   - component: {fileID: 754855555}
   - component: {fileID: 754855557}
   - component: {fileID: 754855558}
-  m_Layer: 0
+  - component: {fileID: 754855559}
+  - component: {fileID: 754855560}
+  m_Layer: 9
   m_Name: Tilemap Pont
-  m_TagString: pont
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5265,7 +5294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754855553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 74088610}
@@ -5506,6 +5535,32 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &754855559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754855553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a4b909ab99ad04caa5d0037e522c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pont: {fileID: 754855553}
+--- !u!114 &754855560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754855553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b2c203bc921a54cac2ea5661fc5e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pont2: {fileID: 754855553}
 --- !u!1 &772291416
 GameObject:
   m_ObjectHideFlags: 0
@@ -5643,9 +5698,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801982545}
+  - component: {fileID: 801982546}
   m_Layer: 8
   m_Name: CeilingCheck
-  m_TagString: Untagged
+  m_TagString: pont
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5664,6 +5720,32 @@ Transform:
   m_Father: {fileID: 207696938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &801982546
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801982544}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.015690196, y: -0.002969124}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.18561119, y: 0.007856571}
+  m_EdgeRadius: 0
 --- !u!1 &816672995
 GameObject:
   m_ObjectHideFlags: 0

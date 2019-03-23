@@ -21,6 +21,7 @@ TagManager:
   - Tilemap solid
   - MagazineMitraillette
   - MagazineBazouka
+  - pont2
   layers:
   - Default
   - TransparentFX

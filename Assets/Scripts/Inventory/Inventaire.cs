@@ -292,7 +292,7 @@ public class Inventaire : MonoBehaviour
         }
         if (other.tag == "MagazineBazouka")
         {
-            Inventaire.instance.AddMagazinePistolet();
+            Inventaire.instance.AddMagazineBazouka();
             Destroy(other.gameObject);
         }
     }
