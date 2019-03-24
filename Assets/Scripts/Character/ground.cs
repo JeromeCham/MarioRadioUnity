@@ -5,13 +5,13 @@ using UnityEngine;
 public class ground : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pont2;
+    private GameObject pont;
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "pont2")
         {
-            pont2.layer = 0;
+            pont.layer = 0;
         }
     }
 }
