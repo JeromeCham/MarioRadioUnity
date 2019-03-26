@@ -101,7 +101,7 @@ public class ButtonPause : MonoBehaviour
         {
             isInShop = !isInShop;
 
-            if (isInInventory == true)
+            if (isInShop == true)
             {
                 Time.timeScale = 0;
                 AudioListener.pause = true;
