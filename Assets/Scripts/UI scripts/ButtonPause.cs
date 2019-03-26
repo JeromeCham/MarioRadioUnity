@@ -7,7 +7,7 @@ public class ButtonPause : MonoBehaviour
 {
     private bool isPaused = false;
     private bool isInInventory = false;
-    private bool fixFonction = false;
+    private bool isInShop = false;
     int count = 0;
 
     [SerializeField]
@@ -23,6 +23,9 @@ public class ButtonPause : MonoBehaviour
     private GameObject inInventory;
 
     [SerializeField]
+    private GameObject shopMenuUI;
+
+    [SerializeField]
     private PlayerMovement player;
 
     private void Update()
@@ -36,11 +39,17 @@ public class ButtonPause : MonoBehaviour
         {
             InventoryGame();
         }
+
+        /*if (Input.GetKeyDown(KeyCode.E) && )
+        {
+            ShopGame();
+        }*/
     }
 
     public void PauseGame()
     {
-        if (isInInventory == false)
+        player = FindObjectOfType<PlayerMovement>();
+        if (isInInventory == false && isInShop == false && player.IsDead == false)
         {
             isPaused = !isPaused;
 
@@ -62,7 +71,7 @@ public class ButtonPause : MonoBehaviour
     public void InventoryGame()
     {
         player = FindObjectOfType<PlayerMovement>();
-        if (isPaused == false && player.IsDead == false)
+        if (isPaused == false && isInShop == false && player.IsDead == false)
         {
             isInInventory = !isInInventory;
 
@@ -85,6 +94,27 @@ public class ButtonPause : MonoBehaviour
         }
     }
 
+    public void ShopGame()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+        if (isPaused == false && isInInventory == false && player.IsDead == false)
+        {
+            isInShop = !isInShop;
+
+            if (isInInventory == true)
+            {
+                Time.timeScale = 0;
+                AudioListener.pause = true;
+                shopMenuUI.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                AudioListener.pause = false;
+                shopMenuUI.SetActive(false);
+            }
+        }
+    }
     public void MainMenu()
     {
         Time.timeScale = 1;
