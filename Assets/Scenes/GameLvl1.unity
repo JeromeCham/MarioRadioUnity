@@ -4756,7 +4756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648425039}
   - component: {fileID: 648425041}
-  - component: {fileID: 648425042}
+  - component: {fileID: 648425040}
   m_Layer: 8
   m_Name: GroundCheck
   m_TagString: pont2
@@ -4772,12 +4772,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648425038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.017, y: -0.167, z: 0}
+  m_LocalPosition: {x: -0.02, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 207696938}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &648425040
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648425038}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.04}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.060704503, y: 0.000000014901161}
+  - {x: 0.06637282, y: 0.000000014901161}
 --- !u!95 &648425041
 Animator:
   serializedVersion: 3
@@ -4797,32 +4815,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &648425042
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648425038}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0019644722, y: 0.0064402097}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.13955455, y: 0.008192194}
-  m_EdgeRadius: 0
 --- !u!1 &650298732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5560,7 +5552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b2c203bc921a54cac2ea5661fc5e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pont2: {fileID: 754855553}
+  pont: {fileID: 754855553}
 --- !u!1 &772291416
 GameObject:
   m_ObjectHideFlags: 0
@@ -5698,7 +5690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801982545}
-  - component: {fileID: 801982546}
+  - component: {fileID: 801982547}
   m_Layer: 8
   m_Name: CeilingCheck
   m_TagString: pont
@@ -5720,8 +5712,8 @@ Transform:
   m_Father: {fileID: 207696938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &801982546
-BoxCollider2D:
+--- !u!68 &801982547
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5733,19 +5725,11 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015690196, y: -0.002969124}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.18561119, y: 0.007856571}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.066337295, y: 0.0029774234}
+  - {x: 0.07195108, y: 0.0029774308}
 --- !u!1 &816672995
 GameObject:
   m_ObjectHideFlags: 0
