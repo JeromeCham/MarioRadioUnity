@@ -47,9 +47,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject newLevelUI;
 
-    float horizontalMove = 0f;
-    bool jump = false;
-    bool crouch = false;
+    private float horizontalMove = 0f;
+    private bool jump = false;
+    private bool crouch = false;
     public bool isUsingGreenPotion = false;
     public bool isUsingBluePotion = false;
     private int timerGreen = 0;
