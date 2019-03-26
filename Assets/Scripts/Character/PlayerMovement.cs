@@ -13,9 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Stat neutraliser;
 
     [SerializeField]
-    private Stat level;
+    private Stat exp;
 
-    public int exp;
+    private int level;
 
     [SerializeField]
     private CharacterController2D controller;
@@ -41,19 +41,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Collider2D[] colliderList;
 
+    [SerializeField]
+    private TextMeshProUGUI levelText;
+
+    [SerializeField]
+    private GameObject newLevelUI;
 
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
     public bool isUsingGreenPotion = false;
     public bool isUsingBluePotion = false;
-    int timerGreen = 0;
-    int timerBlue = 0;
+    private int timerGreen = 0;
+    private int timerBlue = 0;
     private bool active = false;
     private bool isDead;
     private int moneytemp;
-
-
 
     public Stat Neutraliser
     {
@@ -81,16 +84,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public Stat Level
+    public Stat Experience
     {
         get
         {
-            return level;
+            return exp;
         }
 
         set
         {
-            level = value;
+            exp = value;
         }
     }
 
@@ -111,14 +114,16 @@ public class PlayerMovement : MonoBehaviour
     {
         Neutraliser.Initialized();
         Health.Initialized();
+        Experience.Initialized();
         
         isDead = false;
         animator.SetBool("IsDead", false);
+
+
     }
     
     void Update()
     {
-
         if (health.CurrentValue == 0) Die();
 
         if (isUsingGreenPotion == true)
@@ -139,11 +144,9 @@ public class PlayerMovement : MonoBehaviour
             bluePotion.SetActive(false);
         }
 
-        moneytemp = Inventaire.instance.Nbmoney();
-        if (active == true && Input.GetKeyDown(KeyCode.E) && moneytemp > 0)
+        if (active == true && Input.GetKeyDown(KeyCode.E))
         {
-            Inventaire.instance.AddMagazinePistolet();
-            Inventaire.instance.MoinsShop();
+            ButtonPause.instancePause.ShopGame();
         }
 
        
@@ -199,12 +202,20 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsFalling", true);
             animator.SetBool("IsJumping", false);
         }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            addExp(-10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            addExp(10);
+        }
     }
 
     public void setJumpForce(float valeur)
     {
         controller.m_JumpForce = valeur;
-        Debug.Log(controller.m_JumpForce);
     }
 
     public void OnLanding()
@@ -271,6 +282,17 @@ public class PlayerMovement : MonoBehaviour
         Health.CurrentValue -= dmg;
     }
 
+    public void addExp(int valeur)
+    {
+        Experience.CurrentValue += valeur;
+
+        if (Experience.CurrentValue >= Experience.MaxVal)
+        {   
+            Experience.CurrentValue = 0;
+            NewLevel();
+        }
+    }
+
     public void GreenPotion()
     {
         if (!isDead) isUsingGreenPotion = true;
@@ -307,5 +329,12 @@ public class PlayerMovement : MonoBehaviour
             colliderList[i].enabled = false;
         }
      
+    }
+
+    public void NewLevel()
+    {
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        newLevelUI.SetActive(true);
     }
 }

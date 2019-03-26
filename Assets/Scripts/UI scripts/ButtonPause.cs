@@ -7,8 +7,11 @@ public class ButtonPause : MonoBehaviour
 {
     private bool isPaused = false;
     private bool isInInventory = false;
-    private bool fixFonction = false;
+    private bool isInShop = false;
     int count = 0;
+    private int tempMoney;
+
+    public static ButtonPause instancePause;
 
     [SerializeField]
     private GameObject pauseMenuUI;
@@ -23,7 +26,19 @@ public class ButtonPause : MonoBehaviour
     private GameObject inInventory;
 
     [SerializeField]
+    private GameObject shopMenuUI;
+
+    [SerializeField]
     private PlayerMovement player;
+
+    private void Awake()
+    {
+        if (instancePause != null)
+        {
+            return;
+        }
+        instancePause = this;
+    }
 
     private void Update()
     {
@@ -40,7 +55,8 @@ public class ButtonPause : MonoBehaviour
 
     public void PauseGame()
     {
-        if (isInInventory == false)
+        player = FindObjectOfType<PlayerMovement>();
+        if (isInInventory == false && isInShop == false && player.IsDead == false)
         {
             isPaused = !isPaused;
 
@@ -62,7 +78,7 @@ public class ButtonPause : MonoBehaviour
     public void InventoryGame()
     {
         player = FindObjectOfType<PlayerMovement>();
-        if (isPaused == false && player.IsDead == false)
+        if (isPaused == false && isInShop == false && player.IsDead == false)
         {
             isInInventory = !isInInventory;
 
@@ -82,6 +98,58 @@ public class ButtonPause : MonoBehaviour
                 inInventory.SetActive(false);
                 outInventory.SetActive(true);
             }
+        }
+    }
+
+    public void ShopGame()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+        if (isPaused == false && isInInventory == false && player.IsDead == false)
+        {
+            isInShop = !isInShop;
+
+            if (isInShop == true)
+            {
+                Time.timeScale = 0;
+                AudioListener.pause = true;
+                shopMenuUI.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                AudioListener.pause = false;
+                shopMenuUI.SetActive(false);
+            }
+        }
+    }
+
+    public void AmmoPistolet()
+    {
+        tempMoney =Inventaire.instance.NbMoney();
+        if(tempMoney >= 10)
+        {
+            Inventaire.instance.AddMagazinePistolet();
+            Inventaire.instance.MoinsShop();
+        }
+    }
+
+    public void AmmoMitraillette()
+    {
+        tempMoney = Inventaire.instance.NbMoney();
+        if (tempMoney >= 10)
+        {
+            Inventaire.instance.AddMagazineMitraillette();
+            Inventaire.instance.MoinsShop();
+        }
+    }
+
+    public void AmmoBazooka()
+    {
+        tempMoney = Inventaire.instance.NbMoney();
+        if (tempMoney >= 10)
+        {
+            Inventaire.instance.AddMagazineBazouka();
+            Inventaire.instance.MoinsShop();
         }
     }
 

@@ -57,4 +57,3 @@ public class Arme
         set => ammo = value;
     }
 }
-

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 459746933806894054}
   - component: {fileID: 1337978829523202463}
   - component: {fileID: 2170718285303264601}
+  - component: {fileID: 1444111020298505150}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e23cd460351e314a977f5148eaa432f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1444111020298505150}
   speed: 10
   rb: {fileID: 459746933806894054}
   destroy: 0
@@ -172,3 +174,22 @@ MonoBehaviour:
     type: 3}
   explosion: {fileID: 0}
   t: 0.5
+--- !u!95 &1444111020298505150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4818967521923939946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5212b5ddf3dff074d8a97044f2289140, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
