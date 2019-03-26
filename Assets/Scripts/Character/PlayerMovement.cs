@@ -13,9 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Stat neutraliser;
 
     [SerializeField]
-    private Stat level;
+    private Stat exp;
 
-    public int exp;
+    private int level;
 
     [SerializeField]
     private CharacterController2D controller;
@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Collider2D[] colliderList;
 
+    [SerializeField]
+    private TextMeshProUGUI levelText;
+
+    [SerializeField]
+    private GameObject newLevelUI;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -81,16 +86,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public Stat Level
+    public Stat Experience
     {
         get
         {
-            return level;
+            return exp;
         }
 
         set
         {
-            level = value;
+            exp = value;
         }
     }
 
@@ -111,14 +116,16 @@ public class PlayerMovement : MonoBehaviour
     {
         Neutraliser.Initialized();
         Health.Initialized();
+        Experience.Initialized();
         
         isDead = false;
         animator.SetBool("IsDead", false);
+
+
     }
     
     void Update()
     {
-
         if (health.CurrentValue == 0) Die();
 
         if (isUsingGreenPotion == true)
@@ -146,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
             Inventaire.instance.MoinsShop();
         }
 
-       
+        levelText.text = ("Niveau: " + level.ToString());
 
         if (isUsingGreenPotion) timerGreen++;
         if (timerGreen == 1000)
@@ -199,12 +206,20 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsFalling", true);
             animator.SetBool("IsJumping", false);
         }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            addExp(-10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            addExp(10);
+        }
     }
 
     public void setJumpForce(float valeur)
     {
         controller.m_JumpForce = valeur;
-        Debug.Log(controller.m_JumpForce);
     }
 
     public void OnLanding()
@@ -271,6 +286,17 @@ public class PlayerMovement : MonoBehaviour
         Health.CurrentValue -= dmg;
     }
 
+    public void addExp(int valeur)
+    {
+        Experience.CurrentValue += valeur;
+
+        if (Experience.CurrentValue >= Experience.MaxVal)
+        {   
+            Experience.CurrentValue = 0;
+            NewLevel();
+        }
+    }
+
     public void GreenPotion()
     {
         if (!isDead) isUsingGreenPotion = true;
@@ -307,5 +333,12 @@ public class PlayerMovement : MonoBehaviour
             colliderList[i].enabled = false;
         }
      
+    }
+
+    public void NewLevel()
+    {
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        newLevelUI.SetActive(true);
     }
 }

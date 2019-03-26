@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Blob_die : MonoBehaviour
 {
-    public GameObject other2;
+    public GameObject blob;
     public float timer;
     bool hit = false;
+    public int expValue = 10;
     void Update()
     {
         if (hit == true)
@@ -15,7 +16,8 @@ public class Blob_die : MonoBehaviour
         }
         if (timer == 10)
         {
-            Destroy(other2);
+            Destroy(blob);
+            GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().addExp(expValue);
         }
     }
     void OnTriggerExit2D(Collider2D other)
