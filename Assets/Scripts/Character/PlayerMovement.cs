@@ -41,19 +41,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Collider2D[] colliderList;
 
-
-    float horizontalMove = 0f;
-    bool jump = false;
-    bool crouch = false;
+    private float horizontalMove = 0f;
+    private bool jump = false;
+    private bool crouch = false;
     public bool isUsingGreenPotion = false;
     public bool isUsingBluePotion = false;
-    int timerGreen = 0;
-    int timerBlue = 0;
+    private int timerGreen = 0;
+    private int timerBlue = 0;
     private bool active = false;
     private bool isDead;
     private int moneytemp;
-
-
 
     public Stat Neutraliser
     {
@@ -139,15 +136,11 @@ public class PlayerMovement : MonoBehaviour
             bluePotion.SetActive(false);
         }
 
-        moneytemp = Inventaire.instance.Nbmoney();
-        if (active == true && Input.GetKeyDown(KeyCode.E) && moneytemp > 0)
+        if (active == true && Input.GetKeyDown(KeyCode.E))
         {
-            Inventaire.instance.AddMagazinePistolet();
-            Inventaire.instance.MoinsShop();
+            ButtonPause.instancePause.ShopGame();
         }
-
-       
-
+        
         if (isUsingGreenPotion) timerGreen++;
         if (timerGreen == 1000)
         {

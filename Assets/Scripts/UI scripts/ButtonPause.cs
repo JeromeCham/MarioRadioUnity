@@ -9,6 +9,9 @@ public class ButtonPause : MonoBehaviour
     private bool isInInventory = false;
     private bool isInShop = false;
     int count = 0;
+    private int tempMoney;
+
+    public static ButtonPause instancePause;
 
     [SerializeField]
     private GameObject pauseMenuUI;
@@ -28,6 +31,15 @@ public class ButtonPause : MonoBehaviour
     [SerializeField]
     private PlayerMovement player;
 
+    private void Awake()
+    {
+        if (instancePause != null)
+        {
+            return;
+        }
+        instancePause = this;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -39,11 +51,6 @@ public class ButtonPause : MonoBehaviour
         {
             InventoryGame();
         }
-
-        /*if (Input.GetKeyDown(KeyCode.E) && )
-        {
-            ShopGame();
-        }*/
     }
 
     public void PauseGame()
@@ -115,6 +122,37 @@ public class ButtonPause : MonoBehaviour
             }
         }
     }
+
+    public void AmmoPistolet()
+    {
+        tempMoney =Inventaire.instance.NbMoney();
+        if(tempMoney >= 10)
+        {
+            Inventaire.instance.AddMagazinePistolet();
+            Inventaire.instance.MoinsShop();
+        }
+    }
+
+    public void AmmoMitraillette()
+    {
+        tempMoney = Inventaire.instance.NbMoney();
+        if (tempMoney >= 10)
+        {
+            Inventaire.instance.AddMagazineMitraillette();
+            Inventaire.instance.MoinsShop();
+        }
+    }
+
+    public void AmmoBazooka()
+    {
+        tempMoney = Inventaire.instance.NbMoney();
+        if (tempMoney >= 10)
+        {
+            Inventaire.instance.AddMagazineBazouka();
+            Inventaire.instance.MoinsShop();
+        }
+    }
+
     public void MainMenu()
     {
         Time.timeScale = 1;
