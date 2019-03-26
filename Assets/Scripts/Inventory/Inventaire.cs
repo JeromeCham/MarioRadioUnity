@@ -13,9 +13,8 @@ public class Inventaire : MonoBehaviour
     private TextMeshProUGUI ammoText;
 
     [SerializeField]
-    private GameObject AmmoText2;
-
-
+    private GameObject ammoTextInGame;
+    
     [SerializeField]
     private int money = 50;
 
@@ -49,7 +48,6 @@ public class Inventaire : MonoBehaviour
     #region Singleton
     public static Inventaire instance;
 
-    
     private bool shoot = false;
 
     private bool drop = false;
@@ -72,10 +70,8 @@ public class Inventaire : MonoBehaviour
     public OnItemChanged onItemChangedCallback;
 
     public List<Item> items = new List<Item>();
-    public int space = 6;
-
-
-
+    private int space = 6;
+   
     private void Awake()
     {
         tempMoney = moneyText.text;
@@ -89,19 +85,18 @@ public class Inventaire : MonoBehaviour
         instance = this;
     }
 
-
     void Update()
     {
         switch (selectobject)
         {
             case "Machine gun":
-                    ammo = NbAmmoMitraillette();
+                    ammo = mitraillette.Ammo;
                 break;
             case "Gun":
-                    ammo = NbAmmoPistolet();
+                    ammo = pistolet.Ammo;
                 break;
             case "RocketLauncher":
-                    ammo = NbAmmoBazouka();
+                    ammo = bazouka.Ammo;
                 break;
             default:
                 ammo = -1;
@@ -110,11 +105,11 @@ public class Inventaire : MonoBehaviour
         moneyText.text = money + tempMoney;
         if(ammo == -1)
         {
-            AmmoText2.SetActive(false);
+            ammoTextInGame.SetActive(false);
         }
         else
         {
-            AmmoText2.SetActive(true);
+            ammoTextInGame.SetActive(true);
         }
         ammoText.text = ammo + tempAmmo;
         
@@ -184,41 +179,30 @@ public class Inventaire : MonoBehaviour
         tempcolor.a = 255f;
         imageArmeUI.GetComponent<Image>().color = tempcolor;
     }
+
     public void AddMagazinePistolet()
     {
         pistolet.Ammo += 30;
-    }
-    public int NbAmmoPistolet()
-    {
-        return pistolet.Ammo;
     }
 
     public void AddMagazineMitraillette()
     {
         mitraillette.Ammo += 50;
     }
-    public int NbAmmoMitraillette()
-    {
-        return mitraillette.Ammo;
-    }
 
     public void AddMagazineBazouka()
     {
         bazouka.Ammo += 5;
     }
-    public int NbAmmoBazouka()
+
+    public int NbMoney()
     {
-        return bazouka.Ammo;
+        return money;
     }
 
-    public int Nbmoney()
-    {
-        return money;
-    }
-    public int MoinsShop()
+    public void MoinsShop()
     {
         money-=10;
-        return money;
     }
 
     private void Fire()
