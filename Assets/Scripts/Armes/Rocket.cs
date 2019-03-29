@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    public Animator animator;
     public float speed = 10f;
     public Rigidbody2D rb;
     public bool destroy;
@@ -16,34 +15,22 @@ public class Rocket : MonoBehaviour
 
     void Start()
     {
-        animator.SetBool("Exploion", false);
         rb.velocity = transform.right * speed;
     }
     void Update()
     {
         if (hit == true)
         {
-            animator.SetBool("Exploion", true);
             explosion = (GameObject)Instantiate(ExplosionPrefab, ExplosionPoint.position, ExplosionPoint.rotation);
-            //gameObject.SetActive(false);
-
             Destroy(explosion.gameObject, t);
             Destroy(gameObject);
-
         }
 
     }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag == "Dmg")
+        if (hitInfo.tag == "Dmg" || hitInfo.tag == "Gate" || hitInfo.tag == "Tilemap solid")
         {
-            Debug.Log("hit");
-            Shooting enemy = hitInfo.GetComponent<Shooting>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(50);
-            }
-
             hit = true;
         }
     }

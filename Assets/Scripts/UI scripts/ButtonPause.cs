@@ -9,7 +9,7 @@ public class ButtonPause : MonoBehaviour
     private bool isInInventory = false;
     private bool isInShop = false;
     int count = 0;
-    private int tempMoney;
+    int tempMoney = 0;
 
     public static ButtonPause instancePause;
 
@@ -125,8 +125,8 @@ public class ButtonPause : MonoBehaviour
 
     public void AmmoPistolet()
     {
-        tempMoney =Inventaire.instance.NbMoney();
-        if(tempMoney >= 10)
+        tempMoney = Inventaire.instance.NbMoney();
+        if (tempMoney >= 10)
         {
             Inventaire.instance.AddMagazinePistolet();
             Inventaire.instance.MoinsShop();
@@ -148,7 +148,7 @@ public class ButtonPause : MonoBehaviour
         tempMoney = Inventaire.instance.NbMoney();
         if (tempMoney >= 10)
         {
-            Inventaire.instance.AddMagazineBazouka();
+            Inventaire.instance.AddMagazineBazooka();
             Inventaire.instance.MoinsShop();
         }
     }
