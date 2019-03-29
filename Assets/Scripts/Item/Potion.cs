@@ -13,8 +13,31 @@ public class Potion : Item
     [SerializeField]
     private GameObject potion2;
 
-    public GameObject PotionPrefab { get => potionPrefab; set => potionPrefab = value; }
-    public GameObject Potion2 { get => potion2; set => potion2 = value; }
+    public GameObject PotionPrefab
+    {
+        get
+        {
+            return potionPrefab;
+        }
+
+        set
+        {
+            potionPrefab = value;
+        }
+    }
+
+    public GameObject Potion2
+    {
+        get
+        {
+            return potion2;
+        }
+
+        set
+        {
+            potion2 = value;
+        }
+    }
 
     PlayerMovement player;
 

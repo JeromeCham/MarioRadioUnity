@@ -24,37 +24,81 @@ public class Arme
     [SerializeField]
     private int ammo = 1;
 
-    public GameObject BulletPrefab
-    {
-        get => bulletPrefab;
-        set => bulletPrefab = value;
-    }
-    public GameObject Bullet
-    {
-        get;
-        set;
-        /*get => bullet; 
-        set => bullet = value;*/
-    }
-    public float BulletLife
-    {
-        get => bulletLife;
-        set => bulletLife = value;
-    }
     public GameObject GunPrefab
     {
-        get => gunPrefab;
-        set => gunPrefab = value;
+        get
+        {
+            return gunPrefab;
+        }
+
+        set
+        {
+            gunPrefab = value;
+        }
     }
+
     public GameObject Gun
     {
-        get => gun;
-        set => gun = value;
+        get
+        {
+            return gun;
+        }
+
+        set
+        {
+            gun = value;
+        }
     }
+
+    public GameObject BulletPrefab
+    {
+        get
+        {
+            return bulletPrefab;
+        }
+
+        set
+        {
+            bulletPrefab = value;
+        }
+    }
+
+    public GameObject Bullet
+    {
+        get
+        {
+            return bullet;
+        }
+
+        set
+        {
+            bullet = value;
+        }
+    }
+
+    public float BulletLife
+    {
+        get
+        {
+            return bulletLife;
+        }
+
+        set
+        {
+            bulletLife = value;
+        }
+    }
+
     public int Ammo
     {
-        get => ammo;
-        set => ammo = value;
+        get
+        {
+            return ammo;
+        }
+
+        set
+        {
+            ammo = value;
+        }
     }
 }
-
