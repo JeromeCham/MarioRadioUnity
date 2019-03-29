@@ -42,13 +42,13 @@ public class PlayerMovement : MonoBehaviour
     private Collider2D[] colliderList;
 
 
-    float horizontalMove = 0f;
-    bool jump = false;
-    bool crouch = false;
+    private float horizontalMove = 0f;
+    private bool jump = false;
+    private bool crouch = false;
     public bool isUsingGreenPotion = false;
     public bool isUsingBluePotion = false;
-    int timerGreen = 0;
-    int timerBlue = 0;
+    private int timerGreen = 0;
+    private int timerBlue = 0;
     private bool active = false;
     private bool isDead;
     private int moneytemp;
@@ -136,9 +136,7 @@ public class PlayerMovement : MonoBehaviour
         {
             bluePotion.SetActive(false);
         }
-
-        /*moneytemp = Inventaire.instance.Nbmoney();
-         && moneytemp > 0*/
+        
         if (active == true && Input.GetKeyDown(KeyCode.E))
         {
             ButtonPause.instancePause.ShopGame();
