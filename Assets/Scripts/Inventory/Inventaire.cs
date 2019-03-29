@@ -13,8 +13,8 @@ public class Inventaire : MonoBehaviour
     private TextMeshProUGUI ammoText;
 
     [SerializeField]
-    private GameObject ammoTextInGame;
-    
+    private GameObject ammoTextUI;
+
     [SerializeField]
     private int money = 50;
 
@@ -48,6 +48,7 @@ public class Inventaire : MonoBehaviour
     #region Singleton
     public static Inventaire instance;
 
+    
     private bool shoot = false;
 
     private bool drop = false;
@@ -70,8 +71,10 @@ public class Inventaire : MonoBehaviour
     public OnItemChanged onItemChangedCallback;
 
     public List<Item> items = new List<Item>();
-    private int space = 6;
-   
+    public int space = 6;
+
+
+
     private void Awake()
     {
         tempMoney = moneyText.text;
@@ -84,19 +87,19 @@ public class Inventaire : MonoBehaviour
         }
         instance = this;
     }
-
+    
     void Update()
     {
         switch (selectobject)
         {
             case "Machine gun":
-                    ammo = mitraillette.Ammo;
+                ammo = mitraillette.Ammo;
                 break;
             case "Gun":
-                    ammo = pistolet.Ammo;
+                ammo = pistolet.Ammo;
                 break;
             case "RocketLauncher":
-                    ammo = bazouka.Ammo;
+                ammo = bazouka.Ammo;
                 break;
             default:
                 ammo = -1;
@@ -105,11 +108,11 @@ public class Inventaire : MonoBehaviour
         moneyText.text = money + tempMoney;
         if(ammo == -1)
         {
-            ammoTextInGame.SetActive(false);
+            ammoTextUI.SetActive(false);
         }
         else
         {
-            ammoTextInGame.SetActive(true);
+            ammoTextUI.SetActive(true);
         }
         ammoText.text = ammo + tempAmmo;
         
@@ -179,18 +182,17 @@ public class Inventaire : MonoBehaviour
         tempcolor.a = 255f;
         imageArmeUI.GetComponent<Image>().color = tempcolor;
     }
-
     public void AddMagazinePistolet()
     {
         pistolet.Ammo += 30;
     }
-
+   
     public void AddMagazineMitraillette()
     {
         mitraillette.Ammo += 50;
     }
-
-    public void AddMagazineBazouka()
+    
+    public void AddMagazineBazooka()
     {
         bazouka.Ammo += 5;
     }
@@ -199,7 +201,6 @@ public class Inventaire : MonoBehaviour
     {
         return money;
     }
-
     public void MoinsShop()
     {
         money-=10;
@@ -276,7 +277,7 @@ public class Inventaire : MonoBehaviour
         }
         if (other.tag == "MagazineBazouka")
         {
-            Inventaire.instance.AddMagazineBazouka();
+            Inventaire.instance.AddMagazineBazooka();
             Destroy(other.gameObject);
         }
     }

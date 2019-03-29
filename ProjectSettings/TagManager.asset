@@ -71,3 +71,9 @@ TagManager:
   - name: Player
     uniqueID: 2548428049
     locked: 0
+  - name: explosion
+    uniqueID: 1952369997
+    locked: 0
+  - name: Ground
+    uniqueID: 3984747799
+    locked: 0

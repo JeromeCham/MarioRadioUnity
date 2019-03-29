@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public int health = 100;
-    public int expValue = 10;
+
 
     public void TakeDamage(int damage)
     {
@@ -14,12 +14,11 @@ public class Shooting : MonoBehaviour
         {
             Die();
         }
-        Debug.Log(health);
+       // Debug.Log(health);
     }
     void Die()
     {
         //Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        GameObject.Find("PlayerFox").GetComponent<PlayerMovement>().addExp(expValue);
     }
 }
