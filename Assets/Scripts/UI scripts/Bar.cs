@@ -10,13 +10,13 @@ public class Bar : MonoBehaviour
     private float fillAmount;
 
     [SerializeField]
-    private float healthBarSpeed;
+    private float healthBarSpeed = 0;
 
     [SerializeField]
-    private Image content;
+    private Image content = null;
 
     [SerializeField]
-    private TextMeshProUGUI valueText;
+    private TextMeshProUGUI valueText = null;
 
     public float MaxValue {get; set;}
 

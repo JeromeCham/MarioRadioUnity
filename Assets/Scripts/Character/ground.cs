@@ -5,7 +5,7 @@ using UnityEngine;
 public class ground : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pont;
+    private GameObject pont = null;
 
     void OnTriggerExit2D(Collider2D other)
     {

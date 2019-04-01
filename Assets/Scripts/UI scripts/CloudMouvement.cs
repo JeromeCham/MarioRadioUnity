@@ -5,7 +5,7 @@ using UnityEngine;
 public class CloudMouvement : MonoBehaviour
 {
     [SerializeField]
-    private Transform Cloud;
+    private Transform Cloud = null;
 
     [SerializeField]
     private float cloudSpeed = 0.01f;

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private float restartDelay = 0f;
 
     [SerializeField]
-    private GameObject text;
+    private GameObject text = null;
 
     public void EndGame()
     {

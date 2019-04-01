@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collision : MonoBehaviour
 {
     [SerializeField]
-    private Collider2D other, other2, other3;
+    private Collider2D other = null, other2 = null, other3 = null;
 
     private void Awake()
     {

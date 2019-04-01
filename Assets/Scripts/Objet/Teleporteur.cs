@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class Teleporteur : MonoBehaviour
 {
-    public Vector3 PortInitial;
-    public Vector3 PortFinal;
-    static float portCooldown = 2.0f;
-    static float portCooldownMax = 2.0f;
+    [SerializeField]
+    private Transform testPosition;
+    
+    private Vector3 PortFinal;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static float portCooldown = 2.0f;
 
-    // Update is called once per frame
+    private static float portCooldownMax = 2.0f;
+    
     void Update()
     {
         if (portCooldown > 0)
@@ -28,6 +25,8 @@ public class Teleporteur : MonoBehaviour
     {
         if (portCooldown <= 0)
         {
+            PortFinal = testPosition.position;
+
             PlayerMovement player = col.GetComponent<PlayerMovement>();
             player.transform.position = PortFinal;
             portCooldown = portCooldownMax;

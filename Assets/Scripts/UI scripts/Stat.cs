@@ -7,13 +7,13 @@ using System;
 public class Stat
 {
     [SerializeField]
-    private Bar bar;
+    private Bar bar = null;
 
     [SerializeField]
-    private float maxVal;
+    private float maxVal = 0;
 
     [SerializeField]
-    private float currentVal;
+    private float currentVal = 0;
 
     public float CurrentValue
     {
