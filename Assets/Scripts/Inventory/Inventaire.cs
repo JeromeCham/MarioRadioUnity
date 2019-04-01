@@ -7,47 +7,46 @@ using TMPro;
 public class Inventaire : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI moneyText;
+    private TextMeshProUGUI moneyText = null;
 
     [SerializeField]
-    private TextMeshProUGUI ammoText;
+    private TextMeshProUGUI ammoText = null;
 
     [SerializeField]
-    private GameObject ammoTextUI;
+    private GameObject ammoTextUI = null;
 
     [SerializeField]
     private int money = 50;
 
     [SerializeField]
-    private Transform firePoint;
+    private Transform firePoint = null;
 
     [SerializeField]
-    private Transform dropPoint;
+    private Transform dropPoint = null;
 
     [SerializeField]
-    private Arme pistolet;
+    private Arme pistolet = null;
 
     [SerializeField]
-    private Arme mitraillette;
+    private Arme mitraillette = null;
 
     [SerializeField]
-    private Arme bazouka;
+    private Arme bazouka = null;
 
     [SerializeField]
-    private Potion potionverte;
+    private Potion potionverte = null;
 
     [SerializeField]
-    private Potion potionrouge;
+    private Potion potionrouge = null;
 
     [SerializeField]
-    private Potion potionbleue;
+    private Potion potionbleue = null;
 
     [SerializeField]
-    private GameObject imageArmeUI;
+    private GameObject imageArmeUI = null;
 
     #region Singleton
     public static Inventaire instance;
-
     
     private bool shoot = false;
 

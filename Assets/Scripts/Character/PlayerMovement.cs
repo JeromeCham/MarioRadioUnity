@@ -7,24 +7,24 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private Stat health;
+    private Stat health = null;
 
     [SerializeField]
-    private Stat neutraliser;
+    private Stat neutraliser = null;
 
     [SerializeField]
-    private Stat level;
+    private Stat level = null;
 
-    public int exp;
-
-    [SerializeField]
-    private CharacterController2D controller;
+    public int exp = 0;
 
     [SerializeField]
-    private Animator animator;
+    private CharacterController2D controller = null;
 
     [SerializeField]
-    private Rigidbody2D rb;
+    private Animator animator = null;
+
+    [SerializeField]
+    private Rigidbody2D rb = null;
 
     [SerializeField]
     private float runSpeed = 40f;
@@ -33,13 +33,13 @@ public class PlayerMovement : MonoBehaviour
     private float minimumHeight = -20f;
 
     [SerializeField]
-    private GameObject bluePotion;
+    private GameObject bluePotion = null;
 
     [SerializeField]
-    private GameObject greenPotion;
+    private GameObject greenPotion = null;
 
     [SerializeField]
-    private Collider2D[] colliderList;
+    private Collider2D[] colliderList = null;
 
 
     private float horizontalMove = 0f;

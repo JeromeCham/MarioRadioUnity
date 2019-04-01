@@ -5,7 +5,7 @@ using UnityEngine;
 public class ceiling : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pont;
+    private GameObject pont = null;
 
     void OnTriggerEnter2D(Collider2D other)
     {

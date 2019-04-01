@@ -5,13 +5,13 @@ using UnityEngine;
 public class Follow : MonoBehaviour
 {
     [SerializeField]
-    private Transform firePoint;
+    private Transform firePoint = null;
 
     [SerializeField]
-    private BlobFollow enemy;
+    private BlobFollow enemy = null;
 
     [SerializeField]
-    private Arme blobgun;
+    private Arme blobgun = null;
 
     private bool shoot = false;
 

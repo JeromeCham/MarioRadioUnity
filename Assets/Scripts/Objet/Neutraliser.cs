@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class Neutraliser : MonoBehaviour
 {
-
-    private PlayerMovement player;
+    private PlayerMovement player = null;
 
     [SerializeField]
-    private GameObject bar;
+    private GameObject bar = null;
 
     public void OnTriggerEnter2D(Collider2D other)
     {

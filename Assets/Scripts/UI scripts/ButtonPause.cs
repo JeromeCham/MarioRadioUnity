@@ -8,28 +8,27 @@ public class ButtonPause : MonoBehaviour
     private bool isPaused = false;
     private bool isInInventory = false;
     private bool isInShop = false;
-    int count = 0;
-    int tempMoney = 0;
+    private int tempMoney = 0;
 
     public static ButtonPause instancePause;
 
     [SerializeField]
-    private GameObject pauseMenuUI;
+    private GameObject pauseMenuUI = null;
 
     [SerializeField]
-    private GameObject inventoryMenuUI;
+    private GameObject inventoryMenuUI = null;
 
     [SerializeField]
-    private GameObject outInventory;
+    private GameObject outInventory = null;
 
     [SerializeField]
-    private GameObject inInventory;
+    private GameObject inInventory = null;
 
     [SerializeField]
-    private GameObject shopMenuUI;
+    private GameObject shopMenuUI = null;
 
     [SerializeField]
-    private PlayerMovement player;
+    private PlayerMovement player = null;
 
     private void Awake()
     {
