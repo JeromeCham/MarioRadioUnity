@@ -1549,6 +1549,7 @@ MonoBehaviour:
   ammoText: {fileID: 1041363546}
   ammoTextUI: {fileID: 1041363544}
   money: 50
+  imageArmeUI: {fileID: 1904395975}
   firePoint: {fileID: 177682773}
   dropPoint: {fileID: 1683173435}
   pistolet:
@@ -1581,7 +1582,6 @@ MonoBehaviour:
   potionverte: {fileID: 11400000, guid: c0bc3cf58fc382a489063ae96fbbac8f, type: 2}
   potionrouge: {fileID: 11400000, guid: 2916890f854410c4299b69d581d4d703, type: 2}
   potionbleue: {fileID: 11400000, guid: 8ca9a6395e9e84948b5702b79a26e4e4, type: 2}
-  imageArmeUI: {fileID: 1904395975}
   selectobject: ' '
   objectname: ' '
   items: []
@@ -3416,7 +3416,7 @@ GameObject:
   - component: {fileID: 409094324}
   - component: {fileID: 409094325}
   m_Layer: 0
-  m_Name: Teleporteur A(1)
+  m_Name: Teleporteur A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3522,7 +3522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d2cccbe2b09b04993287e275a33264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testPosition: {fileID: 910668076}
+  positionPortal: {fileID: 910668076}
 --- !u!95 &409094325
 Animator:
   serializedVersion: 3
@@ -4266,7 +4266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277ca772782296f459a5a6e6170d9787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temp: 800
 --- !u!95 &430230130
 Animator:
   serializedVersion: 3
@@ -5755,7 +5754,7 @@ GameObject:
   - component: {fileID: 754855558}
   - component: {fileID: 754855559}
   - component: {fileID: 754855560}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tilemap Pont
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8508,7 +8507,7 @@ GameObject:
   - component: {fileID: 910668079}
   - component: {fileID: 910668077}
   m_Layer: 0
-  m_Name: Teleporteur A(2)
+  m_Name: Teleporteur A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8607,7 +8606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d2cccbe2b09b04993287e275a33264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testPosition: {fileID: 409094321}
+  positionPortal: {fileID: 409094321}
 --- !u!61 &910668080
 BoxCollider2D:
   m_ObjectHideFlags: 0
