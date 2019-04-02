@@ -5,7 +5,7 @@ using UnityEngine;
 public class Teleporteur : MonoBehaviour
 {
     [SerializeField]
-    private Transform testPosition;
+    private Transform testPosition = null;
     
     private Vector3 PortFinal;
 
