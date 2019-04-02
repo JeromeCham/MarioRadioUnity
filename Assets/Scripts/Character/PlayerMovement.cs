@@ -198,7 +198,6 @@ public class PlayerMovement : MonoBehaviour
     public void setJumpForce(float valeur)
     {
         controller.m_JumpForce = valeur;
-        Debug.Log(controller.m_JumpForce);
     }
 
     public void OnLanding()

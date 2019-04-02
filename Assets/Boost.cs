@@ -17,7 +17,7 @@ public class Boost : MonoBehaviour
         
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         PlayerMovement player = col.GetComponent<PlayerMovement>();
         player.setJumpForce(0);
