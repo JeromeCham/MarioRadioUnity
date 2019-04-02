@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class Boost : MonoBehaviour
 {
-    public float temp = 800f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private float temp = 800f;
 
     void OnTriggerStay2D(Collider2D col)
     {
