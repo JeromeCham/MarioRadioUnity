@@ -6,6 +6,8 @@ using TMPro;
 
 public class Inventaire : MonoBehaviour
 {
+    //UI
+    #region Singleton
     [SerializeField]
     private TextMeshProUGUI moneyText = null;
 
@@ -18,6 +20,15 @@ public class Inventaire : MonoBehaviour
     [SerializeField]
     private int money = 50;
 
+    [SerializeField]
+    private GameObject imageArmeUI = null;
+
+    private string tempMoney;
+    private string tempAmmo;
+    #endregion
+
+    //Arme
+    #region Singleton
     [SerializeField]
     private Transform firePoint = null;
 
@@ -33,6 +44,13 @@ public class Inventaire : MonoBehaviour
     [SerializeField]
     private Arme bazouka = null;
 
+    private bool shoot = false;
+
+    private int ammo = 0;
+    #endregion
+
+    //Potion
+    #region Singleton
     [SerializeField]
     private Potion potionverte = null;
 
@@ -41,16 +59,18 @@ public class Inventaire : MonoBehaviour
 
     [SerializeField]
     private Potion potionbleue = null;
+    #endregion
 
-    [SerializeField]
-    private GameObject imageArmeUI = null;
-
+    //Inventaire
     #region Singleton
     public static Inventaire instance;
-    
-    private bool shoot = false;
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
 
     private bool drop = false;
+
+    private int count = 0;
 
     [SerializeField]
     private string selectobject = "";
@@ -58,19 +78,9 @@ public class Inventaire : MonoBehaviour
     [SerializeField]
     private string objectname = "";
 
-    private int count = 0;
-
-    private string tempMoney;
-    private string tempAmmo;
-    private int ammo=0;
-
-    #endregion
-
-    public delegate void OnItemChanged();
-    public OnItemChanged onItemChangedCallback;
-
     public List<Item> items = new List<Item>();
     public int space = 6;
+    #endregion
 
 
 
