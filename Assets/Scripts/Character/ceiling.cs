@@ -11,7 +11,7 @@ public class ceiling : MonoBehaviour
     {
         if (other.tag == "pont")
         {
-            pont.layer = 14;
+            pont.layer = 9;
         }
     }
 }
