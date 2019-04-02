@@ -5,7 +5,7 @@ using UnityEngine;
 public class Teleporteur : MonoBehaviour
 {
     [SerializeField]
-    private Transform testPosition;
+    private Transform positionPortal = null;
     
     private Vector3 PortFinal;
 
@@ -25,7 +25,7 @@ public class Teleporteur : MonoBehaviour
     {
         if (portCooldown <= 0)
         {
-            PortFinal = testPosition.position;
+            PortFinal = positionPortal.position;
 
             PlayerMovement player = col.GetComponent<PlayerMovement>();
             player.transform.position = PortFinal;
