@@ -13,9 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Stat neutraliser = null;
 
     [SerializeField]
-    private Stat level = null;
+    private Stat2 exp = null;
 
-    public int exp = 0;
+    public int level = 0;
 
     [SerializeField]
     private CharacterController2D controller = null;
@@ -79,16 +79,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public Stat Level
+    public Stat2 Experience
     {
         get
         {
-            return level;
+            return exp;
         }
 
         set
         {
-            level = value;
+            exp = value;
         }
     }
 
@@ -109,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Neutraliser.Initialized();
         Health.Initialized();
+        Experience.Initialized(level);
         
         isDead = false;
         animator.SetBool("IsDead", false);
@@ -165,14 +166,19 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
+
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
         }
+
         else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
         }
+
+        Experience.TextValue = level;
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Health.CurrentValue -= 10;
@@ -181,6 +187,16 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             Health.CurrentValue += 10;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            addExp(-10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            addExp(10);
         }
 
         if (rb.velocity.y > 0 && controller.getGrounded() == false)
@@ -263,6 +279,19 @@ public class PlayerMovement : MonoBehaviour
     public void takeDmg(float dmg)
     {
         Health.CurrentValue -= dmg;
+    }
+
+    public void addExp(int value)
+    {
+        Experience.CurrentValue += value;
+
+        if(Experience.CurrentValue >= Experience.MaxVal)
+        {
+            Experience.CurrentValue = 0;
+            level++;
+            Experience.TextValue = level;
+        }
+        Debug.Log(Experience.TextValue);
     }
 
     public void GreenPotion()

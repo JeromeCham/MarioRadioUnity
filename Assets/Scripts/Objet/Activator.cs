@@ -6,13 +6,22 @@ public class Activator : MonoBehaviour
 {
     public bool isActivated = false;
     public bool onActivator = false;
-    public Vector3 doorPositionInitial = new Vector3(0f, 0f, 0f);
-    public Vector3 doorPositionFinal = new Vector3(0f, 0f, 0f);
+    [SerializeField]
+    private Vector3 doorPositionInitial = new Vector3(0f, 0f, 0f);
+    [SerializeField]
+    private Vector3 doorPositionFinal = new Vector3(0f, 0f, 0f);
+    [SerializeField]
+    private float distanceX;
+    [SerializeField]
+    private float distanceY;
     public string nom;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject Gate = GameObject.Find(nom);
+        doorPositionInitial = Gate.transform.GetChild(0).position;
+        doorPositionFinal = new Vector3(doorPositionInitial.x + distanceX, doorPositionInitial.y + distanceY, doorPositionInitial.z);
         transform.GetChild(0).gameObject.SetActive(!isActivated);
         transform.GetChild(1).gameObject.SetActive(isActivated);
     }
@@ -20,9 +29,11 @@ public class Activator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject Gate = GameObject.Find(nom);
         transform.GetChild(0).gameObject.SetActive(!isActivated);
         transform.GetChild(1).gameObject.SetActive(isActivated);
-        GameObject Gate = GameObject.Find(nom);
+        Gate.transform.GetChild(0).gameObject.
+
         DoorOpenClose gate1 = Gate.transform.GetChild(0).GetComponent<DoorOpenClose>();
 
         if (onActivator && Input.GetKeyDown(KeyCode.E))
