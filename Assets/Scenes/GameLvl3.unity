@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 99457473}
   - component: {fileID: 99457472}
   m_Layer: 0
-  m_Name: Teleporteur A(2)
+  m_Name: Teleporteur A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d2cccbe2b09b04993287e275a33264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionPortal: {fileID: 0}
+  positionPortal: {fileID: 1922427524}
 --- !u!61 &99457474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3254,11 +3254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4239ed600089c41a9e72b7fa5f2a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
-  onActivator: 0
   doorPositionInitial: {x: 0, y: 0, z: 0}
   doorPositionFinal: {x: 0, y: 0, z: 0}
-  nom: Gate 1
+  distanceX: 0
+  distanceY: 0
 --- !u!1 &631712280
 GameObject:
   m_ObjectHideFlags: 0
@@ -5588,11 +5587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4239ed600089c41a9e72b7fa5f2a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
-  onActivator: 0
   doorPositionInitial: {x: 0, y: 0, z: 0}
   doorPositionFinal: {x: 0, y: 0, z: 0}
-  nom: Trap 1
+  distanceX: 0
+  distanceY: 0
 --- !u!1 &985852147
 GameObject:
   m_ObjectHideFlags: 0
@@ -11528,7 +11526,6 @@ MonoBehaviour:
     bar2: {fileID: 1026380539}
     maxVal: 100
     currentVal: 0
-  level: 0
   controller: {fileID: 1704962730}
   animator: {fileID: 1704962727}
   rb: {fileID: 1704962729}
@@ -12186,7 +12183,7 @@ GameObject:
   - component: {fileID: 1922427526}
   - component: {fileID: 1922427525}
   m_Layer: 0
-  m_Name: Teleporteur A(1)
+  m_Name: Teleporteur A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12237,7 +12234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d2cccbe2b09b04993287e275a33264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionPortal: {fileID: 0}
+  positionPortal: {fileID: 99457471}
 --- !u!61 &1922427527
 BoxCollider2D:
   m_ObjectHideFlags: 0

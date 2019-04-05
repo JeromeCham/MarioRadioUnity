@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
-    public bool isActivated = false;
-    public bool onActivator = false;
+    private bool isActivated = false;
+    private bool onActivator = false;
+
     [SerializeField]
     private Vector3 doorPositionInitial = new Vector3(0f, 0f, 0f);
+
     [SerializeField]
     private Vector3 doorPositionFinal = new Vector3(0f, 0f, 0f);
+
     [SerializeField]
     private float distanceX;
+
     [SerializeField]
     private float distanceY;
-    public string nom;
+
+    private string nom;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +37,6 @@ public class Activator : MonoBehaviour
         GameObject Gate = GameObject.Find(nom);
         transform.GetChild(0).gameObject.SetActive(!isActivated);
         transform.GetChild(1).gameObject.SetActive(isActivated);
-        Gate.transform.GetChild(0).gameObject.
 
         DoorOpenClose gate1 = Gate.transform.GetChild(0).GetComponent<DoorOpenClose>();
 

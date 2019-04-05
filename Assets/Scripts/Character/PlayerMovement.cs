@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Stat2 exp = null;
 
-    public int level = 0;
+    private int level = 0;
 
     [SerializeField]
     private CharacterController2D controller = null;
@@ -41,14 +41,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Collider2D[] colliderList = null;
 
-
     private float horizontalMove = 0f;
     private bool jump = false;
     private bool crouch = false;
     public bool isUsingGreenPotion = false;
     public bool isUsingBluePotion = false;
-    int timerGreen = 0;
-    int timerBlue = 0;
+    private int timerGreen = 0;
+    private int timerBlue = 0;
     private bool active = false;
     private bool isDead;
     private int moneytemp;
