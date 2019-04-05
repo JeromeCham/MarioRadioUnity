@@ -6,7 +6,7 @@ public class Boost : MonoBehaviour
 {
     private float temp = 800f;
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         PlayerMovement player = col.GetComponent<PlayerMovement>();
         player.setJumpForce(0);

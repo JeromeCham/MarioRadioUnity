@@ -9,9 +9,9 @@ public class Teleporteur : MonoBehaviour
     
     private Vector3 PortFinal;
 
-    private static float portCooldown = 3.0f;
+    private static float portCooldown = 2.0f;
 
-    private static float portCooldownMax = 3.0f;
+    private static float portCooldownMax = 2.0f;
     
     void Update()
     {

@@ -97,7 +97,6 @@ public class CharacterController2D : MonoBehaviour
 
             if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
             {
-                Debug.Log(m_CeilingCheck.position);
                 crouch = true;
             }
         }

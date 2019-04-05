@@ -6,18 +6,13 @@ public class Activator : MonoBehaviour
 {
     public bool isActivated = false;
     public bool onActivator = false;
-    private Vector3 doorPositionInitial;
-    private Vector3 doorPositionFinal;
+    public Vector3 doorPositionInitial = new Vector3(0f, 0f, 0f);
+    public Vector3 doorPositionFinal = new Vector3(0f, 0f, 0f);
     public string nom;
-    public float distanceX;
-    public float distanceY;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject Gate = GameObject.Find(nom);
-        doorPositionInitial = Gate.transform.GetChild(0).position;
-        doorPositionFinal = new Vector3(doorPositionInitial.x + distanceX, doorPositionInitial.y + distanceY, doorPositionInitial.z);
         transform.GetChild(0).gameObject.SetActive(!isActivated);
         transform.GetChild(1).gameObject.SetActive(isActivated);
     }
