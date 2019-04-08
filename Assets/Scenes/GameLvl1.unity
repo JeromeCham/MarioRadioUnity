@@ -2280,7 +2280,7 @@ GameObject:
   - component: {fileID: 350937247}
   - component: {fileID: 350937249}
   m_Layer: 5
-  m_Name: BluePotion
+  m_Name: BluePotionUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2615,7 +2615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389082207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.112885, y: 6.067135, z: 0.19459903}
+  m_LocalPosition: {x: 3.25, y: -3.54, z: 0.19459903}
   m_LocalScale: {x: 0.15303898, y: 0.13822055, z: 1}
   m_Children: []
   m_Father: {fileID: 1801120753}
@@ -3845,7 +3845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 12.0000305, y: 12.39999}
+  m_AnchoredPosition: {x: 12.0000305, y: 12.399963}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &420903927
@@ -6017,7 +6017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746235608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.721, y: -0.576, z: 0}
+  m_LocalPosition: {x: 1.743, y: -0.987, z: 0}
   m_LocalScale: {x: 4.6999993, y: 4.6999993, z: 1}
   m_Children: []
   m_Father: {fileID: 756277774}
@@ -6578,8 +6578,8 @@ MonoBehaviour:
   rb: {fileID: 756277768}
   runSpeed: 40
   minimumHeight: -20
-  bluePotion: {fileID: 228592915}
-  greenPotion: {fileID: 389082207}
+  bluePotion: {fileID: 350937245}
+  greenPotion: {fileID: 1383456830}
   colliderList:
   - {fileID: 756277767}
   - {fileID: 756277765}
@@ -14512,7 +14512,7 @@ GameObject:
   - component: {fileID: 1383456832}
   - component: {fileID: 1383456834}
   m_Layer: 5
-  m_Name: GreenPotion
+  m_Name: GreenPotionUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
