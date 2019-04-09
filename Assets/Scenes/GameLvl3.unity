@@ -1477,7 +1477,7 @@ MonoBehaviour:
     currentVal: 0
   exp:
     bar2: {fileID: 1026380539}
-    maxVal: 0
+    maxVal: 100
     currentVal: 0
   controller: {fileID: 112229636}
   animator: {fileID: 112229637}
@@ -1490,6 +1490,7 @@ MonoBehaviour:
   - {fileID: 112229634}
   - {fileID: 112229632}
   - {fileID: 112229633}
+  newLevelMenu: {fileID: 0}
   isUsingGreenPotion: 0
   isUsingBluePotion: 0
 --- !u!61 &112229632
@@ -5589,6 +5590,60 @@ Tilemap:
   m_GameObject: {fileID: 660891573}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 10, y: -3, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 11, y: -3, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 12, y: -3, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 10, y: 0, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 11, y: 0, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 12, y: 0, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 1
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: 0, y: 2, z: 0}
     second:
       m_TileIndex: 2
@@ -5640,7 +5695,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 5
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: 2708d23495e718546945d396eccf454f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -5661,10 +5716,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 5
+  - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: fad26b059e5bd1b43922eb1fede119be, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 5
+  - m_RefCount: 11
     m_Data:
       e00: 1
       e01: 0
@@ -5685,7 +5740,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 2.239e-41, g: 2.239e-41, b: 2.239e-41, a: 2.239e-41}
-  - m_RefCount: 5
+  - m_RefCount: 11
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17173,6 +17228,7 @@ MonoBehaviour:
   - {fileID: 1704962725}
   - {fileID: 1704962724}
   - {fileID: 1704962723}
+  newLevelMenu: {fileID: 0}
   isUsingGreenPotion: 0
   isUsingBluePotion: 0
 --- !u!50 &1704962729
