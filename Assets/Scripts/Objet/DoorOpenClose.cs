@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class DoorOpenClose : MonoBehaviour
 {
-    public float speed;
-    private Vector3 destination;
+    [SerializeField]
+    private float speed = 10f;
 
-    // Start is called before the first frame update
+    private Vector3 destination;
+    
     void Start()
     {
         SetDestination(gameObject.transform.position);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (destination != gameObject.transform.position)
