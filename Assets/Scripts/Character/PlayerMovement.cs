@@ -50,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Collider2D[] colliderList = null;
 
+    [SerializeField]
+    private GameObject newLevelMenu = null;
+
     private float horizontalMove = 0f;
     private bool jump = false;
     private bool crouch = false;
@@ -305,8 +308,8 @@ public class PlayerMovement : MonoBehaviour
         if(Experience.CurrentValue >= Experience.MaxVal)
         {
             Experience.CurrentValue = 0;
-            level++;
-            Experience.TextValue = level;
+            newLevel();
+
         }
         Debug.Log(Experience.TextValue);
     }
@@ -339,13 +342,20 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("IsDead", true);
         isDead = true;
-        rb.velocity = new Vector2(0, 0.6f);
+        rb.velocity = new Vector2(0, 0);
         FindObjectOfType<GameManager>().EndGame();
 
         for (int i = 0; i < colliderList.Length; i++)
         {
             colliderList[i].enabled = false;
         }
-     
+    }
+    public void newLevel()
+    {
+        level++;
+        Experience.TextValue = level;
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        newLevelMenu.SetActive(true);
     }
 }
