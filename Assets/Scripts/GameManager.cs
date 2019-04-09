@@ -18,22 +18,11 @@ public class GameManager : MonoBehaviour
         {
             text.SetActive(true);
             gameHasEnded = true;
-            Debug.Log("GAME OVER");
             Invoke("Restart", restartDelay);
         }
     }
 
-    /*public void EndLevel()
-    {
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("Niveau terminé");
-            Invoke("Restart", restartDelay);
-        }
-    }*/
-
-    public  void NextLevel()
+    public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
