@@ -30,6 +30,16 @@ public class Inventaire : MonoBehaviour
     //Arme
     #region Singleton
     [SerializeField]
+    private GameObject gunImage = null;
+
+    [SerializeField]
+    private GameObject machinegunImage = null;
+
+    [SerializeField]
+    private GameObject RocketImage = null;
+
+
+    [SerializeField]
     private Transform firePoint = null;
 
     [SerializeField]
@@ -81,7 +91,7 @@ public class Inventaire : MonoBehaviour
     public List<Item> items = new List<Item>();
     public int space = 6;
     #endregion
-
+    public Animator animator;
 
 
     private void Awake()
@@ -96,7 +106,7 @@ public class Inventaire : MonoBehaviour
         }
         instance = this;
     }
-    
+
     void Update()
     {
         switch (selectobject)
@@ -115,7 +125,7 @@ public class Inventaire : MonoBehaviour
                 break;
         }
         moneyText.text = money + tempMoney;
-        if(ammo == -1)
+        if (ammo == -1)
         {
             ammoTextUI.SetActive(false);
         }
@@ -124,8 +134,8 @@ public class Inventaire : MonoBehaviour
             ammoTextUI.SetActive(true);
         }
         ammoText.text = ammo + tempAmmo;
-        
-        
+
+
         if (shoot == true)
         {
             Fire();
@@ -150,6 +160,7 @@ public class Inventaire : MonoBehaviour
         Debug.Log(item.name);
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
+
             selectobject = item.name;
             shoot = true;
             imageArmeUI.GetComponent<Image>().sprite = item.icon;
@@ -170,6 +181,21 @@ public class Inventaire : MonoBehaviour
             onItemChangedCallback.Invoke();
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
+            if (item.name == "Gun")
+            {
+                gunImage.SetActive(false);
+                animator.SetBool("IsShooting", false);
+            }
+            if (item.name == "Machine gun")
+            {
+                machinegunImage.SetActive(false);
+                animator.SetBool("IsShootingMg", false);
+            }
+            if (item.name == "RocketLauncher")
+            {
+                RocketImage.SetActive(false);
+                animator.SetBool("IsShootingRl", false);
+            }
             shoot = false;
             selectobject = null;
             imageArmeUI.GetComponent<Image>().sprite = null;
@@ -195,12 +221,12 @@ public class Inventaire : MonoBehaviour
     {
         pistolet.Ammo += 30;
     }
-   
+
     public void AddMagazineMitraillette()
     {
         mitraillette.Ammo += 50;
     }
-    
+
     public void AddMagazineBazooka()
     {
         bazouka.Ammo += 5;
@@ -212,7 +238,7 @@ public class Inventaire : MonoBehaviour
     }
     public void MoinsShop()
     {
-        money-=10;
+        money -= 10;
     }
 
     private void Fire()
@@ -220,6 +246,12 @@ public class Inventaire : MonoBehaviour
         switch (selectobject)
         {
             case "Machine gun":
+                animator.SetBool("IsShooting", false);
+                gunImage.SetActive(false);
+                animator.SetBool("IsShootingMg", true);
+                machinegunImage.SetActive(true);
+                animator.SetBool("IsShootingRl", false);
+                RocketImage.SetActive(false);
                 if (Input.GetButton("Fire1") && mitraillette.Ammo > 0)
                 {
                     mitraillette.Bullet = (GameObject)Instantiate(mitraillette.BulletPrefab, firePoint.position, firePoint.rotation);
@@ -228,6 +260,12 @@ public class Inventaire : MonoBehaviour
                 }
                 break;
             case "Gun":
+                animator.SetBool("IsShooting", true);
+                gunImage.SetActive(true);
+                animator.SetBool("IsShootingMg", false);
+                machinegunImage.SetActive(false);
+                animator.SetBool("IsShootingRl", false);
+                RocketImage.SetActive(false);
                 if (Input.GetButtonDown("Fire1") && pistolet.Ammo > 0)
                 {
                     pistolet.Bullet = (GameObject)Instantiate(pistolet.BulletPrefab, firePoint.position, firePoint.rotation);
@@ -236,6 +274,12 @@ public class Inventaire : MonoBehaviour
                 }
                 break;
             case "RocketLauncher":
+                animator.SetBool("IsShooting", false);
+                gunImage.SetActive(false);
+                animator.SetBool("IsShootingMg", false);
+                machinegunImage.SetActive(false);
+                animator.SetBool("IsShootingRl", true);
+                RocketImage.SetActive(true);
                 if (Input.GetButtonDown("Fire1") && bazouka.Ammo > 0)
                 {
                     bazouka.Bullet = (GameObject)Instantiate(bazouka.BulletPrefab, firePoint.position, firePoint.rotation);
