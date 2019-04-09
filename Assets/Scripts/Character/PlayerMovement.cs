@@ -181,6 +181,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
+            animator.SetBool("IsCrouching", true);
         }
 
         else if (Input.GetButtonUp("Crouch"))
@@ -238,9 +239,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("IsJumping", false);
         animator.SetBool( "IsFalling", false);
-        gunImage.SetActive(false);
-        machinegunImage.SetActive(false);
-        RocketImage.SetActive(false);
+        
     }
 
     public void OnCrouching(bool isCrouching)
