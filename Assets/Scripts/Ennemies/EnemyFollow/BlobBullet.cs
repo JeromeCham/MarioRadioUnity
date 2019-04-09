@@ -37,5 +37,15 @@ public class BlobBullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (col.tag == "Gate")
+        {
+            Destroy(gameObject);
+        }
+
+        if (col.tag == "Tilemap solid")
+        {
+            Destroy(gameObject);
+        }
     }
 }
