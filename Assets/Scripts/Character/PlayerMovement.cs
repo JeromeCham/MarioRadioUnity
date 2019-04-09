@@ -321,13 +321,12 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("IsDead", true);
         isDead = true;
-        rb.velocity = new Vector2(0, 0.6f);
+        rb.velocity = new Vector2(0, 0);
         FindObjectOfType<GameManager>().EndGame();
 
         for (int i = 0; i < colliderList.Length; i++)
         {
             colliderList[i].enabled = false;
         }
-     
     }
 }
