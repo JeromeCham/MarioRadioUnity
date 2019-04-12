@@ -14,10 +14,10 @@ public class Neutraliser : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Destroy(gameObject);
             bar.SetActive(true);
             player = other.GetComponentInParent<PlayerMovement>();
             player.Neutraliser.CurrentValue += 1;
-            Destroy(gameObject);
         }
     }
 }

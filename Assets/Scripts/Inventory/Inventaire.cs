@@ -149,6 +149,7 @@ public class Inventaire : MonoBehaviour
     }
     public bool Add(Item item)
     {
+        animator.SetBool("Start", true);
         if (items.Count >= space)
         {
             Debug.Log("Not enough room");
