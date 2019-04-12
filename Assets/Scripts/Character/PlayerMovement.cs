@@ -341,6 +341,26 @@ public class PlayerMovement : MonoBehaviour
         Experience.TextValue = level;
         Time.timeScale = 0;
         AudioListener.pause = true;
+        activateLevelMenu(level);
+    }
+
+    public void resumeGame()
+    {
+        newLevelMenu.SetActive(false);
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+    }
+
+    public void activateLevelMenu(int level)
+    {
         newLevelMenu.SetActive(true);
+        newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 2).gameObject.SetActive(true);
+        newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 1).gameObject.SetActive(true);
+
+        if(level > 1)
+        {
+            newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 4).gameObject.SetActive(false);
+            newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 3).gameObject.SetActive(false);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class FinishLevel : MonoBehaviour
 
         if (other.tag == "Player" && player.Neutraliser.CurrentValue == 10 && player.Health.CurrentValue > 0)
         {
-            FindObjectOfType<GameManager>().Invoke("NextLevel", 3f);
+            FindObjectOfType<GameManager>().NextLevel();
             Debug.Log("collision");
         }
     }

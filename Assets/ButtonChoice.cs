@@ -7,7 +7,7 @@ public class ButtonChoice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,28 +16,35 @@ public class ButtonChoice : MonoBehaviour
         
     }
 
-    public void choicePicked()
+    public void choice1A()
     {
-        string choice = "1";
-        applyChoice(choice);
+        PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
+        player.setJumpForce(900);
     }
 
-    public void applyChoice(string choice)
+    public void choice2A()
     {
-        switch(choice)
-        {
-            case "1":
-                break;
-            case "2":
-                break;
-            case "3":
-                break;
-            case "4":
-                break;
-            case "5":
-                break;
-            case "6":
-                break;
-        }
+        PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
+        player.Health.MaxVal = 120;
+    }
+
+    public void choice1B()
+    {
+        PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
+    }
+
+    public void choice2B()
+    {
+        PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
+    }
+
+    public void choice1C()
+    {
+        PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
+    }
+
+    public void choice2C()
+    {
+        PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
     }
 }
