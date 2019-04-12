@@ -5844,8 +5844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4239ed600089c41a9e72b7fa5f2a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
-  onActivator: 0
   doorPositionInitial: {x: 4.385, y: -3.83, z: 0}
   doorPositionFinal: {x: 4.385, y: -0.5, z: 0}
   distanceX: 0
@@ -6790,9 +6788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f2d0e55dad4194b9b4da9ee96dc592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunImage: {fileID: 997214960}
-  machinegunImage: {fileID: 1208130904}
-  RocketImage: {fileID: 223574954}
   health:
     bar: {fileID: 1392288469}
     maxVal: 100
@@ -7333,8 +7328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4239ed600089c41a9e72b7fa5f2a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
-  onActivator: 0
   doorPositionInitial: {x: 24, y: 0.66, z: 0}
   doorPositionFinal: {x: 32, y: 0.66, z: 0}
   distanceX: 0
@@ -15306,7 +15299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &997214961
 Transform:
   m_ObjectHideFlags: 0
@@ -15315,8 +15308,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997214960}
   m_LocalRotation: {x: -0, y: -0, z: 0.7172124, w: 0.69685477}
-  m_LocalPosition: {x: -0.097, y: 0.138, z: 0}
-  m_LocalScale: {x: 0.73175925, y: 0.50579846, z: 1}
+  m_LocalPosition: {x: -0.264, y: 0.408, z: 0}
+  m_LocalScale: {x: 0.9013, y: 0.5853211, z: 1}
   m_Children: []
   m_Father: {fileID: 920489383}
   m_RootOrder: 0
@@ -16978,8 +16971,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208130904}
   m_LocalRotation: {x: -0, y: -0, z: 0.7172124, w: 0.69685477}
-  m_LocalPosition: {x: -0.19, y: 0.262, z: -0.09677616}
-  m_LocalScale: {x: 1.2901231, y: 1.0865383, z: 1}
+  m_LocalPosition: {x: 0, y: 0.262, z: 0}
+  m_LocalScale: {x: 1, y: 1.0865383, z: 1}
   m_Children: []
   m_Father: {fileID: 920489383}
   m_RootOrder: 2
@@ -19650,7 +19643,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1456534130}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 361.011}
 --- !u!1 &1619988541
 GameObject:
   m_ObjectHideFlags: 0
