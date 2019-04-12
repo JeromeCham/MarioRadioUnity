@@ -6,14 +6,6 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject gunImage = null;
-
-    [SerializeField]
-    private GameObject machinegunImage = null;
-
-    [SerializeField]
-    private GameObject RocketImage = null;
 
     [SerializeField]
     private Stat health = null;
@@ -215,17 +207,11 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsJumping", true);
             animator.SetBool("IsFalling", false);
-            gunImage.SetActive(false);
-            machinegunImage.SetActive(false);
-            RocketImage.SetActive(false);
         }
         if (rb.velocity.y < 0 && controller.getGrounded() == false)
         {
             animator.SetBool("IsFalling", true);
             animator.SetBool("IsJumping", false);
-            gunImage.SetActive(false);
-            machinegunImage.SetActive(false);
-            RocketImage.SetActive(false);
         }
     }
 
@@ -355,6 +341,26 @@ public class PlayerMovement : MonoBehaviour
         Experience.TextValue = level;
         Time.timeScale = 0;
         AudioListener.pause = true;
+        activateLevelMenu(level);
+    }
+
+    public void resumeGame()
+    {
+        newLevelMenu.SetActive(false);
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+    }
+
+    public void activateLevelMenu(int level)
+    {
         newLevelMenu.SetActive(true);
+        newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 2).gameObject.SetActive(true);
+        newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 1).gameObject.SetActive(true);
+
+        if(level > 1)
+        {
+            newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 4).gameObject.SetActive(false);
+            newLevelMenu.transform.GetChild(0).gameObject.transform.GetChild((2 * level) - 3).gameObject.SetActive(false);
+        }
     }
 }
