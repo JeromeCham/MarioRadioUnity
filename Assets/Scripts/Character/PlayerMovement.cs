@@ -357,4 +357,11 @@ public class PlayerMovement : MonoBehaviour
         AudioListener.pause = true;
         newLevelMenu.SetActive(true);
     }
+
+    public void resumeGame()
+    {
+        newLevelMenu.SetActive(false);
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+    }
 }
