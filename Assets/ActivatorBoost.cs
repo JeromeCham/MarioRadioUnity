@@ -11,10 +11,10 @@ public class ActivatorBoost : MonoBehaviour
     private bool onActivator = false;
 
     [SerializeField]
-    private int nbActivator;
+    private int nbActivator = 0;
 
     [SerializeField]
-    private string nom;
+    private string nom = null;
 
     [SerializeField]
     private float rotation = 180;

@@ -1,5 +1,0 @@
-<<<<<<< Updated upstream
-m_EditorVersion: 2018.3.10f1
-=======
-m_EditorVersion: 2018.3.11f1
->>>>>>> Stashed changes

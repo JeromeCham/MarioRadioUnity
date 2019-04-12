@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
-    public bool isActivated = false;
-    public bool onActivator = false;
+    private bool isActivated = false;
+    private bool onActivator = false;
 
     [SerializeField]
     private Vector3 doorPositionInitial = new Vector3(0f, 0f, 0f);
@@ -14,13 +14,13 @@ public class Activator : MonoBehaviour
     private Vector3 doorPositionFinal = new Vector3(0f, 0f, 0f);
 
     [SerializeField]
-    private float distanceX;
+    private float distanceX = 0f;
 
     [SerializeField]
-    private float distanceY;
+    private float distanceY = 0f;
 
     [SerializeField]
-    private string nom;
+    private string nom = null;
 
     // Start is called before the first frame update
     void Start()

@@ -8,7 +8,7 @@ public class Gravity : MonoBehaviour
     private float gravityModifier = 3f;
 
     [SerializeField]
-    private Rigidbody2D rb;
+    private Rigidbody2D rb = null;
 
     void Update()
     {
