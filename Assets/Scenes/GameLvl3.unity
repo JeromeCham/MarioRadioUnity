@@ -1419,6 +1419,9 @@ MonoBehaviour:
   ammoTextUI: {fileID: 0}
   money: 50
   imageArmeUI: {fileID: 0}
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   firePoint: {fileID: 1960155482}
   dropPoint: {fileID: 1073904034}
   pistolet:
@@ -1455,6 +1458,7 @@ MonoBehaviour:
   objectname: ' '
   items: []
   space: 6
+  animator: {fileID: 0}
 --- !u!114 &112229631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,6 +1471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f2d0e55dad4194b9b4da9ee96dc592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   health:
     bar: {fileID: 219180025}
     maxVal: 100
@@ -1758,7 +1765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112229629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.34, y: 14.38, z: 0}
+  m_LocalPosition: {x: 1.84, y: 11.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 640263781}
@@ -3703,7 +3710,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300763866}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9999696, w: -0.007798493}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9999696, w: -0.007798832}
   m_LocalPosition: {x: 0.2538379, y: -0.09614631, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4867,7 +4874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549134911}
-  m_LocalRotation: {x: -0, y: -0, z: 0.022531878, w: 0.9997462}
+  m_LocalRotation: {x: -0, y: -0, z: 0.022531519, w: 0.9997462}
   m_LocalPosition: {x: 0.244, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5644,15 +5651,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 0, y: 2, z: 0}
-    second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 9
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: 1, y: 2, z: 0}
     second:
       m_TileIndex: 2
@@ -5680,22 +5678,13 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 4, y: 2, z: 0}
-    second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 9
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 11
+  - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 2708d23495e718546945d396eccf454f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -5716,10 +5705,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 11
+  - m_RefCount: 9
     m_Data: {fileID: 21300000, guid: fad26b059e5bd1b43922eb1fede119be, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 11
+  - m_RefCount: 9
     m_Data:
       e00: 1
       e01: 0
@@ -5740,7 +5729,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 2.239e-41, g: 2.239e-41, b: 2.239e-41, a: 2.239e-41}
-  - m_RefCount: 11
+  - m_RefCount: 9
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6797,7 +6786,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817157427}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9999999, w: 0.0005773365}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9999999, w: 0.00057770807}
   m_LocalPosition: {x: 0.05240986, y: -0.1500193, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7336,7 +7325,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867568688}
-  m_LocalRotation: {x: 0, y: 0, z: 0.021013904, w: 0.9997792}
+  m_LocalRotation: {x: 0, y: 0, z: 0.021013912, w: 0.9997792}
   m_LocalPosition: {x: 0.28158912, y: 0.00000009362938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7901,7 +7890,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959630935}
-  m_LocalRotation: {x: -0, y: -0, z: -0.008825221, w: -0.99996114}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008824767, w: -0.99996114}
   m_LocalPosition: {x: 0.214, y: -0.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8655,7 +8644,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027233769}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9997835, w: 0.020810207}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9997835, w: 0.02080976}
   m_LocalPosition: {x: 0.24152961, y: 0.08830113, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13928,7 +13917,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173871193}
-  m_LocalRotation: {x: -0, y: -0, z: 0.024505574, w: 0.99969965}
+  m_LocalRotation: {x: -0, y: -0, z: 0.024505913, w: 0.99969965}
   m_LocalPosition: {x: 0.238, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -14353,7 +14342,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259019216}
-  m_LocalRotation: {x: 0, y: 0, z: -0.0061470955, w: 0.99998116}
+  m_LocalRotation: {x: 0, y: 0, z: -0.006147099, w: 0.99998116}
   m_LocalPosition: {x: 0.23938006, y: -0.000000049408115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16885,7 +16874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693957983}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0059582447, w: -0.9999823}
+  m_LocalRotation: {x: -0, y: -0, z: -0.005957874, w: -0.9999823}
   m_LocalPosition: {x: 0.249, y: -0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -17138,6 +17127,9 @@ MonoBehaviour:
   ammoTextUI: {fileID: 1545150673}
   money: 50
   imageArmeUI: {fileID: 132492447}
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   firePoint: {fileID: 1259443520}
   dropPoint: {fileID: 531312517}
   pistolet:
@@ -17174,6 +17166,7 @@ MonoBehaviour:
   objectname: ' '
   items: []
   space: 6
+  animator: {fileID: 0}
 --- !u!95 &1704962727
 Animator:
   serializedVersion: 3
@@ -17205,6 +17198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f2d0e55dad4194b9b4da9ee96dc592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   health:
     bar: {fileID: 219180025}
     maxVal: 100
@@ -18169,7 +18165,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864892814}
-  m_LocalRotation: {x: 0, y: 0, z: 0.99999654, w: 0.0026371498}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99999654, w: 0.0026367866}
   m_LocalPosition: {x: 0.052034233, y: 0.06712658, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

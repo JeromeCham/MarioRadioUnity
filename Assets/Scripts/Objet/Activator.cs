@@ -35,9 +35,9 @@ public class Activator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject Gate = GameObject.Find(nom);
         transform.GetChild(0).gameObject.SetActive(!isActivated);
         transform.GetChild(1).gameObject.SetActive(isActivated);
-        GameObject Gate = GameObject.Find(nom);
         DoorOpenClose gate1 = Gate.transform.GetChild(0).GetComponent<DoorOpenClose>();
 
         if (onActivator && Input.GetKeyDown(KeyCode.E))
