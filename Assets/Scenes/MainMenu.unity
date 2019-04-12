@@ -191,17 +191,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 528907932}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 789558828}
         m_MethodName: SetActive
         m_Mode: 6
@@ -212,6 +201,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 528907932}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938031204}
+      - m_Target: {fileID: 780778676}
         m_MethodName: PlayGameLvl1
         m_Mode: 1
         m_Arguments:
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
     m_HighlightedColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0.19607843}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0.5882353}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938031204}
+      - m_Target: {fileID: 780778676}
         m_MethodName: PlayGameLvl2
         m_Mode: 1
         m_Arguments:
@@ -1420,11 +1420,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1614,6 +1614,7 @@ GameObject:
   - component: {fileID: 780778674}
   - component: {fileID: 780778673}
   - component: {fileID: 780778672}
+  - component: {fileID: 780778676}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1703,6 +1704,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &780778676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780778671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005c25b5d759cda4cbc6bb8ff584b92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonLvl2: {fileID: 466799939}
+  buttonLvl3: {fileID: 1308446781}
+  textLvl2: {fileID: 1815376187}
+  textLvl3: {fileID: 1731038449}
 --- !u!1 &783170867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,11 +1854,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1872,7 +1889,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789558829}
-  - component: {fileID: 789558830}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1897,18 +1913,6 @@ Transform:
   m_Father: {fileID: 780778675}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &789558830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789558828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005c25b5d759cda4cbc6bb8ff584b92d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &909803619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,17 +2187,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938031202}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 789558828}
         m_MethodName: SetActive
         m_Mode: 6
@@ -2204,6 +2197,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1938031202}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2466,7 +2470,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
     m_HighlightedColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0.19607843}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0.5882353}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2483,7 +2487,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938031204}
+      - m_Target: {fileID: 780778676}
         m_MethodName: PlayGameLvl3
         m_Mode: 1
         m_Arguments:
@@ -5073,11 +5077,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -5459,11 +5463,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -5839,7 +5843,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1938031203}
-  - component: {fileID: 1938031204}
   m_Layer: 0
   m_Name: ChooseLvlMenu
   m_TagString: Untagged
@@ -5865,18 +5868,6 @@ Transform:
   m_Father: {fileID: 780778675}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1938031204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938031202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005c25b5d759cda4cbc6bb8ff584b92d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2041069349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5956,7 +5947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 789558830}
+      - m_Target: {fileID: 780778676}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:

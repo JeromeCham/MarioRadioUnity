@@ -24,6 +24,16 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            MainMenu.lvlControl.Lvl2Done = true;
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            MainMenu.lvlControl.Lvl3Done = true;
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -31,6 +41,4 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-
 }
