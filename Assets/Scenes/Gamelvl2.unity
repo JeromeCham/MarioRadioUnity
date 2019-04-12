@@ -8392,6 +8392,9 @@ MonoBehaviour:
   ammoTextUI: {fileID: 1039559986}
   money: 50
   imageArmeUI: {fileID: 1968785006}
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   firePoint: {fileID: 884924671}
   dropPoint: {fileID: 1999231976}
   pistolet:
@@ -8428,6 +8431,7 @@ MonoBehaviour:
   objectname: ' '
   items: []
   space: 6
+  animator: {fileID: 0}
 --- !u!95 &355503997
 Animator:
   serializedVersion: 3
@@ -8459,6 +8463,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f2d0e55dad4194b9b4da9ee96dc592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   health:
     bar: {fileID: 919025479}
     maxVal: 100
@@ -8482,6 +8489,7 @@ MonoBehaviour:
   - {fileID: 355503995}
   - {fileID: 355503994}
   - {fileID: 355503993}
+  newLevelMenu: {fileID: 0}
   isUsingGreenPotion: 0
   isUsingBluePotion: 0
 --- !u!50 &355503999
@@ -10405,6 +10413,9 @@ MonoBehaviour:
   ammoTextUI: {fileID: 1039559986}
   money: 50
   imageArmeUI: {fileID: 1968785006}
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   firePoint: {fileID: 829113155}
   dropPoint: {fileID: 46881430}
   pistolet:
@@ -10441,6 +10452,7 @@ MonoBehaviour:
   objectname: ' '
   items: []
   space: 6
+  animator: {fileID: 0}
 --- !u!114 &557195128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10453,6 +10465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f2d0e55dad4194b9b4da9ee96dc592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunImage: {fileID: 0}
+  machinegunImage: {fileID: 0}
+  RocketImage: {fileID: 0}
   health:
     bar: {fileID: 919025479}
     maxVal: 100
@@ -10476,6 +10491,7 @@ MonoBehaviour:
   - {fileID: 557195131}
   - {fileID: 557195129}
   - {fileID: 557195130}
+  newLevelMenu: {fileID: 0}
   isUsingGreenPotion: 0
   isUsingBluePotion: 0
 --- !u!61 &557195129
@@ -14259,8 +14275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4239ed600089c41a9e72b7fa5f2a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
-  onActivator: 0
   doorPositionInitial: {x: 0, y: 0, z: 0}
   doorPositionFinal: {x: 0, y: 0, z: 0}
   distanceX: 0
@@ -28879,7 +28893,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 758d59a1d392db744bb1320c374b3c8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fc46098cab492e49b188f3a38d25fad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29100,8 +29114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4239ed600089c41a9e72b7fa5f2a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
-  onActivator: 0
   doorPositionInitial: {x: 0, y: 0, z: 0}
   doorPositionFinal: {x: 0, y: 0, z: 0}
   distanceX: 3
