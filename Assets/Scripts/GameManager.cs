@@ -26,12 +26,14 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
-            MainMenu.lvlControl.Lvl2Done = true;
+            //MainMenu.lvlControl.Lvl2Done = true;
+            MainMenu.instance.Lev1Clear();
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            MainMenu.lvlControl.Lvl3Done = true;
+            //MainMenu.lvlControl.Lvl3Done = true;
+            MainMenu.instance.Lev2Clear();
         }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

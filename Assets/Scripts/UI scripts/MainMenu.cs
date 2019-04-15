@@ -7,7 +7,10 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    public static MainMenu lvlControl;
+    //public static MainMenu lvlControl;
+
+    public static MainMenu instance;
+
 
     private bool lvl2Done = false;
     private bool lvl3Done = false;
@@ -49,6 +52,22 @@ public class MainMenu : MonoBehaviour
         {
             lvl3Done = value;
         }
+    }
+    public void Lev1Clear()
+    {
+        Lvl2Done = true;
+    }
+    public void Lev2Clear()
+    {
+        Lvl3Done = true;
+    }
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
     }
 
     public void Update()
