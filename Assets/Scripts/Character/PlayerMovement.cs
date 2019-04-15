@@ -289,12 +289,10 @@ public class PlayerMovement : MonoBehaviour
     public void addExp(int value)
     {
         Experience.CurrentValue += value;
-
-        if(Experience.CurrentValue >= Experience.MaxVal)
+        if((Experience.CurrentValue >= Experience.MaxVal) && level != 3)
         {
             Experience.CurrentValue = 0;
             newLevel();
-
         }
         Debug.Log(Experience.TextValue);
     }
