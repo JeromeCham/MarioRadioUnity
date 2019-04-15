@@ -12,6 +12,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject text = null;
 
+    private MainMenu mainMenu;
+
+    public void Start()
+    {
+        mainMenu = GetComponent<MainMenu>();
+    }
+
     public void EndGame()
     {
         if (gameHasEnded == false)
@@ -26,15 +33,14 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
+            mainMenu.accessLvl2();
             //MainMenu.lvlControl.Lvl2Done = true;
-            MainMenu.instance.Lev1Clear();
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        /*if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            //MainMenu.lvlControl.Lvl3Done = true;
-            MainMenu.instance.Lev2Clear();
-        }
+            MainMenu.lvlControl.Lvl3Done = true;
+        }*/
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

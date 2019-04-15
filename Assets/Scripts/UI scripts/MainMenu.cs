@@ -9,11 +9,10 @@ public class MainMenu : MonoBehaviour
 {
     //public static MainMenu lvlControl;
 
-    public static MainMenu instance;
+    //public static MainMenu instance;
 
-
-    private bool lvl2Done = false;
-    private bool lvl3Done = false;
+    //private bool lvl2Done = false;
+    //private bool lvl3Done = false;
     private Color tempColor;
 
     [SerializeField]
@@ -28,7 +27,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textLvl3 = null;
 
-    public bool Lvl2Done
+    /*public bool Lvl2Done
     {
         get
         {
@@ -52,31 +51,26 @@ public class MainMenu : MonoBehaviour
         {
             lvl3Done = value;
         }
-    }
-    public void Lev1Clear()
-    {
-        Lvl2Done = true;
-    }
-    public void Lev2Clear()
-    {
-        Lvl3Done = true;
-    }
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            return;
-        }
-        instance = this;
-    }
+    }*/
 
-    public void Update()
+    public void Start()
     {
         tempColor.r = 255f;
         tempColor.g = 255f;
         tempColor.b = 88f;
 
-        if (lvl2Done == false)
+        tempColor.a = 0.5f;
+        textLvl2.GetComponent<TextMeshProUGUI>().color = tempColor;
+        buttonLvl2.interactable = false;
+
+        tempColor.a = 0.5f;
+        textLvl3.GetComponent<TextMeshProUGUI>().color = tempColor;
+        buttonLvl3.interactable = false;
+    }
+
+    public void Update()
+    {
+        /*if (lvl2Done == false)
         {
             tempColor.a = 0.5f;
             textLvl2.GetComponent<TextMeshProUGUI>().color = tempColor;
@@ -100,7 +94,14 @@ public class MainMenu : MonoBehaviour
             tempColor.a = 1f;
             textLvl3.GetComponent<TextMeshProUGUI>().color = tempColor;
             buttonLvl3.interactable = true;
-        }
+        }*/
+    }
+
+    public void accessLvl2()
+    {
+        tempColor.a = 1f;
+        textLvl2.GetComponent<TextMeshProUGUI>().color = tempColor;
+        buttonLvl2.interactable = true;
     }
 
     public void PlayGameLvl1()
