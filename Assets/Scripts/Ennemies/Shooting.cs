@@ -18,6 +18,8 @@ public class Shooting : MonoBehaviour
     }
     void Die()
     {
+        PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
+        player.addExp(10);
         //Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
