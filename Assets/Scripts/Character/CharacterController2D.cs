@@ -7,6 +7,9 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator = null;
+
     [SerializeField] public float m_JumpForce = 800f;                                  // Amount of force added when the player jumps.
 
     [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;                 // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -98,6 +101,10 @@ public class CharacterController2D : MonoBehaviour
             if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
             {
                 crouch = true;
+            }
+            else
+            {
+                animator.SetBool("IsCrouching", false);
             }
         }
 

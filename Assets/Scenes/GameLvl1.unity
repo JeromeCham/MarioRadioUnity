@@ -7442,6 +7442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e70557939071e42941f810334f69c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 756277770}
   m_JumpForce: 800
   m_CrouchSpeed: 0.52
   m_MovementSmoothing: 0.05
