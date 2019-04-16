@@ -7212,8 +7212,8 @@ GameObject:
   - component: {fileID: 756277770}
   - component: {fileID: 756277769}
   - component: {fileID: 756277768}
-  - component: {fileID: 756277766}
   - component: {fileID: 756277767}
+  - component: {fileID: 756277766}
   - component: {fileID: 756277765}
   - component: {fileID: 756277764}
   - component: {fileID: 756277763}
@@ -7294,6 +7294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f2d0e55dad4194b9b4da9ee96dc592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CrouchDisableCollider: {fileID: 756277767}
   health:
     bar: {fileID: 1392288469}
     maxVal: 120
