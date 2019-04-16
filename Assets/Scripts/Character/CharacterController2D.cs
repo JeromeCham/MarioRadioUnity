@@ -7,6 +7,9 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator = null;
+
     [SerializeField] public float m_JumpForce = 800f;                                  // Amount of force added when the player jumps.
 
     [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;                 // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -99,6 +102,10 @@ public class CharacterController2D : MonoBehaviour
             {
                 crouch = true;
             }
+            else
+            {
+                animator.SetBool("IsCrouching", false);
+            }
         }
 
         //only control the player if grounded or airControl is turned on
@@ -119,16 +126,19 @@ public class CharacterController2D : MonoBehaviour
                 // Reduce the speed by the crouchSpeed multiplier
 
                 move *= m_CrouchSpeed;
-                
+
                 // Disable one of the colliders when crouching
 
-                if (m_CrouchDisableCollider != null) m_CrouchDisableCollider.enabled = false;
+                /*if (m_CrouchDisableCollider != null)
+                {
+                     m_CrouchDisableCollider.enabled = false;
+                }*/
             }
             else
             {
                 // Enable the collider when not crouching
 
-                if (m_CrouchDisableCollider != null) m_CrouchDisableCollider.enabled = true;
+                //if (m_CrouchDisableCollider != null) m_CrouchDisableCollider.enabled = true;
 
                 if (m_wasCrouching)
                 {
