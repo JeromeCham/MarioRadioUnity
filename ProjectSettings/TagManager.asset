@@ -22,6 +22,8 @@ TagManager:
   - MagazineMitraillette
   - MagazineBazouka
   - pont2
+  - Canvas
+  - Logo
   layers:
   - Default
   - TransparentFX

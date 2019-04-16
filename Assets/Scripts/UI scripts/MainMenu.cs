@@ -4,15 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System;
 
 public class MainMenu : MonoBehaviour
 {
-    //public static MainMenu lvlControl;
-
-    //public static MainMenu instance;
-
-    //private bool lvl2Done = false;
-    //private bool lvl3Done = false;
     private Color tempColor;
 
     [SerializeField]
@@ -27,32 +24,34 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textLvl3 = null;
 
-    /*public bool Lvl2Done
-    {
-        get
-        {
-            return lvl2Done;
-        }
+    private GameObject[] mainMenus;
 
-        set
+    private bool trueOne;
+
+    public string lvl2Done = "fds";
+    public string lvl3Done = "dcv";
+
+    public void Awake()
+    {
+        Load();
+        /*mainMenus = GameObject.FindGameObjectsWithTag("Canvas");
+
+        if (mainMenus.Length > 1)
         {
-            lvl2Done = value;
+            foreach (GameObject mainMenu in mainMenus)
+            {
+                if (mainMenu.GetComponent<MainMenu>().trueOne == false)
+                {
+                    Destroy(mainMenu);
+                }
+            }
         }
+        else
+        {
+            trueOne = true;
+        }
+        DontDestroyOnLoad(this.gameObject);*/
     }
-
-    public bool Lvl3Done
-    {
-        get
-        {
-            return lvl3Done;
-        }
-
-        set
-        {
-            lvl3Done = value;
-        }
-    }*/
-
     public void Start()
     {
         tempColor.r = 255f;
@@ -68,35 +67,6 @@ public class MainMenu : MonoBehaviour
         buttonLvl3.interactable = false;
     }
 
-    public void Update()
-    {
-        /*if (lvl2Done == false)
-        {
-            tempColor.a = 0.5f;
-            textLvl2.GetComponent<TextMeshProUGUI>().color = tempColor;
-            buttonLvl2.interactable = false;
-        }
-        else
-        {
-            tempColor.a = 1f;
-            textLvl2.GetComponent<TextMeshProUGUI>().color = tempColor;
-            buttonLvl2.interactable = true;
-        }
-
-        if (lvl3Done == false)
-        {
-            tempColor.a = 0.5f;
-            textLvl3.GetComponent<TextMeshProUGUI>().color = tempColor;
-            buttonLvl3.interactable = false;
-        }
-        else
-        {
-            tempColor.a = 1f;
-            textLvl3.GetComponent<TextMeshProUGUI>().color = tempColor;
-            buttonLvl3.interactable = true;
-        }*/
-    }
-
     public void accessLvl2()
     {
         tempColor.a = 1f;
@@ -104,24 +74,76 @@ public class MainMenu : MonoBehaviour
         buttonLvl2.interactable = true;
     }
 
-    public void PlayGameLvl1()
+    public void accessLvl3()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        tempColor.a = 1f;
+        textLvl3.GetComponent<TextMeshProUGUI>().color = tempColor;
+        buttonLvl3.interactable = true;
+    }
+
+    public void PlayGameLvl1()
+    {   
+        SceneManager.LoadScene(1);
     }
 
     public void PlayGameLvl2()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(2);
     }
 
     public void PlayGameLvl3()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene(3);
     }
 
+    public void Save()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = null;
+        
+        if(File.Exists(Application.persistentDataPath + "/menuLVL.dat"))
+        {
+            file = File.Open(Application.persistentDataPath + "/menuLVL.dat", FileMode.Open);
+        }
+        else
+        {
+            file = File.Create(Application.persistentDataPath + "/menuLVL.dat");
+            file = File.Open(Application.persistentDataPath + "/menuLVL.dat", FileMode.Open);
+        }
+        
+        MenuSave data = new MenuSave();
+        data.verif = "mdrujhfgbkuysadgfoiuahgfdoiuagfdouy";
+
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void Load()
+    {
+        if(File.Exists(Application.persistentDataPath + "/menuLVL.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/menuLVL.dat", FileMode.Open);
+            MenuSave data = (MenuSave)bf.Deserialize(file);
+            file.Close();
+
+            lvl2Done = data.verif;
+            lvl3Done = data.verif;
+
+            Debug.Log(lvl2Done + " " + lvl3Done);
+        }
+
+    }
+    
     public void QuitGame()
     {
         Debug.Log("QUIT!");
         Application.Quit();
     }
+}
+
+[Serializable]
+public class MenuSave : MonoBehaviour
+{
+    public string verif = "alow";
 }

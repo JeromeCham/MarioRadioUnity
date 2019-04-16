@@ -6,7 +6,6 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [SerializeField]
     private Stat health = null;
 

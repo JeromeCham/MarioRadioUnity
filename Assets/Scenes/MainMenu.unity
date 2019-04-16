@@ -1164,6 +1164,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 780778676}
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &464865689
@@ -1775,7 +1786,7 @@ GameObject:
   - component: {fileID: 780778676}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1879,6 +1890,8 @@ MonoBehaviour:
   buttonLvl3: {fileID: 1308446781}
   textLvl2: {fileID: 1815376187}
   textLvl3: {fileID: 1731038449}
+  lvl2Done: 
+  lvl3Done: 
 --- !u!1 &783170867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,7 +2593,7 @@ GameObject:
   - component: {fileID: 1298697828}
   m_Layer: 5
   m_Name: Logo
-  m_TagString: Untagged
+  m_TagString: Logo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

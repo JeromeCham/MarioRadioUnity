@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject text = null;
-
-    private MainMenu mainMenu;
+    
+    private GameObject mainMenu;
 
     public void Start()
     {
-        mainMenu = GetComponent<MainMenu>();
+        
     }
 
     public void EndGame()
@@ -33,14 +33,15 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
-            mainMenu.accessLvl2();
-            //MainMenu.lvlControl.Lvl2Done = true;
+            mainMenu = GameObject.FindGameObjectWithTag("Canvas");
+            mainMenu.GetComponent<MainMenu>().accessLvl2();
         }
 
-        /*if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            MainMenu.lvlControl.Lvl3Done = true;
-        }*/
+            mainMenu = GameObject.FindGameObjectWithTag("Canvas");
+            mainMenu.GetComponent<MainMenu>().accessLvl3();
+        }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
