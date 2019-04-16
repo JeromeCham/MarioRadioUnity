@@ -6,6 +6,7 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Collider2D m_CrouchDisableCollider = null;
 
     [SerializeField]
     private Stat health = null;
@@ -168,17 +169,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("IsCrouching", false);
+            m_CrouchDisableCollider.enabled = true;
         }
 
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
             animator.SetBool("IsCrouching", true);
+            m_CrouchDisableCollider.enabled = false;
         }
 
         else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
+            //animator.SetBool("IsCrouching", false);
+
         }
 
         Experience.TextValue = level;
@@ -228,10 +234,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    public void OnCrouching(bool isCrouching)
+    /*public void OnCrouching(bool isCrouching)
     {
         if (!isDead) animator.SetBool("IsCrouching", isCrouching);
-    }
+    }*/
 
     void FixedUpdate()
     {
