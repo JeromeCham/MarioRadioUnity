@@ -152,16 +152,15 @@ public class Inventaire : MonoBehaviour
         animator.SetBool("Start", true);
         if (items.Count >= space)
         {
-            Debug.Log("Not enough room");
+            //Debug.Log("Not enough room");
             return false;
         }
-        Debug.Log("Adding " + item.name + " to inventory");
+        //Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
         //selectobject = item.name;
-        Debug.Log(item.name);
+       // Debug.Log(item.name);
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
-
             selectobject = item.name;
             shoot = true;
             imageArmeUI.GetComponent<Image>().sprite = item.icon;
@@ -175,7 +174,7 @@ public class Inventaire : MonoBehaviour
     }
     public void Remove(Item item)
     {
-        Debug.Log("Removing " + item.name + " from inventory");
+        //Debug.Log("Removing " + item.name + " from inventory");
         items.Remove(item);
         objectname = item.name;
         if (onItemChangedCallback != null)

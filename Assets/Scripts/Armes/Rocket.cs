@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 15f;
     public Rigidbody2D rb;
     public bool destroy;
     public Transform ExplosionPoint;

@@ -22,7 +22,7 @@ public class ItemPickup : MonoBehaviour
         if (wasPickedUp)
         {
             Destroy(gameObject);
-            Debug.Log("Picking up " + item.name);
+            //Debug.Log("Picking up " + item.name);
         }
 
     }

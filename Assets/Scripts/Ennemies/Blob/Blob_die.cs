@@ -22,7 +22,7 @@ public class Blob_die : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Die");
+            //Debug.Log("Die");
             hit = true;
         }
     }

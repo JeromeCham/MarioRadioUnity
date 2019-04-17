@@ -225,7 +225,7 @@ public class PlayerMovement : MonoBehaviour
     public void setJumpForce(float valeur)
     {
         controller.m_JumpForce = valeur;
-        Debug.Log(controller.m_JumpForce);
+        //Debug.Log(controller.m_JumpForce);
     }
 
     public void OnLanding()
@@ -301,7 +301,7 @@ public class PlayerMovement : MonoBehaviour
             Experience.CurrentValue = 0;
             newLevel();
         }
-        Debug.Log(Experience.TextValue);
+        //Debug.Log(Experience.TextValue);
     }
 
     public void GreenPotion()

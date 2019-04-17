@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
     {
         if (hitInfo.tag == "Dmg")
         {
-            Debug.Log("hit");
+            //Debug.Log("hit");
             Shooting enemy = hitInfo.GetComponent<Shooting>();
             if (enemy != null)
             {
