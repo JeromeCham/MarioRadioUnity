@@ -6,7 +6,8 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Collider2D m_CrouchDisableCollider = null;
+    [SerializeField]
+    private Collider2D m_CrouchDisableCollider = null;
 
     [SerializeField]
     private Stat health = null;
