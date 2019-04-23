@@ -10,30 +10,41 @@ public class PLayerDataSave
     private bool lvl1Done;
     private bool lvl2Done;
 
-    public float Health { get => health; set => health = value; }
-    public bool Lvl1Done { get => lvl1Done; set => lvl1Done = value; }
-    public bool Lvl2Done { get => lvl2Done; set => lvl2Done = value; }
+    public float Health { get; set; }
+    public bool Lvl1Done { get; set; }
+    public bool Lvl2Done { get; set; }
 }
 
-// exemple de save and load
+/* exemple de save and load
 
-/*private void Save()
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
+private void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = null;
-        
+
         if (!File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
             file = File.Create(Application.persistentDataPath + "/playerData.dat");
         }
-
-        file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
+        else
+        {
+            file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
+        }
 
         PLayerDataSave data = new PLayerDataSave();
 
-        data.Lvl1Done = lvl1Done;
-        data.Lvl2Done = lvl2Done;
-        
+        if(lvlDone == 2)
+        {
+            data.Lvl1Done = true;
+        }
+        else if(lvlDone == 3)
+        {
+            data.Lvl2Done = true;
+        }
+
         bf.Serialize(file, data);
         file.Close();
     }
