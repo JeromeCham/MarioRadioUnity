@@ -8,6 +8,7 @@ public class Boost : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+
         PlayerMovement player = col.GetComponent<PlayerMovement>();
         player.setJumpForce(0);
     }
