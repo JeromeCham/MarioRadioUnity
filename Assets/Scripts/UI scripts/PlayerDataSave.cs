@@ -19,6 +19,7 @@ public class PLayerDataSave
     public int AmmoPistolet { get; set; }
     public int AmmoMitraillette { get; set; }
     public int AmmoBazooka { get; set; }
+    public int Money { get; set; }
 }
 
 /* exemple de save and load

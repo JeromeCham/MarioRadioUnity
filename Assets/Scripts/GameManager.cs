@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
             data.AmmoPistolet = 0;
             data.AmmoMitraillette = 0;
             data.AmmoBazooka = 0;
+            data.Money = 0;
         }
         else
         {
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
             data.AmmoPistolet = Inventaire.instance.Pistolet.Ammo;
             data.AmmoMitraillette = Inventaire.instance.Mitraillette.Ammo;
             data.AmmoBazooka = Inventaire.instance.Bazouka.Ammo;
+            data.Money = Inventaire.instance.NbMoney();
         }
         
         bf.Serialize(file, data);

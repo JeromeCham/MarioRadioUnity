@@ -157,6 +157,7 @@ public class Inventaire : MonoBehaviour
             pistolet.Ammo = data.AmmoPistolet;
             mitraillette.Ammo = data.AmmoMitraillette;
             bazouka.Ammo = data.AmmoBazooka;
+            money = data.Money;
         }
     }
         void Update()
