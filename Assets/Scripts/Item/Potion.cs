@@ -44,7 +44,6 @@ public class Potion : Item
     public override void Use()
     {
         player = FindObjectOfType<PlayerMovement>();
-        Debug.Log("name");
         switch (name)
         {
             case "Red potion":

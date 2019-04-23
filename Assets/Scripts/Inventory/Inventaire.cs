@@ -8,6 +8,7 @@ using System.IO;
 
 public class Inventaire : MonoBehaviour
 {
+    public static Inventaire instance;
     //UI
     #region Singleton
     [SerializeField]
@@ -59,9 +60,42 @@ public class Inventaire : MonoBehaviour
 
     private int ammo = 0;
 
-    public Arme Pistolet { get; set; }
-    public Arme Mitraillette { get; set; }
-    public Arme Bazouka { get; set; }
+    public Arme Pistolet
+    {
+        get
+        {
+            return pistolet;
+        }
+
+        set
+        {
+            pistolet = value;
+        }
+    }
+    public Arme Mitraillette
+    {
+        get
+        {
+            return mitraillette;
+        }
+
+        set
+        {
+            mitraillette = value;
+        }
+    }
+    public Arme Bazouka
+    {
+        get
+        {
+            return bazouka;
+        }
+
+        set
+        {
+            bazouka = value;
+        }
+    }
     #endregion
 
     //Potion
@@ -78,8 +112,6 @@ public class Inventaire : MonoBehaviour
 
     //Inventaire
     #region Singleton
-    public static Inventaire instance;
-
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
@@ -101,15 +133,14 @@ public class Inventaire : MonoBehaviour
 
     private void Awake()
     {
-        tempMoney = moneyText.text;
-        tempAmmo = ammoText.text;
-
         if (instance != null)
         {
-            Debug.LogWarning("Plus qu'un inventaire");
+            //Debug.LogWarning("Plus qu'un inventaire");
             return;
         }
         instance = this;
+        tempMoney = moneyText.text;
+        tempAmmo = ammoText.text;
 
         Load();
     }
