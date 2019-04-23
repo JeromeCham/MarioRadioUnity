@@ -8,13 +8,14 @@ public class Boost : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        PlayerMovement player = col.GetComponent<PlayerMovement>();
+        PlayerMovement player = col.GetComponentInParent<PlayerMovement>();
+        if (player == null) Debug.Log("player null");
         player.setJumpForce(0);
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        PlayerMovement player = col.GetComponent<PlayerMovement>();
+        PlayerMovement player = col.GetComponentInParent<PlayerMovement>();
         player.setJumpForce(temp);
     }
 }

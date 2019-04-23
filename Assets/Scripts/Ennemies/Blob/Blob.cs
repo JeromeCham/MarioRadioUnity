@@ -10,6 +10,8 @@ public class Blob : MonoBehaviour
     Transform myTrans;
     float myWidth;
     bool facingRight = false;
+    bool isTouchingWall = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +26,10 @@ public class Blob : MonoBehaviour
     {
         Vector2 lineCastPos = myTrans.position - myTrans.right * myWidth;
         bool isGrounded = Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down, blobMask);
+        
 
 
-
-        if (!isGrounded)
+        if ((!isGrounded || isTouchingWall) && myBody.velocity.y >= 0)
         {
             Vector3 currRot = myTrans.eulerAngles;
             currRot.y += 180;
@@ -57,4 +59,15 @@ public class Blob : MonoBehaviour
             return Vector2.left;
         }
     }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Tilemap solid") isTouchingWall = true;
+    }
+
+    public void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag == "Tilemap solid") isTouchingWall = false;
+    }
+
 }
