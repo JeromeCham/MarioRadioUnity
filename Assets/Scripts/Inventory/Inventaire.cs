@@ -219,12 +219,12 @@ public class Inventaire : MonoBehaviour
     }
     public void AddMagazinePistolet()
     {
-        pistolet.Ammo += 30;
+        pistolet.Ammo += 60;
     }
 
     public void AddMagazineMitraillette()
     {
-        mitraillette.Ammo += 50;
+        mitraillette.Ammo += 150;
     }
 
     public void AddMagazineBazooka()

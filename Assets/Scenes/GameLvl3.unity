@@ -1175,7 +1175,7 @@ MonoBehaviour:
     gunPrefab: {fileID: 5393166599197017399, guid: d655d125c6ffa404cb274b29e9053caa,
       type: 3}
     gun: {fileID: 0}
-    bulletPrefab: {fileID: 5698325997075960966, guid: 54a014356448f9745b44e1835d33f4d8,
+    bulletPrefab: {fileID: 3038247916458148057, guid: be28d1a07cd6204418b72cbc708ba457,
       type: 3}
     bullet: {fileID: 0}
     bulletLife: 1
@@ -1337,7 +1337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e70557939071e42941f810334f69c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 51375668}
   m_JumpForce: 800
   m_CrouchSpeed: 0.52
   m_MovementSmoothing: 0.05
