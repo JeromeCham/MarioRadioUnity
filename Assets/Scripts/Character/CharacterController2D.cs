@@ -53,6 +53,10 @@ public class CharacterController2D : MonoBehaviour
 
     private bool m_wasCrouching = false;
 
+    public bool isUnderSomething = false;
+
+    public bool wasUnderSomething = false;
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -61,11 +65,11 @@ public class CharacterController2D : MonoBehaviour
         
         if (OnCrouchEvent == null) OnCrouchEvent = new BoolEvent();
     }
-
-
-
+    
     private void FixedUpdate()
     {
+        isUnderSomething = Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround);
+
         bool wasGrounded = m_Grounded;
 
         m_Grounded = false;
@@ -86,8 +90,7 @@ public class CharacterController2D : MonoBehaviour
             }
 
         }
-
-
+        
     }
 
     public void Move(float move, bool crouch, bool jump)
@@ -98,7 +101,7 @@ public class CharacterController2D : MonoBehaviour
         {
             // If the character has a ceiling preventing them from standing up, keep them crouching
 
-            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+            if (isUnderSomething)
             {
                 crouch = true;
             }
@@ -107,6 +110,7 @@ public class CharacterController2D : MonoBehaviour
                 animator.SetBool("IsCrouching", false);
             }
         }
+
 
         //only control the player if grounded or airControl is turned on
 
