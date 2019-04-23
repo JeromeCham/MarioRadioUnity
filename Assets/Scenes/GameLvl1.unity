@@ -7285,7 +7285,7 @@ MonoBehaviour:
     gunPrefab: {fileID: 5393166599197017399, guid: d655d125c6ffa404cb274b29e9053caa,
       type: 3}
     gun: {fileID: 0}
-    bulletPrefab: {fileID: 5698325997075960966, guid: 54a014356448f9745b44e1835d33f4d8,
+    bulletPrefab: {fileID: 3038247916458148057, guid: be28d1a07cd6204418b72cbc708ba457,
       type: 3}
     bullet: {fileID: 0}
     bulletLife: 1
