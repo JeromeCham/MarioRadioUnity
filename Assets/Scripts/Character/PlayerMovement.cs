@@ -167,7 +167,9 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        
+
+        if (Input.GetButtonDown("Jump") && !controller.isUnderSomething)
         {
             jump = true;
             animator.SetBool("IsCrouching", false);
@@ -181,11 +183,11 @@ public class PlayerMovement : MonoBehaviour
             m_CrouchDisableCollider.enabled = false;
         }
 
-        else if (Input.GetButtonUp("Crouch"))
+        if ((Input.GetButtonUp("Crouch") && !controller.isUnderSomething) || (!controller.isUnderSomething && !Input.GetButton("Crouch")))
         {
             crouch = false;
-            //animator.SetBool("IsCrouching", false);
-
+            m_CrouchDisableCollider.enabled = true;
+            animator.SetBool("IsCrouching", false);
         }
 
         Experience.TextValue = level;
@@ -235,10 +237,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    /*public void OnCrouching(bool isCrouching)
+    public void OnCrouching(bool isCrouching)
     {
         if (!isDead) animator.SetBool("IsCrouching", isCrouching);
-    }*/
+    }
 
     void FixedUpdate()
     {
