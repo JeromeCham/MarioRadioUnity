@@ -71,7 +71,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
-    public void Load()
+    private void Load()
     {
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {

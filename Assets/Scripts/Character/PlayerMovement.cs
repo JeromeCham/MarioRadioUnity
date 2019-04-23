@@ -2,10 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement playerInstance;
+
     [SerializeField]
     private Collider2D m_CrouchDisableCollider = null;
 
@@ -112,14 +115,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        if(playerInstance != null)
+        {
+            return;
+        }
+        playerInstance = this;
+
         Neutraliser.Initialized();
         Health.Initialized();
         Experience.Initialized(level);
         
         isDead = false;
         animator.SetBool("IsDead", false);
+
+        Load();
     }
-    
+
+    private void Load()
+    {
+        if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
+            PLayerDataSave data = bf.Deserialize(file) as PLayerDataSave;
+            file.Close();
+
+            if(data.Health != 0)
+            {
+                health.CurrentValue = data.Health;
+            }
+        }
+    }
+
     void Update()
     {
 
