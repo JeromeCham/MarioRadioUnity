@@ -46,10 +46,13 @@ public class InventorySlot : MonoBehaviour
             Inventaire.instance.SelectWeapon(item);
         }
 
-        if (item != null && item.name != "Gun" && item.name != "Machine gun" && item.name != "RocketLauncher" && !player.isUsingBluePotion && !player.isUsingGreenPotion)
+        if (item != null && item.name != "Gun" && item.name != "Machine gun" && item.name != "RocketLauncher")
         {
-            item.Use();
-            Inventaire.instance.Remove(item);
+            if (item.name == "Red potion" || (!player.isUsingBluePotion && !player.isUsingGreenPotion))
+            {
+                item.Use();
+                Inventaire.instance.Remove(item);
+            }
         }
     }
 }

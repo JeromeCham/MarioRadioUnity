@@ -23,12 +23,12 @@ public class Teleporteur : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (portCooldown <= 0)
+        if (portCooldown <= 0 && col.tag == "Player")
         {
             PortFinal = positionPortal.position;
 
-            PlayerMovement player = col.GetComponent<PlayerMovement>();
-            player.transform.position = PortFinal;
+            Transform player = col.GetComponentInParent<Transform>();
+            player.position = PortFinal;
             portCooldown = portCooldownMax;
         }
     }

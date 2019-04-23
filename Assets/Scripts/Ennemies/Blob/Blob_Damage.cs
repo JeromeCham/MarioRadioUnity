@@ -7,13 +7,7 @@ public class Blob_Damage : MonoBehaviour
     public float hitDamage = 0.0f;
     public float dmgTimer = 0.3f;
     public float maxTimer = 0.3f;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+ 
     void Update()
     {
         if (dmgTimer > 0)
