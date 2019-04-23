@@ -9,10 +9,16 @@ public class PLayerDataSave
     private float health;
     private bool lvl1Done;
     private bool lvl2Done;
+    private int ammoPistolet;
+    private int ammoMitraillette;
+    private int ammoBazooka;
 
     public float Health { get; set; }
     public bool Lvl1Done { get; set; }
     public bool Lvl2Done { get; set; }
+    public int AmmoPistolet { get; set; }
+    public int AmmoMitraillette { get; set; }
+    public int AmmoBazooka { get; set; }
 }
 
 /* exemple de save and load
@@ -25,6 +31,8 @@ private void Save()
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = null;
 
+        PLayerDataSave data = Load();
+
         if (!File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
             file = File.Create(Application.persistentDataPath + "/playerData.dat");
@@ -33,9 +41,7 @@ private void Save()
         {
             file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
         }
-
-        PLayerDataSave data = new PLayerDataSave();
-
+        
         if(lvlDone == 2)
         {
             data.Lvl1Done = true;

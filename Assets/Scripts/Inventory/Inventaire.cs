@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class Inventaire : MonoBehaviour
 {
@@ -37,8 +39,7 @@ public class Inventaire : MonoBehaviour
 
     [SerializeField]
     private GameObject RocketImage = null;
-
-
+    
     [SerializeField]
     private Transform firePoint = null;
 
@@ -57,6 +58,10 @@ public class Inventaire : MonoBehaviour
     private bool shoot = false;
 
     private int ammo = 0;
+
+    public Arme Pistolet { get; set; }
+    public Arme Mitraillette { get; set; }
+    public Arme Bazouka { get; set; }
     #endregion
 
     //Potion
@@ -105,9 +110,25 @@ public class Inventaire : MonoBehaviour
             return;
         }
         instance = this;
+
+        Load();
     }
 
-    void Update()
+    private void Load()
+    {
+        if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
+            PLayerDataSave data = bf.Deserialize(file) as PLayerDataSave;
+            file.Close();
+
+            pistolet.Ammo = data.AmmoPistolet;
+            mitraillette.Ammo = data.AmmoMitraillette;
+            bazouka.Ammo = data.AmmoBazooka;
+        }
+    }
+        void Update()
     {
         switch (selectobject)
         {

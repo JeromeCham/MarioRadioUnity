@@ -63,8 +63,21 @@ public class GameManager : MonoBehaviour
             data.Lvl2Done = true;
         }
 
-        data.Health = PlayerMovement.playerInstance.Health.CurrentValue;
-
+        if(currentLvl == -1)
+        {
+            data.Health = 120;
+            data.AmmoPistolet = 0;
+            data.AmmoMitraillette = 0;
+            data.AmmoBazooka = 0;
+        }
+        else
+        {
+            data.Health = PlayerMovement.playerInstance.Health.CurrentValue;
+            data.AmmoPistolet = Inventaire.instance.Pistolet.Ammo;
+            data.AmmoMitraillette = Inventaire.instance.Mitraillette.Ammo;
+            data.AmmoBazooka = Inventaire.instance.Bazouka.Ammo;
+        }
+        
         bf.Serialize(file, data);
         file.Close();
     }
@@ -88,30 +101,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        Save();
+        Save(-1);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    private void Save()
-    {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = null;
-
-        PLayerDataSave data = Load();
-
-        if (!File.Exists(Application.persistentDataPath + "/playerData.dat"))
-        {
-            file = File.Create(Application.persistentDataPath + "/playerData.dat");
-        }
-        else
-        {
-            file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
-        }
-
-        data.Health = 120;
-
-        bf.Serialize(file, data);
-        file.Close();
     }
 }
