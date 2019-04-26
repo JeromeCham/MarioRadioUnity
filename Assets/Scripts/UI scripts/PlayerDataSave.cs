@@ -12,6 +12,10 @@ public class PLayerDataSave
     private int ammoPistolet;
     private int ammoMitraillette;
     private int ammoBazooka;
+    //private List<Item> items;
+    private List<SaveItems> items;
+    
+    //private Item item1;
 
     public float Health { get; set; }
     public bool Lvl1Done { get; set; }
@@ -20,6 +24,17 @@ public class PLayerDataSave
     public int AmmoMitraillette { get; set; }
     public int AmmoBazooka { get; set; }
     public int Money { get; set; }
+    //public List<Item> Items { get; set; }
+    public List<SaveItems> Items { get; set; }
+}
+
+[Serializable]
+public class SaveItems
+{
+    public string name;// = "New item";
+    public Sprite icon;// = null;
+    public bool isDefaultItem;// = false;
+    public string description;
 }
 
 /* exemple de save and load

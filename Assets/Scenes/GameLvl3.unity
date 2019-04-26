@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e70557939071e42941f810334f69c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 51375668}
   m_JumpForce: 800
   m_CrouchSpeed: 0.52
   m_MovementSmoothing: 0.05
@@ -1380,6 +1380,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: CharacterController2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  isUnderSomething: 0
+  wasUnderSomething: 0
 --- !u!95 &51375668
 Animator:
   serializedVersion: 3

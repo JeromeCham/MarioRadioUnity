@@ -129,8 +129,7 @@ public class Inventaire : MonoBehaviour
     public int space = 6;
     #endregion
     public Animator animator;
-
-
+    
     private void Awake()
     {
         if (instance != null)
@@ -158,6 +157,17 @@ public class Inventaire : MonoBehaviour
             mitraillette.Ammo = data.AmmoMitraillette;
             bazouka.Ammo = data.AmmoBazooka;
             money = data.Money;
+            Debug.Log(items.Count);
+
+            data.Items = new List<SaveItems>(); /// Ca va planter la car on le met a 0 tout le temps
+
+            for (int i = 0; i < data.Items.Count; i++)
+            {
+                items[i].name = data.Items[i].name;
+                items[i].icon = data.Items[i].icon;
+                items[i].isDefaultItem = data.Items[i].isDefaultItem;
+                items[i].description = data.Items[i].description;
+            }
         }
     }
         void Update()

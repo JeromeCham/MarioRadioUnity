@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +71,9 @@ public class GameManager : MonoBehaviour
             data.AmmoMitraillette = 0;
             data.AmmoBazooka = 0;
             data.Money = 0;
+
+            //data.Items = new List<SaveItems>();
+            //data.Items = new List<Item>();
         }
         else
         {
@@ -78,6 +82,20 @@ public class GameManager : MonoBehaviour
             data.AmmoMitraillette = Inventaire.instance.Mitraillette.Ammo;
             data.AmmoBazooka = Inventaire.instance.Bazouka.Ammo;
             data.Money = Inventaire.instance.NbMoney();
+
+            data.Items = new List<SaveItems>();
+            /*for (int i = 0; i < Inventaire.instance.items.Count; i++)
+            {
+                data.Items.Add(new Item())
+            }*/
+
+            for (int i = 0; i < Inventaire.instance.items.Count; i++)
+            {
+                data.Items[i].name = Inventaire.instance.items[i].name;
+                data.Items[i].icon = Inventaire.instance.items[i].icon;
+                data.Items[i].isDefaultItem = Inventaire.instance.items[i].isDefaultItem;
+                data.Items[i].description = Inventaire.instance.items[i].description;
+            }
         }
         
         bf.Serialize(file, data);
