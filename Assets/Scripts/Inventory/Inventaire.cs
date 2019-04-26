@@ -289,6 +289,10 @@ public class Inventaire : MonoBehaviour
     {
         return money;
     }
+    public void AddMoney(int money2)
+    {
+        money += money2;
+    }
     public void MoinsShop()
     {
         money -= 10;
