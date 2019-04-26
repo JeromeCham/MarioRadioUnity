@@ -1113,8 +1113,8 @@ GameObject:
   - component: {fileID: 51375668}
   - component: {fileID: 51375667}
   - component: {fileID: 51375666}
-  - component: {fileID: 51375665}
   - component: {fileID: 51375664}
+  - component: {fileID: 51375665}
   - component: {fileID: 51375663}
   - component: {fileID: 51375662}
   - component: {fileID: 51375661}
@@ -5722,6 +5722,7 @@ GameObject:
   - component: {fileID: 504113478}
   - component: {fileID: 504113477}
   - component: {fileID: 504113476}
+  - component: {fileID: 504113475}
   m_Layer: 0
   m_Name: Neutraliser (5)
   m_TagString: Untagged
@@ -5743,6 +5744,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504113475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504113473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &504113476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5753,7 +5769,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6352,6 +6368,7 @@ GameObject:
   - component: {fileID: 649056128}
   - component: {fileID: 649056127}
   - component: {fileID: 649056126}
+  - component: {fileID: 649056125}
   m_Layer: 0
   m_Name: Neutraliser (7)
   m_TagString: Untagged
@@ -6373,6 +6390,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649056125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649056123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &649056126
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6383,7 +6415,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -17897,6 +17929,7 @@ GameObject:
   - component: {fileID: 1536619531}
   - component: {fileID: 1536619530}
   - component: {fileID: 1536619529}
+  - component: {fileID: 1536619528}
   m_Layer: 0
   m_Name: Neutraliser (3)
   m_TagString: Untagged
@@ -17918,6 +17951,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1536619528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536619526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &1536619529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17928,7 +17976,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -18420,6 +18468,7 @@ GameObject:
   - component: {fileID: 1590075503}
   - component: {fileID: 1590075502}
   - component: {fileID: 1590075501}
+  - component: {fileID: 1590075500}
   m_Layer: 0
   m_Name: Neutraliser (1)
   m_TagString: Untagged
@@ -18441,6 +18490,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590075500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590075498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &1590075501
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18451,7 +18515,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -19425,6 +19489,7 @@ GameObject:
   - component: {fileID: 1702430384}
   - component: {fileID: 1702430383}
   - component: {fileID: 1702430382}
+  - component: {fileID: 1702430381}
   m_Layer: 0
   m_Name: Neutraliser (4)
   m_TagString: Untagged
@@ -19446,6 +19511,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1702430381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702430379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &1702430382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19456,7 +19536,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -19961,6 +20041,7 @@ GameObject:
   - component: {fileID: 1767966311}
   - component: {fileID: 1767966310}
   - component: {fileID: 1767966309}
+  - component: {fileID: 1767966308}
   m_Layer: 0
   m_Name: Neutraliser (8)
   m_TagString: Untagged
@@ -19982,6 +20063,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767966308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767966306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &1767966309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19992,7 +20088,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -20081,6 +20177,7 @@ GameObject:
   - component: {fileID: 1783907938}
   - component: {fileID: 1783907937}
   - component: {fileID: 1783907936}
+  - component: {fileID: 1783907935}
   m_Layer: 0
   m_Name: Neutraliser (2)
   m_TagString: Untagged
@@ -20102,6 +20199,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783907935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783907933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &1783907936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20112,7 +20224,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -22022,6 +22134,7 @@ GameObject:
   - component: {fileID: 2007837577}
   - component: {fileID: 2007837576}
   - component: {fileID: 2007837575}
+  - component: {fileID: 2007837574}
   m_Layer: 0
   m_Name: Neutraliser (9)
   m_TagString: Untagged
@@ -22043,6 +22156,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2007837574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007837572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &2007837575
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22053,7 +22181,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -22943,6 +23071,7 @@ GameObject:
   - component: {fileID: 2077363921}
   - component: {fileID: 2077363920}
   - component: {fileID: 2077363919}
+  - component: {fileID: 2077363918}
   m_Layer: 0
   m_Name: Neutraliser
   m_TagString: Untagged
@@ -22964,6 +23093,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2077363918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077363916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &2077363919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22974,7 +23118,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -24056,6 +24200,7 @@ GameObject:
   - component: {fileID: 2137974851}
   - component: {fileID: 2137974850}
   - component: {fileID: 2137974849}
+  - component: {fileID: 2137974848}
   m_Layer: 0
   m_Name: Neutraliser (6)
   m_TagString: Untagged
@@ -24077,6 +24222,21 @@ Transform:
   m_Father: {fileID: 1083676349}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2137974848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137974846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b05f713b5245d4b94242a375ebcbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 51375665}
+  other2: {fileID: 51375664}
+  other3: {fileID: 51375664}
 --- !u!61 &2137974849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24087,7 +24247,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
