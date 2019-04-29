@@ -151,15 +151,25 @@ public class Inventaire : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             PLayerDataSave data = bf.Deserialize(file) as PLayerDataSave;
-            file.Close();
-
+            file.Close();            
             pistolet.Ammo = data.AmmoPistolet;
             mitraillette.Ammo = data.AmmoMitraillette;
             bazouka.Ammo = data.AmmoBazooka;
             money = data.Money;
+
+            Debug.Log(items.Count);            
+            data.Items = new List<SaveItems>(); /// Ca va planter la car on le met a 0 tout le temps            
+            for (int i = 0; i < data.Items.Count; i++)
+            {
+                items[i].name = data.Items[i].name;
+                items[i].icon = data.Items[i].icon;
+                items[i].isDefaultItem = data.Items[i].isDefaultItem;
+                items[i].description = data.Items[i].description;
+            }
         }
     }
-        void Update()
+
+    void Update()
     {
         switch (selectobject)
         {
@@ -392,29 +402,4 @@ public class Inventaire : MonoBehaviour
     }
 }
 
-    private void Load()
-    {
-        if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
-        {
-            FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
-            BinaryFormatter bf = new BinaryFormatter();
-            PLayerDataSave data = bf.Deserialize(file) as PLayerDataSave;
-            file.Close();
-
-            pistolet.Ammo = data.AmmoPistolet;
-            mitraillette.Ammo = data.AmmoMitraillette;
-            bazouka.Ammo = data.AmmoBazooka;
-            money = data.Money;
-            Debug.Log(items.Count);
-
-            data.Items = new List<SaveItems>(); /// Ca va planter la car on le met a 0 tout le temps
-
-            for (int i = 0; i < data.Items.Count; i++)
-            {
-                items[i].name = data.Items[i].name;
-                items[i].icon = data.Items[i].icon;
-                items[i].isDefaultItem = data.Items[i].isDefaultItem;
-                items[i].description = data.Items[i].description;
-            }
-        }
-    }
+    
