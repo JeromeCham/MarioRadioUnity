@@ -71,9 +71,7 @@ public class GameManager : MonoBehaviour
             data.AmmoMitraillette = 0;
             data.AmmoBazooka = 0;
             data.Money = 0;
-
-            //data.Items = new List<SaveItems>();
-            //data.Items = new List<Item>();
+            data.Items = new List<int>();
         }
         else
         {
@@ -83,11 +81,44 @@ public class GameManager : MonoBehaviour
             data.AmmoBazooka = Inventaire.instance.Bazouka.Ammo;
             data.Money = Inventaire.instance.NbMoney();
 
-            data.Items = new List<SaveItems>();
-            /*for (int i = 0; i < Inventaire.instance.items.Count; i++)
+            if (data.Items == null)
+            {
+                data.Items = new List<int>();
+            }
+
+            for (int i = 0; i < Inventaire.instance.items.Count; i++)
+            {
+                if (Inventaire.instance.items[i].name == "Gun")
+                {
+                    data.Items[i] = 1;
+                }
+                else if (Inventaire.instance.items[i].name == "Machine gun")
+                {
+                    data.Items[i] = 2;
+                }
+                else if (Inventaire.instance.items[i].name == "RocketLauncher")
+                {
+                    data.Items[i] = 3;
+                }
+                else if (Inventaire.instance.items[i].name == "Blue potion")
+                {
+                    data.Items[i] = 4;
+                }
+                else if (Inventaire.instance.items[i].name == "Green potion")
+                {
+                    data.Items[i] = 5;
+                }
+                else if (Inventaire.instance.items[i].name == "Red potion")
+                {
+                    data.Items[i] = 6;
+                }
+            }
+
+            /*data.Items = new List<SaveItems>();
+            for (int i = 0; i < Inventaire.instance.items.Count; i++)
             {
                 data.Items.Add(new Item())
-            }*/
+            }
 
             for (int i = 0; i < Inventaire.instance.items.Count; i++)
             {
@@ -95,7 +126,7 @@ public class GameManager : MonoBehaviour
                 data.Items[i].icon = Inventaire.instance.items[i].icon;
                 data.Items[i].isDefaultItem = Inventaire.instance.items[i].isDefaultItem;
                 data.Items[i].description = Inventaire.instance.items[i].description;
-            }
+            }*/
         }
         
         bf.Serialize(file, data);
@@ -105,6 +136,7 @@ public class GameManager : MonoBehaviour
     private PLayerDataSave Load()
     {
         PLayerDataSave data = new PLayerDataSave();
+        data.Items = new List<int>();
 
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {

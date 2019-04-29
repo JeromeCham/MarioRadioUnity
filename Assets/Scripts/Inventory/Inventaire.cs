@@ -129,7 +129,28 @@ public class Inventaire : MonoBehaviour
     public int space = 6;
     #endregion
     public Animator animator;
-    
+
+    //SaveInventaire
+    #region Singleton
+    [SerializeField]
+    private ScriptableObject item1;
+
+    [SerializeField]
+    private ScriptableObject item2;
+
+    [SerializeField]
+    private ScriptableObject item3;
+
+    [SerializeField]
+    private ScriptableObject item4;
+
+    [SerializeField]
+    private ScriptableObject item5;
+
+    [SerializeField]
+    private ScriptableObject item6;
+    #endregion
+
     private void Awake()
     {
         if (instance != null)
@@ -151,21 +172,55 @@ public class Inventaire : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             PLayerDataSave data = bf.Deserialize(file) as PLayerDataSave;
-            file.Close();            
+            file.Close();
+
             pistolet.Ammo = data.AmmoPistolet;
             mitraillette.Ammo = data.AmmoMitraillette;
             bazouka.Ammo = data.AmmoBazooka;
             money = data.Money;
 
-            Debug.Log(items.Count);            
-            data.Items = new List<SaveItems>(); /// Ca va planter la car on le met a 0 tout le temps            
+            if(data.Items == null)
+            {
+                data.Items = new List<int>();
+            }
+
             for (int i = 0; i < data.Items.Count; i++)
             {
-                items[i].name = data.Items[i].name;
-                items[i].icon = data.Items[i].icon;
-                items[i].isDefaultItem = data.Items[i].isDefaultItem;
-                items[i].description = data.Items[i].description;
+                if (data.Items[i] == 1)
+                {
+                    items[i] = (Item)item1;
+                }
+                else if (data.Items[i] == 2)
+                {
+                    items[i] = (Item)item2;
+                }
+                else if (data.Items[i] == 3)
+                {
+                    items[i] = (Item)item3;
+                }
+                else if (data.Items[i] == 4)
+                {
+                    items[i] = (Item)item4;
+                }
+                else if (data.Items[i] == 5)
+                {
+                    items[i] = (Item)item5;
+                }
+                else if (data.Items[i] == 6)
+                {
+                    items[i] = (Item)item6;
+                }
             }
+
+            /* Debug.Log(items.Count);            
+             data.Items = new List<SaveItems>(); /// Ca va planter la car on le met a 0 tout le temps            
+             for (int i = 0; i < data.Items.Count; i++)
+             {
+                 items[i].name = data.Items[i].name;
+                 items[i].icon = data.Items[i].icon;
+                 items[i].isDefaultItem = data.Items[i].isDefaultItem;
+                 items[i].description = data.Items[i].description;
+             }*/
         }
     }
 

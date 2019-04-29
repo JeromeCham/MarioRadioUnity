@@ -7781,6 +7781,12 @@ MonoBehaviour:
   items: []
   space: 6
   animator: {fileID: 756277770}
+  item1: {fileID: 11400000, guid: 4cadb78dfe2fa1a4daa81785428e4a14, type: 2}
+  item2: {fileID: 11400000, guid: 6e590b29e980d0f448ea6b3c65978325, type: 2}
+  item3: {fileID: 11400000, guid: 5027cc28803aa7f498f41a20c4fad348, type: 2}
+  item4: {fileID: 11400000, guid: 8ca9a6395e9e84948b5702b79a26e4e4, type: 2}
+  item5: {fileID: 11400000, guid: c0bc3cf58fc382a489063ae96fbbac8f, type: 2}
+  item6: {fileID: 11400000, guid: 2916890f854410c4299b69d581d4d703, type: 2}
 --- !u!114 &756277764
 MonoBehaviour:
   m_ObjectHideFlags: 0
