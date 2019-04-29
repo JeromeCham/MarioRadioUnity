@@ -31,6 +31,7 @@ public class ButtonChoice : MonoBehaviour
     public void choice1B()
     {
         PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
+
     }
 
     public void choice2B()
