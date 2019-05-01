@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -10,6 +9,17 @@ public class InventorySlot : MonoBehaviour
     public TextMeshProUGUI description;
     Item item;
     PlayerMovement player;
+
+    public static InventorySlot instanceslot;
+
+    private void Awake()
+    {
+        if (instanceslot != null)
+        {
+            return;
+        }
+        instanceslot = this;
+    }
 
     public void AddItem(Item newItem)
     {

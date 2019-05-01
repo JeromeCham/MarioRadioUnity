@@ -85,32 +85,31 @@ public class GameManager : MonoBehaviour
             {
                 data.Items = new List<int>();
             }
-
             for (int i = 0; i < Inventaire.instance.items.Count; i++)
             {
                 if (Inventaire.instance.items[i].name == "Gun")
                 {
-                    data.Items[i] = 1;
+                    data.Items.Add(1);
                 }
                 else if (Inventaire.instance.items[i].name == "Machine gun")
                 {
-                    data.Items[i] = 2;
+                    data.Items.Add(2);
                 }
                 else if (Inventaire.instance.items[i].name == "RocketLauncher")
                 {
-                    data.Items[i] = 3;
+                    data.Items.Add(3);
                 }
                 else if (Inventaire.instance.items[i].name == "Blue potion")
                 {
-                    data.Items[i] = 4;
+                    data.Items.Add(4);
                 }
                 else if (Inventaire.instance.items[i].name == "Green potion")
                 {
-                    data.Items[i] = 5;
+                    data.Items.Add(5);
                 }
                 else if (Inventaire.instance.items[i].name == "Red potion")
                 {
-                    data.Items[i] = 6;
+                    data.Items.Add(6);
                 }
             }
 

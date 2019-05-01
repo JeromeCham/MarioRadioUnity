@@ -183,32 +183,38 @@ public class Inventaire : MonoBehaviour
             {
                 data.Items = new List<int>();
             }
-
+            
             for (int i = 0; i < data.Items.Count; i++)
             {
                 if (data.Items[i] == 1)
                 {
-                    items[i] = (Item)item1;
+                    items.Add((Item)item1);
+                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 2)
                 {
-                    items[i] = (Item)item2;
+                    items.Add((Item)item2);
+                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 3)
                 {
-                    items[i] = (Item)item3;
+                    items.Add((Item)item3);
+                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 4)
                 {
-                    items[i] = (Item)item4;
+                    items.Add((Item)item4);
+                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 5)
                 {
-                    items[i] = (Item)item5;
+                    items.Add((Item)item5);
+                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 6)
                 {
-                    items[i] = (Item)item6;
+                    items.Add((Item)item6);
+                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
             }
 
