@@ -10,17 +10,6 @@ public class InventorySlot : MonoBehaviour
     Item item;
     PlayerMovement player;
 
-    public static InventorySlot instanceslot;
-
-    private void Awake()
-    {
-        if (instanceslot != null)
-        {
-            return;
-        }
-        instanceslot = this;
-    }
-
     public void AddItem(Item newItem)
     {
         item = newItem;

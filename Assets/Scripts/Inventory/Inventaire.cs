@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 public class Inventaire : MonoBehaviour
-{
+{   
     public static Inventaire instance;
     //UI
     #region Singleton
@@ -153,16 +153,14 @@ public class Inventaire : MonoBehaviour
 
     private void Awake()
     {
+        Load();
         if (instance != null)
         {
-            //Debug.LogWarning("Plus qu'un inventaire");
             return;
         }
         instance = this;
         tempMoney = moneyText.text;
         tempAmmo = ammoText.text;
-
-        Load();
     }
 
     private void Load()
@@ -186,47 +184,33 @@ public class Inventaire : MonoBehaviour
             
             for (int i = 0; i < data.Items.Count; i++)
             {
+                
                 if (data.Items[i] == 1)
                 {
                     items.Add((Item)item1);
-                    InventorySlot.instanceslot.AddItem(items[i]);
+                    //FindObjectOfType<InventoryUI>().slots[i].AddItem((Item)item1);
                 }
                 else if (data.Items[i] == 2)
                 {
                     items.Add((Item)item2);
-                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 3)
                 {
                     items.Add((Item)item3);
-                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 4)
                 {
                     items.Add((Item)item4);
-                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 5)
                 {
                     items.Add((Item)item5);
-                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
                 else if (data.Items[i] == 6)
                 {
                     items.Add((Item)item6);
-                    InventorySlot.instanceslot.AddItem(items[i]);
                 }
             }
-
-            /* Debug.Log(items.Count);            
-             data.Items = new List<SaveItems>(); /// Ca va planter la car on le met a 0 tout le temps            
-             for (int i = 0; i < data.Items.Count; i++)
-             {
-                 items[i].name = data.Items[i].name;
-                 items[i].icon = data.Items[i].icon;
-                 items[i].isDefaultItem = data.Items[i].isDefaultItem;
-                 items[i].description = data.Items[i].description;
-             }*/
         }
     }
 
@@ -275,13 +259,9 @@ public class Inventaire : MonoBehaviour
         animator.SetBool("Start", true);
         if (items.Count >= space)
         {
-            //Debug.Log("Not enough room");
             return false;
         }
-        //Debug.Log("Adding " + item.name + " to inventory");
         items.Add(item);
-        //selectobject = item.name;
-       // Debug.Log(item.name);
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
             selectobject = item.name;
@@ -292,12 +272,13 @@ public class Inventaire : MonoBehaviour
             imageArmeUI.GetComponent<Image>().color = tempcolor;
         }
         if (onItemChangedCallback != null)
+        {
             onItemChangedCallback.Invoke();
+        }
         return true;
     }
     public void Remove(Item item)
     {
-        //Debug.Log("Removing " + item.name + " from inventory");
         items.Remove(item);
         objectname = item.name;
         if (onItemChangedCallback != null)

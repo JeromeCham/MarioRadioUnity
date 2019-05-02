@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class ButtonChoice : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void choice1A()
     {
         PlayerMovement player = GameObject.Find("Personnage").GetComponent<PlayerMovement>();
