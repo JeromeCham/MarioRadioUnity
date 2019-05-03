@@ -129,6 +129,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsDead", false);
 
         Load();
+
+        FindObjectOfType<VolumeBarSlider>().MusicManager();
     }
 
     private void Load()

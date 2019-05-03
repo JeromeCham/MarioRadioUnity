@@ -1,27 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VolumeBarSlider : MonoBehaviour
 {
-    private AudioSource audioSrc;
+    private AudioSource audioSrcMainMenu;
 
-    private float musicVolume = 1f;
-
-    // Start is called before the first frame update
+    [SerializeField]
+    private AudioSource audioSrcInGame;
+    
     void Start()
     {
-        audioSrc = GetComponent<AudioSource>();
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
+
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+
+        audioSrcMainMenu = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MusicManager()
     {
-        audioSrc.volume = musicVolume;
+        audioSrcMainMenu = GetComponent<AudioSource>();
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            audioSrcMainMenu.Stop();
+            audioSrcInGame.Play();
+        }
+        else
+        {
+            if(audioSrcInGame.isPlaying == false)
+            {
+                audioSrcMainMenu.Stop();
+                audioSrcInGame.Play();
+            }
+        }
     }
 
     public void setVolume(float vol)
     {
-        musicVolume = vol;
+        audioSrcMainMenu.volume = vol;
+        audioSrcInGame.volume = vol;
     }
 }

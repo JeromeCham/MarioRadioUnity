@@ -54,6 +54,8 @@ public class MainMenu : MonoBehaviour
             textLvl3.GetComponent<TextMeshProUGUI>().color = tempColor;
             buttonLvl3.interactable = true;
         }
+
+        FindObjectOfType<VolumeBarSlider>().MusicManager();
     }
 
     public void PlayGameLvl1()
