@@ -219,26 +219,6 @@ public class PlayerMovement : MonoBehaviour
 
         Experience.TextValue = level;
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Health.CurrentValue -= 10;
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            Health.CurrentValue += 10;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            addExp(-10);
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            addExp(10);
-        }
-
         if (rb.velocity.y > 0 && controller.getGrounded() == false)
         {
             animator.SetBool("IsJumping", true);
