@@ -1718,7 +1718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51375659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.9, y: 12.3, z: 0}
+  m_LocalPosition: {x: 2.2, y: 11.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422316322}
@@ -4742,7 +4742,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393330921}
-  m_LocalRotation: {x: 0, y: 0, z: 0.021013904, w: 0.9997792}
+  m_LocalRotation: {x: 0, y: 0, z: 0.021013912, w: 0.9997792}
   m_LocalPosition: {x: 0.28158912, y: 0.00000009362938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5665,7 +5665,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463328069}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9999696, w: -0.0077993926}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9999696, w: -0.0077987164}
   m_LocalPosition: {x: 0.2538379, y: -0.09614631, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7971,7 +7971,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Balles pour bazooka:
 
-    5 balles pour 10$'
+    2 balles pour 10$'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8052,7 +8052,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -9428,7 +9428,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -10045,7 +10045,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952039366}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0059572593, w: -0.9999823}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0059580007, w: -0.9999823}
   m_LocalPosition: {x: 0.249, y: -0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -10215,7 +10215,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957618164}
-  m_LocalRotation: {x: -0, y: -0, z: -0.008825221, w: -0.99996114}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008824767, w: -0.99996114}
   m_LocalPosition: {x: 0.214, y: -0.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -10385,7 +10385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967222870}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9999999, w: 0.0005783264}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9999999, w: 0.00057758513}
   m_LocalPosition: {x: 0.05240986, y: -0.1500193, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17517,7 +17517,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312147417}
-  m_LocalRotation: {x: -0, y: -0, z: 0.024506478, w: 0.99969965}
+  m_LocalRotation: {x: -0, y: -0, z: 0.024505798, w: 0.99969965}
   m_LocalPosition: {x: 0.238, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -17746,7 +17746,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339458929}
-  m_LocalRotation: {x: 0, y: 0, z: -0.006302388, w: 0.9999802}
+  m_LocalRotation: {x: 0, y: 0, z: -0.006302385, w: 0.9999802}
   m_LocalPosition: {x: 0.26751873, y: 0.00000012436143, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19879,7 +19879,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602845230}
-  m_LocalRotation: {x: -0, y: -0, z: 0.022531878, w: 0.9997462}
+  m_LocalRotation: {x: -0, y: -0, z: 0.022531638, w: 0.9997462}
   m_LocalPosition: {x: 0.244, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -20900,7 +20900,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702878944}
-  m_LocalRotation: {x: 0, y: 0, z: 0.99999654, w: 0.0026371498}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99999654, w: 0.0026369076}
   m_LocalPosition: {x: 0.052034233, y: 0.06712658, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -26609,7 +26609,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849284094}
-  m_LocalRotation: {x: 0, y: 0, z: -0.0061470955, w: 0.99998116}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0061470973, w: 0.99998116}
   m_LocalPosition: {x: 0.23938006, y: -0.000000049408115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -27144,7 +27144,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Balles pour pistolet:
 
-    30 balles pour 10$'
+    15 balles pour 10$'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -27225,7 +27225,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -27931,7 +27931,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978357678}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9997835, w: 0.020810207}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9997835, w: 0.02080976}
   m_LocalPosition: {x: 0.24152961, y: 0.08830113, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

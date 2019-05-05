@@ -332,7 +332,7 @@ public class Inventaire : MonoBehaviour
 
     public void AddMagazineMitraillette()
     {
-        mitraillette.Ammo += 100;
+        mitraillette.Ammo += 50;
     }
 
     public void AddMagazineBazooka()
