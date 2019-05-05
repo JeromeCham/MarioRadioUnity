@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
         Load();
 
-        FindObjectOfType<VolumeBarSlider>().MusicManager();
+        FindObjectOfType<VolumeBarSlider>().ResetTemp();
     }
 
     private void Load()
@@ -151,7 +151,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         if (health.CurrentValue == 0) Die();
 
         if (isUsingGreenPotion == true)
@@ -196,7 +195,6 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        
 
         if (Input.GetButtonDown("Jump") && !controller.isUnderSomething)
         {

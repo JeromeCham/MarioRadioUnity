@@ -7,8 +7,10 @@ public class VolumeBarSlider : MonoBehaviour
 {
     private AudioSource audioSrcMainMenu;
 
-    [SerializeField]
-    private AudioSource audioSrcInGame;
+    //[SerializeField]
+    //private AudioSource audioSrcInGame;
+
+    int temp = 0;
     
     void Start()
     {
@@ -24,28 +26,48 @@ public class VolumeBarSlider : MonoBehaviour
         audioSrcMainMenu = GetComponent<AudioSource>();
     }
 
-    public void MusicManager()
+    public void ResetTemp()
+    {
+        temp = 0;
+    }
+
+    private void Update()
+    {
+        //Debug.Log(temp);
+        if(temp <1)
+         {
+            switch (SceneManager.GetActiveScene().buildIndex)
+            {
+                case 0:
+                    audioSrcMainMenu.Play();
+                    
+                    break;
+                default:
+                    audioSrcMainMenu.Stop();
+                    break;
+            }
+            temp += 1;
+         }
+    }
+
+    /*public void MusicManager()
     {
         audioSrcMainMenu = GetComponent<AudioSource>();
 
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (count == true && temp < 1)
         {
-            audioSrcMainMenu.Stop();
-            audioSrcInGame.Play();
+            audioSrcMainMenu.Play();
+            temp += 1;
         }
         else
         {
-            if(audioSrcInGame.isPlaying == false)
-            {
-                audioSrcMainMenu.Stop();
-                audioSrcInGame.Play();
-            }
+            audioSrcMainMenu.Stop();
         }
-    }
+    }*/
 
     public void setVolume(float vol)
     {
         audioSrcMainMenu.volume = vol;
-        audioSrcInGame.volume = vol;
+        //audioSrcInGame.volume = vol;
     }
 }

@@ -55,11 +55,16 @@ public class MainMenu : MonoBehaviour
             buttonLvl3.interactable = true;
         }
 
-        FindObjectOfType<VolumeBarSlider>().MusicManager();
+        FindObjectOfType<VolumeBarSlider>().ResetTemp();
+    }
+
+    public void PlayMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void PlayGameLvl1()
-    {   
+    {
         SceneManager.LoadScene(1);
     }
 
