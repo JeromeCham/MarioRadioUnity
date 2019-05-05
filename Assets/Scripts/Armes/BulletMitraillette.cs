@@ -30,7 +30,7 @@ public class BulletMitraillette : MonoBehaviour
             Shooting enemy = hitInfo.GetComponent<Shooting>();
             if (enemy != null)
             {
-                enemy.TakeDamage(1);
+                enemy.TakeDamage(5);
             }
             Destroy(gameObject);
         }

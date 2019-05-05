@@ -21,6 +21,7 @@ public class Rocket : MonoBehaviour
     {
         if (hit == true)
         {
+            Soundmanager.PlaySound("rocketshot");
             explosion = (GameObject)Instantiate(ExplosionPrefab, ExplosionPoint.position, ExplosionPoint.rotation);
             Destroy(explosion.gameObject, t);
             Destroy(gameObject);

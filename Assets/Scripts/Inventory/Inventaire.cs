@@ -264,6 +264,10 @@ public class Inventaire : MonoBehaviour
         items.Add(item);
         if (item.name == "Gun" || item.name == "Machine gun" || item.name == "RocketLauncher")
         {
+            if (item.name == "Gun" || item.name == "Machine gun")
+            {
+                Soundmanager.PlaySound("pickupgun");
+            }
             selectobject = item.name;
             shoot = true;
             imageArmeUI.GetComponent<Image>().sprite = item.icon;
@@ -323,17 +327,17 @@ public class Inventaire : MonoBehaviour
     }
     public void AddMagazinePistolet()
     {
-        pistolet.Ammo += 60;
+        pistolet.Ammo += 15;
     }
 
     public void AddMagazineMitraillette()
     {
-        mitraillette.Ammo += 150;
+        mitraillette.Ammo += 100;
     }
 
     public void AddMagazineBazooka()
     {
-        bazouka.Ammo += 5;
+        bazouka.Ammo += 2;
     }
 
     public int NbMoney()
@@ -365,6 +369,7 @@ public class Inventaire : MonoBehaviour
                     mitraillette.Bullet = (GameObject)Instantiate(mitraillette.BulletPrefab, firePoint.position, firePoint.rotation);
                     Destroy(mitraillette.Bullet, mitraillette.BulletLife);
                     mitraillette.Ammo -= 1;
+                    Soundmanager.PlaySound("gunshot");
                 }
                 break;
             case "Gun":
@@ -376,6 +381,7 @@ public class Inventaire : MonoBehaviour
                 RocketImage.SetActive(false);
                 if (Input.GetButtonDown("Fire1") && pistolet.Ammo > 0)
                 {
+                    Soundmanager.PlaySound("gunshot");
                     pistolet.Bullet = (GameObject)Instantiate(pistolet.BulletPrefab, firePoint.position, firePoint.rotation);
                     Destroy(pistolet.Bullet, pistolet.BulletLife);
                     pistolet.Ammo -= 1;

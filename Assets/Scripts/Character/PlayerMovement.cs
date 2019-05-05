@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private bool active = false;
     private bool isDead;
     private int moneytemp;
-    
+
     public Stat Neutraliser
     {
         get
@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-
+        
         if (Input.GetButtonDown("Jump") && !controller.isUnderSomething)
         {
             jump = true;
