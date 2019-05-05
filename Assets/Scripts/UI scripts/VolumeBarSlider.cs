@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class VolumeBarSlider : MonoBehaviour
 {
-    private AudioSource audioSrcMainMenu;
+    private AudioSource audioSrcMainMenu = null;
 
     //[SerializeField]
-    //private AudioSource audioSrcInGame;
+    //private AudioSource audioSrcInGame = null;
 
-    int temp = 0;
+    private int temp = 0;
     
     void Start()
     {
@@ -33,7 +33,6 @@ public class VolumeBarSlider : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(temp);
         if(temp <1)
          {
             switch (SceneManager.GetActiveScene().buildIndex)

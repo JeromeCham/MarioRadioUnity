@@ -133,22 +133,22 @@ public class Inventaire : MonoBehaviour
     //SaveInventaire
     #region Singleton
     [SerializeField]
-    private ScriptableObject item1;
+    private ScriptableObject item1 = null;
 
     [SerializeField]
-    private ScriptableObject item2;
+    private ScriptableObject item2 = null;
 
     [SerializeField]
-    private ScriptableObject item3;
+    private ScriptableObject item3 = null;
 
     [SerializeField]
-    private ScriptableObject item4;
+    private ScriptableObject item4 = null;
 
     [SerializeField]
-    private ScriptableObject item5;
+    private ScriptableObject item5 = null;
 
     [SerializeField]
-    private ScriptableObject item6;
+    private ScriptableObject item6 = null;
     #endregion
 
     private void Awake()
