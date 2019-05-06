@@ -5,19 +5,21 @@ using UnityEngine;
 public class Footstep : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip run;
+    private AudioClip run = null;
+
     public static AudioClip run1;
 
     [SerializeField]
-    private AudioClip bois;
+    private AudioClip bois = null;
+
     public static AudioClip bois1;
 
     [SerializeField]
-    private AudioClip metal;
+    private AudioClip metal = null;
+
     public static AudioClip metal1;
-
-
-    static AudioSource audioSrc;
+    
+    public static AudioSource audioSrc;
 
     void Start()
     {

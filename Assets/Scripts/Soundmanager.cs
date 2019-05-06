@@ -5,19 +5,21 @@ using UnityEngine;
 public class Soundmanager : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip gunshot;
+    private AudioClip gunshot = null;
+
     public static AudioClip gunshot1;
 
     [SerializeField]
-    private AudioClip rocketshot;
+    private AudioClip rocketshot = null;
+
     public static AudioClip rocketshot1;
 
     [SerializeField]
-    private AudioClip pickupgun;
+    private AudioClip pickupgun = null;
 
     public static AudioClip pickupgun1;
 
-    static AudioSource audioSrc;
+    public static AudioSource audioSrc;
 
     void Start()
     {
