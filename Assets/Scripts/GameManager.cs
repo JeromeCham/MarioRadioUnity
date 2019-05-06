@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         {
             text.SetActive(true);
             gameHasEnded = true;
+            Soundmanager.PlaySound("rocketshot");
             Invoke("Restart", restartDelay);
         }
     }

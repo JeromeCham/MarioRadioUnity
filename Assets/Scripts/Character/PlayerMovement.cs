@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private bool active = false;
     private bool isDead;
     private int moneytemp;
+    private int temp = 0;
 
     public Stat Neutraliser
     {
@@ -229,6 +230,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsFalling", true);
             animator.SetBool("IsJumping", false);
         }
+
+
     }
 
     public void setJumpForce(float valeur)
@@ -261,7 +264,10 @@ public class PlayerMovement : MonoBehaviour
             Die();
         }
     }
-
+    public float speed()
+    {
+        return Mathf.Abs(horizontalMove);
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Finish" && !isDead)
