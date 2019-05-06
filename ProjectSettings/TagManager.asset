@@ -25,6 +25,7 @@ TagManager:
   - Canvas
   - Logo
   - music
+  - bois
   layers:
   - Default
   - TransparentFX

@@ -60,7 +60,9 @@ public class PlayerMovement : MonoBehaviour
     private bool active = false;
     private bool isDead;
     private int moneytemp;
-    private int temp = 0;
+    private float timer = 0.4f;
+
+    private string ground = " ";
 
     public Stat Neutraliser
     {
@@ -128,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         
         isDead = false;
         animator.SetBool("IsDead", false);
-
+        
         Load();
 
         FindObjectOfType<VolumeBarSlider>().ResetTemp();
@@ -230,8 +232,24 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsFalling", true);
             animator.SetBool("IsJumping", false);
         }
+        timer -= Time.deltaTime;
 
-
+        if (timer <= 0.0f  && animator.GetFloat("Speed") > 0.1 && animator.GetBool("IsFalling") == false && animator.GetBool("IsJumping") == false)
+        {
+            switch (ground)
+            {
+                case "grass":
+                    Footstep.PlaySound("run");
+                    break;
+                case "bois":
+                    Footstep.PlaySound("bois");
+                    break;
+                case "metal":
+                    Footstep.PlaySound("metal");
+                    break;
+            }
+            timer = 0.4f;
+        }
     }
 
     public void setJumpForce(float valeur)
@@ -280,6 +298,20 @@ public class PlayerMovement : MonoBehaviour
         {
             active = true;
         }
+
+        if (other.tag == "Tilemap solid")
+        {
+            ground = "grass";
+        }
+        if (other.tag == "bois")
+        {
+            ground = "bois";
+        }
+        if (other.tag == "Gate")
+        {
+            ground = "metal";
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
