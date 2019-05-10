@@ -8625,8 +8625,8 @@ Transform:
   - {fileID: 5103288}
   - {fileID: 431865698}
   - {fileID: 213413650}
-  - {fileID: 1896264378}
   - {fileID: 1298501876}
+  - {fileID: 1896264378}
   - {fileID: 1288090974}
   - {fileID: 746235609}
   - {fileID: 621957591}
@@ -19389,7 +19389,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1298501876}
-  - component: {fileID: 1298501878}
   - component: {fileID: 1298501877}
   m_Layer: 8
   m_Name: GroundCheck
@@ -19406,11 +19405,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298501875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.042, y: -0.994, z: 0}
+  m_LocalPosition: {x: 0.052, y: -0.985, z: 0}
   m_LocalScale: {x: 4.6999993, y: 4.6999993, z: 1}
   m_Children: []
   m_Father: {fileID: 756277774}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1298501877
 EdgeCollider2D:
@@ -19430,25 +19429,6 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.060704503, y: 0.000000014901161}
   - {x: 0.06637282, y: 0.000000014901161}
---- !u!95 &1298501878
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298501875}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0a9ec029138cdb84cb05913840de0df8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1309887016
 GameObject:
   m_ObjectHideFlags: 0
@@ -33095,11 +33075,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896264377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.064, y: 0.548, z: 0}
+  m_LocalPosition: {x: 0.196, y: 0.546, z: 0}
   m_LocalScale: {x: 4.6999993, y: 4.6999993, z: 1}
   m_Children: []
   m_Father: {fileID: 756277774}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1896264379
 EdgeCollider2D:
